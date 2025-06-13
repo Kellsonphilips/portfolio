@@ -1,12 +1,10 @@
 "use client"
 
-import './globals.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import '@/app/globals.css';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, Github, Linkedin, Twitter } from 'lucide-react';
-import profilePic from '../public/Images/profile.jpg';
+import profilePic from '@/public/Images/profile.jpg';
 
 export default function Home() {
   return (
