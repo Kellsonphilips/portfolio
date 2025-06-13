@@ -12,7 +12,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="flex flex-col-reverse md:flex-row items-center gap-6 mt-10">
         <div className="md:w-2/3 text-center md:text-left">
-          <h1 className="text-4xl font-bold mb-4">Hi, I&apos;m John Doe</h1>
+          <h1 className="text-4xl font-bold mb-4">Hi, I&apos;m Philip Orji</h1>
           <p className="text-xl mb-4">ICT Solution Provider, Software Engineer & Data Analyst</p>
           <p className="text-md text-gray-600 mb-6">
             Welcome to my portfolio where I showcase projects, skills, and capabilities.
@@ -35,12 +35,16 @@ export default function Home() {
           </div>
         </div>
         <div className="md:w-1/3 flex justify-center">
-          <Image
-            src={profilePic}
-            alt="Profile Picture"
-            className="rounded-full w-40 h-40 object-cover"
-            priority
-          />
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
+            <Image
+              src={profilePic}
+              alt="Profile Picture"
+              className="rounded-full object-cover"
+              fill
+              sizes="(max-width: 768px) 192px, (max-width: 1024px) 288px, 320px"
+              priority
+            />
+          </div>
         </div>
       </section>
 
