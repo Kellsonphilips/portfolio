@@ -58,5 +58,70 @@ export const blogPosts = [
       - Statistical methods
       - Visualization best practices
     `
+  },
+  {
+    slug: 'a-deep-dive-into-machine-learning',
+    title: 'A Deep Dive into Machine Learning',
+    excerpt: 'Understand the core concepts and applications of ML...',
+    date: '2024-04-01',
+    readTime: '10 min read',
+    category: 'Artificial Intelligence',
+    content: `
+      Machine Learning is a fascinating field at the intersection of computer science and statistics.
+      This deep dive will cover supervised, unsupervised, and reinforcement learning, along with practical applications.
+
+      ## Supervised Learning
+
+      In supervised learning, models are trained on labeled datasets. Common algorithms include:
+      - Linear Regression
+      - Logistic Regression
+      - Support Vector Machines (SVM)
+      - Decision Trees and Random Forests
+
+      ## Unsupervised Learning
+
+      Unsupervised learning deals with unlabeled data, aiming to find hidden patterns or structures. Key techniques are:
+      - Clustering (K-Means, Hierarchical Clustering)
+      - Dimensionality Reduction (PCA, t-SNE)
+
+      ## Real-world Applications
+
+      ML powers many technologies we use daily:
+      - Image recognition
+      - Natural Language Processing (NLP)
+      - Recommendation systems
+      - Predictive analytics
+    `
+  },
+  {
+    slug: 'understanding-cloud-computing',
+    title: 'Understanding Cloud Computing',
+    excerpt: 'An introduction to the benefits and types of cloud services...',
+    date: '2024-04-05',
+    readTime: '7 min read',
+    category: 'Cloud Technologies',
+    content: `
+      Cloud computing has revolutionized how businesses operate, offering scalable and flexible IT resources.
+      This post will demystify cloud concepts and explore popular service models.
+
+      ## What is Cloud Computing?
+
+      Cloud computing delivers on-demand computing services over the internet with pay-as-you-go pricing.
+
+      ## Service Models
+
+      The three main service models are:
+      - **Infrastructure as a Service (IaaS):** Provides virtualized computing resources over the internet.
+      - **Platform as a Service (PaaS):** Offers a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure.
+      - **Software as a Service (SaaS):** Delivers software applications over the internet, on demand and typically on a subscription basis.
+
+      ## Benefits of Cloud
+
+      Key advantages include:
+      - Cost-effectiveness
+      - Scalability
+      - Global accessibility
+      - Enhanced security
+    `
   }
 ]; 

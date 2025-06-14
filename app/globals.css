@@ -3,18 +3,354 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 255, 255, 255;
+  /* Light theme variables */
+  --primary: #2563eb;
+  --secondary: #4b5563;
+  --accent: #3b82f6;
+  --text: #1f2937;
+  --text-secondary: #4b5563;
+  --background: #ffffff;
+  --card-bg: #ffffff;
+  --card-tag-bg: #f3f4f6;
+  --border: #e5e7eb;
+  --navbar: #ffffff;
+  --navbar-hover: #f3f4f6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-rgb: 0, 0, 0;
+[data-theme='dark'] {
+  /* Dark theme variables */
+  --primary: #3b82f6;
+  --secondary: #9ca3af;
+  --accent: #60a5fa;
+  --text: #16181d;
+  --text-secondary: #d1d5db;
+  --background: #385179;
+  --card-bg: #334155;
+  --card-tag-bg: #475569;
+  --border: #475569;
+  --navbar: #1e293b;
+  --navbar-hover: #334155;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+@layer components {
+  .glass {
+    @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-border;
+  }
+
+  .card {
+    @apply bg-card-bg border border-border;
+  }
+
+  .card-tag {
+    @apply bg-card-tag-bg text-text-secondary;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-accent transition-colors inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-2 rounded-lg hover:bg-accent transition-colors inline-flex items-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border border-border text-text px-6 py-2 rounded-lg hover:bg-card-tag-bg transition-colors inline-flex items-center gap-2;
+  }
+
+  .navbar-link {
+    @apply text-text hover:text-accent transition-colors;
+  }
+
+  .hover-lift {
+    @apply transition-transform hover:-translate-y-1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    color: #40046d;
+  }
+  25% {
+    color: #3b82f6;
+  }
+  50% {
+    color: #3cbc38;
+  }
+  75% {
+    color: #27860f;
+  }
+  100% {
+    color: #2563eb;
+  }
+}
+
+@keyframes fallIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-out;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out;
+}
+
+.animate-typing {
+  /* This class will now act as a container for falling text */
+  /* The actual animation will be on its children spans */
+  display: block; /* Ensure it takes full width for text alignment */
+}
+
+.animate-typing span {
+  display: inline-block; /* Essential for transform and opacity */
+  opacity: 0; /* Start invisible */
+  animation: fallIn 0.5s forwards; /* Apply the falling animation */
+}
+
+.animate-color-change {
+  animation: colorChange 3s linear infinite;
+}
+
+.fall-in-animation span {
+  display: inline-block;
+  opacity: 0;
+  animation: fallIn 0.5s forwards;
+}
+
+/* Custom Tailwind Classes for Colors */
+.text-primary {
+  color: var(--primary);
+}
+.text-secondary-color {
+  color: var(--text-secondary);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.bg-card {
+  background: var(--card-bg);
+}
+.border-color {
+  border-color: var(--border);
+}
+.bg-card-tag {
+  background-color: var(--card-tag-bg);
+}
+.bg-navbar {
+  background-color: var(--navbar);
+}
+
+/* /* Glass effect
+.glass {
+  @apply bg-card-bg/80 backdrop-blur-sm border border-border;
+} */
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Link styles */
+a {
+  color: var(--accent);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: var(--primary);
+  color: white; /* Keep this white for readability on the primary button */
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Navbar Link Hover */
+.navbar-link:hover {
+  color: var(--primary);
+}
+
+/* Blog Link Hover */
+.blog-title-hover:hover {
+  color: var(--primary);
+}
+
+/* Social Link Hover */
+.social-link-hover:hover {
+  color: var(--text);
+}
+
+/* Card styles */
+.card {
+  @apply bg-card-bg border border-border;
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Section styles */
+section {
+  padding: 5rem 0;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-weight: 700;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+}
+
+/* Loading animation */
+.loading {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border);
+  border-radius: 50%;
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
