@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
+
+This is a modern, responsive portfolio website built with [Next.js](https://nextjs.org), showcasing projects, skills, blog posts, and professional capabilities. The site is styled with [Tailwind CSS](https://tailwindcss.com) and features a clean, animated UI for an engaging user experience.
+
+## Features
+
+- **Landing Page:** Animated hero section, featured projects, and call-to-action.
+- **Projects:** Tabbed interface to browse ICT, Web Apps, and Data Analytics projects.
+- **Blog:** List of blog posts with individual post pages.
+- **Skills:** Categorized technical skills display.
+- **Capabilities:** Overview of professional services and expertise.
+- **Contact:** Responsive contact form.
+- **FAQ & Privacy:** Informational pages for visitors.
+- **Responsive Design:** Mobile-friendly and accessible.
+- **Dark Mode Ready:** Uses CSS variables for easy theming.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/portfolio.git
+   cd portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. **Open your browser:**
+   Visit [http://localhost:3000](http://localhost:3000) to view the site.
+
+## Project Structure
+
+```
+.
+├── app/                # Next.js app directory (routing, pages, layouts)
+│   ├── blog/           # Blog listing and post pages
+│   ├── capabilities/   # Capabilities page
+│   ├── contact/        # Contact form page
+│   ├── faq/            # FAQ page
+│   ├── privacy/        # Privacy policy page
+│   ├── projects/       # Projects listing and data
+│   ├── skills/         # Skills page
+│   ├── layout.js       # Root layout
+│   ├── page.js         # Home page
+│   └── globals.css     # Global styles
+├── components/         # Reusable React components (Navbar, Footer, Hero, etc.)
+├── public/             # Static assets (images, favicon, etc.)
+├── styles/             # Additional CSS (if any)
+├── utils/              # Utility functions (e.g., GitHub API helpers)
+├── tailwind.config.js  # Tailwind CSS configuration
+├── postcss.config.js   # PostCSS configuration
+├── package.json        # Project metadata and scripts
+└── README.md           # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Customization
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Update Content:**  
+  - Projects: Edit [`app/projects/projects.js`](app/projects/projects.js)
+  - Blog Posts: Edit [`app/blog/blogs.js`](app/blog/blogs.js)
+  - Skills & Capabilities: Edit [`app/skills/page.js`](app/skills/page.js) and [`app/capabilities/page.js`](app/capabilities/page.js)
+- **Profile Info:**  
+  - Hero/About sections: Edit [`components/Hero.js`](components/Hero.js) and [`components/About.js`](components/About.js)
+- **Images:**  
+  - Replace images in [`public/`](public/) and update imports in components as needed.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+- `npm run dev` — Start the development server
+- `npm run build` — Build for production
+- `npm run start` — Start the production server
+- `npm run lint` — Run ESLint
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [PostCSS](https://postcss.org/)
+- [ESLint](https://eslint.org/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The site can be easily deployed on [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push your code to GitHub.
+2. Connect your repository to Vercel.
+3. Follow the deployment instructions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For more details, see the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**Author:** Philip Kelechukwu Orji  
+**Contact:** See the [Contact page](app/contact/page.js) or connect via social links in the footer.
+
+---
