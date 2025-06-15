@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
               <p className="mb-4 text-secondary-color">{project.description}</p>
               <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {project.technologies.map((tech) => (
-                  <span key={tech} className="card-tag text-sm px-3 py-1 rounded-full">
+                  <span key={tech} className="card-tag text-blue-500 text-sm px-3 py-1 rounded-full">
                     {tech}
                   </span>
                 ))}
@@ -31,7 +31,7 @@ export default function FeaturedProjects() {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button href="/projects" variant="primary">
+          <Button href="/projects" variant="primary" showArrow>
             View All Projects
           </Button>
         </div>

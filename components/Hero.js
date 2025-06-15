@@ -32,7 +32,7 @@ export default function Hero() {
         </h1>
         <p className="text-xl mb-4 text-text">ICT Solution Provider, Software Engineer & Data Analyst</p>
         <p className="text-md mb-6 text-secondary-color">
-          Welcome to my professional space, where I showcase projects, skills, and
+          Welcome to my professional space, where I showcase my  projects, skills, and
           capabilities. I help businesses transform their ideas into digital
           reality.
         </p>
@@ -47,6 +47,7 @@ export default function Hero() {
           <Button 
             href="/projects"
             variant="secondary"
+            showArrow
           >
             View Projects
           </Button>

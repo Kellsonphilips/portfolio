@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogPosts } from './blogs';
 
 export default function Blog() {
@@ -14,10 +15,20 @@ export default function Blog() {
             key={post.slug}
             className="block"
           >
-            <div className="card p-6 rounded-lg shadow-lg hover-lift h-full flex flex-col">
-              <h2 className="text-xl font-semibold mb-2 text-black hover:text-primary transition-colors">{post.title}</h2>
-              <p className="text-secondary-color text-sm mb-4">{new Date(post.date).toLocaleDateString()}</p>
-              <p className="text-text flex-grow">{post.excerpt}</p>
+            <div className="card rounded-lg shadow-lg hover-lift h-full flex flex-col overflow-hidden">
+              <div className="relative h-48 w-full">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-xl font-semibold mb-2 text-black hover:text-primary transition-colors">{post.title}</h2>
+                <p className="text-secondary-color text-sm mb-4">{new Date(post.date).toLocaleDateString()}</p>
+                <p className="text-text flex-grow">{post.excerpt}</p>
+              </div>
             </div>
           </Link>
         ))}

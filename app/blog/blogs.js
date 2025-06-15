@@ -1,3 +1,8 @@
+import CloudComputingBlog from "./blogs/understanding-cloud-computing";
+import GettingStartedWithNext from "./blogs/nextjs-getting-started";
+import DataAnalysisBestPractices from "./blogs/data-analysis-best-practices";
+import MachineLearningDeepDive from "./blogs/machine-learning-deep-dive";
+
 export const blogPosts = [
   {
     slug: 'getting-started-with-nextjs',
@@ -6,29 +11,8 @@ export const blogPosts = [
     date: '2024-03-15',
     readTime: '5 min read',
     category: 'Web Development',
-    content: `
-      Next.js is a powerful React framework that enables you to build modern web applications with ease.
-      In this comprehensive guide, we'll explore the fundamentals of Next.js and how to get started with your first project.
-
-      ## Why Next.js?
-
-      Next.js provides several key features that make it an excellent choice for modern web development:
-      - Server-side rendering
-      - Static site generation
-      - API routes
-      - Built-in CSS and Sass support
-      - TypeScript support
-      - And much more!
-
-      ## Getting Started
-
-      To create a new Next.js project, you can use the following command:
-      \`\`\`bash
-      npx create-next-app@latest my-app
-      \`\`\`
-
-      This will set up a new Next.js project with all the necessary dependencies and configuration.
-    `
+    content: GettingStartedWithNext,
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000'
   },
   {
     slug: 'data-analysis-best-practices',
@@ -37,27 +21,8 @@ export const blogPosts = [
     date: '2024-03-10',
     readTime: '8 min read',
     category: 'Data Science',
-    content: `
-      Data analysis is a crucial skill in today's data-driven world. This guide covers essential best practices
-      for effective data analysis and visualization.
-
-      ## Key Principles
-
-      When working with data, it's important to follow these key principles:
-      - Data cleaning and preprocessing
-      - Exploratory data analysis
-      - Statistical analysis
-      - Data visualization
-      - Drawing meaningful conclusions
-
-      ## Tools and Techniques
-
-      We'll explore various tools and techniques that can help you become a better data analyst:
-      - Python libraries (Pandas, NumPy, Matplotlib)
-      - SQL for data querying
-      - Statistical methods
-      - Visualization best practices
-    `
+    content: DataAnalysisBestPractices,
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000'
   },
   {
     slug: 'a-deep-dive-into-machine-learning',
@@ -66,32 +31,8 @@ export const blogPosts = [
     date: '2024-04-01',
     readTime: '10 min read',
     category: 'Artificial Intelligence',
-    content: `
-      Machine Learning is a fascinating field at the intersection of computer science and statistics.
-      This deep dive will cover supervised, unsupervised, and reinforcement learning, along with practical applications.
-
-      ## Supervised Learning
-
-      In supervised learning, models are trained on labeled datasets. Common algorithms include:
-      - Linear Regression
-      - Logistic Regression
-      - Support Vector Machines (SVM)
-      - Decision Trees and Random Forests
-
-      ## Unsupervised Learning
-
-      Unsupervised learning deals with unlabeled data, aiming to find hidden patterns or structures. Key techniques are:
-      - Clustering (K-Means, Hierarchical Clustering)
-      - Dimensionality Reduction (PCA, t-SNE)
-
-      ## Real-world Applications
-
-      ML powers many technologies we use daily:
-      - Image recognition
-      - Natural Language Processing (NLP)
-      - Recommendation systems
-      - Predictive analytics
-    `
+    content: MachineLearningDeepDive,
+    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000'
   },
   {
     slug: 'understanding-cloud-computing',
@@ -100,28 +41,7 @@ export const blogPosts = [
     date: '2024-04-05',
     readTime: '7 min read',
     category: 'Cloud Technologies',
-    content: `
-      Cloud computing has revolutionized how businesses operate, offering scalable and flexible IT resources.
-      This post will demystify cloud concepts and explore popular service models.
-
-      ## What is Cloud Computing?
-
-      Cloud computing delivers on-demand computing services over the internet with pay-as-you-go pricing.
-
-      ## Service Models
-
-      The three main service models are:
-      - **Infrastructure as a Service (IaaS):** Provides virtualized computing resources over the internet.
-      - **Platform as a Service (PaaS):** Offers a platform allowing customers to develop, run, and manage applications without the complexity of building and maintaining the infrastructure.
-      - **Software as a Service (SaaS):** Delivers software applications over the internet, on demand and typically on a subscription basis.
-
-      ## Benefits of Cloud
-
-      Key advantages include:
-      - Cost-effectiveness
-      - Scalability
-      - Global accessibility
-      - Enhanced security
-    `
+    content: CloudComputingBlog,
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=1000'
   }
 ]; 
