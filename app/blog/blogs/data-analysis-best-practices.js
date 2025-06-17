@@ -171,6 +171,19 @@ export default function DataAnalysisBestPractices() {
           <li>Stay current with tools and trends.</li>
         </ul>
       </main>
+      <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <p className="text-center mb-2">
+          Follow me on 𝕏 for more tech insights
+        </p>
+        <a
+          href="https://twitter.com/JoinPhotonPhill"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 text-blue-500/70 hover:text-blue-600 transition-colors"
+        >
+          @JoinPhotonPhill
+        </a>
+      </div>
     </>
   );
 }

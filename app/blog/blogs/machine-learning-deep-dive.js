@@ -122,7 +122,7 @@ export default function MachineLearningDeepDive() {
         <div className="overflow-auto mb-6">
           <table className="min-w-full table-auto border border-gray-300 text-left">
             <thead>
-              <tr className="bg-gray-100">
+              <tr className="bg-gray-100/20">
                 <th className="border px-4 py-2">Algorithm</th>
                 <th className="border px-4 py-2">Type</th>
                 <th className="border px-4 py-2">Use Case</th>
@@ -218,8 +218,8 @@ export default function MachineLearningDeepDive() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-2">Conclusion</h2>
         <p className="mb-4">
-          Machine learning is not just a technological buzzword—it&apos;s a shift in
-          how we solve problems and extract insights from data.
+          Machine learning is not just a technological buzzword—it&apos;s a
+          shift in how we solve problems and extract insights from data.
         </p>
         <p className="mb-6">
           Mastering ML requires understanding its core principles, asking the
@@ -228,6 +228,19 @@ export default function MachineLearningDeepDive() {
           business, science, and society will only grow.
         </p>
       </main>
+      <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <p className="text-center mb-2">
+          Follow me on 𝕏 for more tech insights
+        </p>
+        <a
+          href="https://twitter.com/JoinPhotonPhill"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 text-blue-500/70 hover:text-blue-600 transition-colors"
+        >
+          @JoinPhotonPhill
+        </a>
+      </div>
     </>
   );
 }

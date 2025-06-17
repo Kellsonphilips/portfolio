@@ -16,7 +16,7 @@ export default function CloudComputingBlog() {
       </p>
 
       <h2>What is Cloud Computing?</h2>
-      <p>
+      <p className="py-2">
         Cloud computing refers to the{" "}
         <strong>delivery of computing services</strong>—including servers,
         storage, databases, networking, software, and more—
@@ -31,7 +31,7 @@ export default function CloudComputingBlog() {
         height={400}
       />
 
-      <h3>Traditional vs Cloud Computing</h3>
+      <h3 className="py-2">Traditional vs Cloud Computing</h3>
       <table>
         <thead>
           <tr>
@@ -64,14 +64,14 @@ export default function CloudComputingBlog() {
         </tbody>
       </table>
 
-      <h2>Types of Cloud Services (Service Models)</h2>
+      <h2 className="py-2">Types of Cloud Services (Service Models)</h2>
       <Image
         src="/Images/cloud-service-models.png"
         alt="IaaS vs PaaS vs SaaS"
         width={800}
         height={450}
       />
-      <h3>1. IaaS – Infrastructure as a Service</h3>
+      <h3 className="py-2">1. IaaS – Infrastructure as a Service</h3>
       <p>
         Offers virtualized computing resources like servers, storage, and
         networking. You manage everything from the OS upward.
@@ -89,14 +89,14 @@ export default function CloudComputingBlog() {
         software via a browser—no installations needed.
       </p>
 
-      <h2>Types of Cloud Deployment</h2>
+      <h2 className="py-4">Types of Cloud Deployment</h2>
       <Image
         src="/Images/cloud-deployment-models.png"
         alt="Public, Private, Hybrid, Community Cloud"
         width={800}
         height={400}
       />
-      <ul>
+      <ul className="py-4">
         <li>
           <strong>Public Cloud</strong>: Hosted by third-party providers; shared
           resources.
@@ -115,14 +115,14 @@ export default function CloudComputingBlog() {
         </li>
       </ul>
 
-      <h2>Core Benefits of Cloud Computing</h2>
+      <h2 className="py-4">Core Benefits of Cloud Computing</h2>
       <Image
         src="/Images/cloud-computing-benefits.jpg"
         alt="Benefits of Cloud Computing"
         width={800}
         height={350}
       />
-      <ul>
+      <ul className="py-4">
         <li>Scalability</li>
         <li>Cost Efficiency</li>
         <li>Flexibility</li>
@@ -130,14 +130,14 @@ export default function CloudComputingBlog() {
         <li>Security</li>
       </ul>
 
-      <h2>Real-World Use Cases</h2>
+      <h2 className="py-4">Real-World Use Cases</h2>
       <Image
         src="/Images/cloud_computing_use_cases.jpg"
         alt="Cloud Use Cases"
         width={800}
         height={400}
       />
-      <ul>
+      <ul className="py-4">
         <li>
           <strong>Netflix</strong>: Streams content using AWS for scalability.
         </li>
@@ -151,14 +151,14 @@ export default function CloudComputingBlog() {
         </li>
       </ul>
 
-      <h2>Common Cloud Providers</h2>
+      <h2 className="py-4">Common Cloud Providers</h2>
       <Image
         src="/Images/major-cloud-computing-service-providers.jpg"
         alt="Major Cloud Providers"
         width={800}
         height={350}
       />
-      <ul>
+      <ul className="py-4">
         <li>AWS</li>
         <li>Microsoft Azure</li>
         <li>Google Cloud</li>
@@ -166,19 +166,21 @@ export default function CloudComputingBlog() {
         <li>Oracle Cloud</li>
       </ul>
 
-      <h2>Visual Architecture Example: A Cloud-Based Web App</h2>
+      <h2 className="py-4">
+        Visual Architecture Example: A Cloud-Based Web App
+      </h2>
       <Image
         src="/Images/cloud-web-app-architecture.png"
         alt="Cloud Web App Architecture"
         width={800}
         height={400}
       />
-      <p>
+      <p className="py-4">
         A typical architecture includes load balancers, virtual machines or
         containers, databases, and storage—all scalable and distributed.
       </p>
 
-      <h2>Getting Started with Cloud Computing</h2>
+      <h2 className="py-4">Getting Started with Cloud Computing</h2>
       <ul>
         <li>Choose a provider (AWS, Azure, GCP)</li>
         <li>Create a free tier account</li>
@@ -187,7 +189,7 @@ export default function CloudComputingBlog() {
         <li>Try certifications like AWS Cloud Practitioner</li>
       </ul>
 
-      <h2>Final Thoughts</h2>
+      <h2 className="py-4">Final Thoughts</h2>
       <p>
         Cloud computing is the new standard. From startups to global
         enterprises, everyone is leveraging cloud platforms for agility, cost
@@ -204,6 +206,18 @@ export default function CloudComputingBlog() {
         <li>Understanding serverless architecture</li>
         <li>Cloud security best practices</li>
       </ul>
+
+      <div className="mt-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+        <p className="text-center mb-2">Follow me on 𝕏 for more tech insights</p>
+        <a 
+          href="https://twitter.com/JoinPhotonPhill" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 text-blue-500/70 hover:text-blue-600 transition-colors"
+        >
+          @JoinPhotonPhill
+        </a>
+      </div>
     </div>
   );
 }

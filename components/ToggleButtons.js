@@ -25,7 +25,7 @@ export default function ToggleButtons() {
       </button>
 
       {/* Language Toggle */}
-      <select
+      {/* <select
         value={currentLanguage}
         onChange={(e) => changeLanguage(e.target.value)}
         className="p-1 sm:p-2 rounded-lg bg-background-light dark:bg-background-dark shadow-lg hover:shadow-xl transition-all duration-300 text-text-light dark:text-text-dark border border-gray-200 dark:border-gray-700 text-sm sm:text-base"
@@ -43,7 +43,7 @@ export default function ToggleButtons() {
         <option value="ja">日本語</option>
         <option value="ko">한국어</option>
         <option value="ar">العربية</option>
-      </select>
+      </select> */}
     </div>
   );
 } 

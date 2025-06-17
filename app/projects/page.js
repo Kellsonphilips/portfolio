@@ -28,8 +28,8 @@ export default function Projects() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center mb-8 bg-background animate-fade-in">
-          <div className="inline-flex rounded-lg bg-white/50 p-1 backdrop-blur-sm">
+        <div className="flex justify-center mb-8 animate-fade-in">
+          <div className="inline-flex rounded-lg bg-white/30 p-1 backdrop-blur-sm">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
@@ -51,7 +51,7 @@ export default function Projects() {
           {projects[activeTab].map((project) => (
             <div
               key={project.id}
-              className="bg-background backdrop-blur-lg rounded-xl shadow-xl overflow-hidden border border-white/20 hover:shadow-2xl transition-all duration-300"
+              className="dark:bg-gray-800 backdrop-blur-lg rounded-xl shadow-xl overflow-hidden border border-white/20 hover:shadow-2xl transition-all duration-300"
             >
               <div className="relative h-48">
                 <Image
@@ -65,7 +65,9 @@ export default function Projects() {
                 <h3 className="text-xl text-primary font-semibold mb-2">
                   {project.title}
                 </h3>
-                <p className="text-text-light dark:text-text-dark light mb-4">{project.description}</p>
+                <p className="text-text-light dark:text-text-dark light mb-4">
+                  {project.description}
+                </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <span
@@ -87,7 +89,7 @@ export default function Projects() {
                     <ExternalLink className="w-4 h-4" />
                   </Link>
                   <Link
-                    href={`${project.link}/github`}
+                    href={`${project.link}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:text-gray-500"

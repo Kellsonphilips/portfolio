@@ -18,7 +18,7 @@ export default function FeaturedProjects() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allProjects.slice(0, 3).map((project) => (
             <div key={project.id} className="card p-6 rounded-lg shadow-lg flex flex-col items-center text-center animate-slide-in">
-              <h3 className="text-xl font-semibold mb-2 text-primary-color">{project.title}</h3>
+              <h3 className="text-xl text-primary font-semibold mb-2 text-primary-color">{project.title}</h3>
               <p className="mb-4 text-secondary-color">{project.description}</p>
               <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {project.technologies.map((tech) => (
