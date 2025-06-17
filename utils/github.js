@@ -1,5 +1,5 @@
 
-const GITHUB_API_URL = "https://api.github.com/Kellsonphilips";
+const GITHUB_API_URL = ".env.local.GITHUB_API_URL";
 
 export async function fetchGitHubRepos(username) {
   try {
