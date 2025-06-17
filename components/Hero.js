@@ -15,26 +15,24 @@ export default function Hero() {
       return (
         <span
           key={index}
-          className={`${isNameChar ? 'animate-color-change text-blue-700' : ''}`}
-          style={{ animationDelay: `${0.10 * index}s` }} // Stagger animation
+          className={`${isNameChar ? 'animate-color-change text-[#DC8923]' : ''}`}
+          style={{ animationDelay: `${0.10 * index}s` }}
         >
-          {char === ' ' ? '\u00A0' : char} {/* Render non-breaking space for actual spaces */}
+          {char === ' ' ? '\u00A0' : char}
         </span>
       );
     });
   };
 
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center gap-6 mt-10 animate-fade-in">
+    <section className="flex flex-col-reverse md:flex-row items-center gap-6 mt-20 animate-fade-in">
       <div className="md:w-2/3 text-center md:text-left">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text animate-typing">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text-light dark:text-text-dark animate-typing">
           {renderAnimatedText(fullText)}
         </h1>
-        <p className="text-xl mb-4 text-text">ICT Solution Provider, Software Engineer & Data Analyst</p>
-        <p className="text-md mb-6 text-secondary-color">
-          Welcome to my professional space, where I showcase my  projects, skills, and
-          capabilities. I help businesses transform their ideas into digital
-          reality.
+        <p className="text-xl mb-4 text-text-light dark:text-text-dark">ICT Solution Provider, Software Engineer & Data Analyst</p>
+        <p className="text-md mb-6 text-gray-600 dark:text-gray-300">
+          Welcome to my professional space, where I showcase my projects, skills, and capabilities. I help businesses transform their ideas into digital reality.
         </p>
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           <Button 

@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 const skills = {
   "Frontend Development": [
     "React",
@@ -22,34 +24,41 @@ const categoryImages = {
 
 export default function Skills() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Technical Skills</h1>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {Object.entries(skills).map(([category, skillList]) => (
-          <div key={category} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="h-48 w-full relative">
-              <img
-                src={categoryImages[category]}
-                alt={category}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h2 className="text-xl font-semibold mb-4">{category}</h2>
-              <div className="flex flex-wrap gap-2">
-                {skillList.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
-                  >
-                    {skill}
-                  </span>
-                ))}
+    <div className="pt-24">
+      <div className="container mx-auto px-4 py-8 mt-20">
+        <h1 className="text-3xl font-bold mb-8">Technical Skills</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {Object.entries(skills).map(([category, skillList]) => (
+            <div
+              key={category}
+              className="bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div className="h-48 w-full relative">
+                <Image
+                  src={categoryImages[category]}
+                  alt={category}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-xl font-semibold mb-4">{category}</h2>
+                <div className="flex flex-wrap gap-2">
+                  {skillList.map((skill) => (
+                    <span
+                      key={skill}
+                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

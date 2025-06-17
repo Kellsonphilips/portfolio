@@ -11,10 +11,34 @@ export default function Contact() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      // Clear form after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+      alert('Message sent successfully!');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Please try again.');
+    }
   };
 
   const handleChange = (e) => {
@@ -26,10 +50,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br to-indigo-100 py-6 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br to-indigo-100 py-6 px-4 mt-20 sm:px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Get in Touch</h1>
+          <h1 className="text-4xl font-bold text-text-light dark:text-text-dark mb-4">Get in Touch</h1>
           <p className="text-lg text-gray-600">
             Have a question or want us to work together? Let&apos;s discuss that by dropping us a message!
           </p>

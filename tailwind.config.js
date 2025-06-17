@@ -5,22 +5,32 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        text: "var(--text)",
-        "text-secondary": "var(--text-secondary)",
-        primary: "var(--primary)",
-        secondary: "var(--secondary)",
-        accent: "var(--accent)",
-        "card-bg": "var(--card-bg)",
-        "card-tag-bg": "var(--card-tag-bg)",
-        border: "var(--border)",
-        navbar: "var(--navbar)",
-        "navbar-hover": "var(--navbar-hover)",
-        "blog-title-hover": "var(--blog-title-hover)",
-        "social-link-hover": "var(--social-link-hover)",
+        primary: '#DC8923',
+        secondary: '#372207',
+        background: {
+          light: '#ffffff',
+          dark: '#1a1a1a',
+        },
+        text: {
+          light: '#000000',
+          dark: '#ffffff',
+        },
+        'text-secondary': {
+          light: '#4a5568',
+          dark: '#a0aec0',
+        },
+        navbar: {
+          light: '#ffffff',
+          dark: '#1a1a1a',
+        },
+        'navbar-hover': {
+          light: '#f7fafc',
+          dark: '#2d3748',
+        },
       },
     },
   },
