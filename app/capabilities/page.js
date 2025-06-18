@@ -48,6 +48,7 @@ export default function Capabilities() {
                   src={capability.image}
                   alt={capability.title}
                   fill
+                  priority
                   className="object-cover"
                 />
               </div>

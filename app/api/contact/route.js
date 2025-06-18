@@ -17,7 +17,7 @@ export async function POST(req) {
       from: process.env.EMAIL_USER,
       to: 'philiporjikelechi@gmail.com',
       replyTo: email,
-      subject: `Portfolio Contact: ${subject}`,
+      subject: `Consultation: ${subject}`,
       text: `
 Name: ${name}
 Email: ${email}

@@ -1,20 +1,41 @@
-# Portfolio Website
+# Philip Kelechukwu Orji – Portfolio
 
-This is a modern, responsive portfolio website built with [Next.js](https://nextjs.org), showcasing projects, skills, blog posts, and professional capabilities. The site is styled with [Tailwind CSS](https://tailwindcss.com) and features a clean, animated UI for an engaging user experience.
+A modern, responsive portfolio website built with [Next.js](https://nextjs.org), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com). This site showcases my projects, skills, blog posts, and professional capabilities, and is optimized for SEO, accessibility, and performance.
 
-## Features
+---
 
-- **Landing Page:** Animated hero section, featured projects, and call-to-action.
-- **Projects:** Tabbed interface to browse ICT, Web Apps, and Data Analytics projects.
-- **Blog:** List of blog posts with individual post pages.
-- **Skills:** Categorized technical skills display.
+## 🚀 Features
+
+- **Landing Page:** Animated hero, featured projects, and call-to-action.
+- **Projects:** Tabbed interface for ICT, Web Apps, and Data Analytics projects.
+- **Blog:** SEO-optimized blog with individual post pages, Open Graph, Twitter Card, and JSON-LD structured data.
+- **Skills:** Categorized technical skills with visual icons.
 - **Capabilities:** Overview of professional services and expertise.
-- **Contact:** Responsive contact form.
+- **Contact:** Responsive contact form with email integration (Nodemailer).
 - **FAQ & Privacy:** Informational pages for visitors.
-- **Responsive Design:** Mobile-friendly and accessible.
-- **Dark Mode Ready:** Uses CSS variables for easy theming.
+- **Internationalization:** Language toggle and Google Translate integration.
+- **Theme Toggle:** Light/dark mode with persistent user preference.
+- **Accessibility:** Keyboard navigation, color contrast, and semantic HTML.
+- **Performance:** Optimized images, static generation, and fast load times.
+- **SEO:** Sitemap, robots.txt, canonical URLs, meta tags, and structured data.
+- **Responsive Design:** Mobile-friendly and accessible on all devices.
 
-## Getting Started
+---
+
+## 🛠️ Tech Stack
+
+- [Next.js](https://nextjs.org/) (App Router)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [Nodemailer](https://nodemailer.com/) (for contact form)
+- [next-intl](https://github.com/amannn/next-intl) (for i18n)
+- [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
+- [Vercel](https://vercel.com/) (deployment)
+
+---
+
+## 📦 Getting Started
 
 ### Prerequisites
 
@@ -36,24 +57,29 @@ This is a modern, responsive portfolio website built with [Next.js](https://next
    yarn install
    ```
 
-3. **Run the development server:**
+3. **Set up environment variables:**
+   - Copy `.env.example` to `.env.local` and fill in your email credentials for Nodemailer and any other secrets.
+
+4. **Run the development server:**
    ```bash
    npm run dev
    # or
    yarn dev
    ```
 
-4. **Open your browser:**
+5. **Open your browser:**
    Visit [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Project Structure
+---
+
+## 🗂️ Project Structure
 
 ```
 .
 ├── app/                # Next.js app directory (routing, pages, layouts)
 │   ├── blog/           # Blog listing and post pages
 │   ├── capabilities/   # Capabilities page
-│   ├── contact/        # Contact form page
+│   ├── contact/        # Contact form page & API route
 │   ├── faq/            # FAQ page
 │   ├── privacy/        # Privacy policy page
 │   ├── projects/       # Projects listing and data
@@ -71,44 +97,56 @@ This is a modern, responsive portfolio website built with [Next.js](https://next
 └── README.md           # Project documentation
 ```
 
-## Customization
+---
+
+## ⚙️ Customization
 
 - **Update Content:**  
   - Projects: Edit [`app/projects/projects.js`](app/projects/projects.js)
-  - Blog Posts: Edit [`app/blog/blogs.js`](app/blog/blogs.js)
+  - Blog Posts: Edit [`app/blog/blogs.js`](app/blog/blogs.js) and individual blog files
   - Skills & Capabilities: Edit [`app/skills/page.js`](app/skills/page.js) and [`app/capabilities/page.js`](app/capabilities/page.js)
 - **Profile Info:**  
   - Hero/About sections: Edit [`components/Hero.js`](components/Hero.js) and [`components/About.js`](components/About.js)
 - **Images:**  
   - Replace images in [`public/`](public/) and update imports in components as needed.
+- **Translations:**  
+  - Update translation files in `/messages/` for i18n.
 
-## Scripts
+---
+
+## 🧪 Scripts
 
 - `npm run dev` — Start the development server
 - `npm run build` — Build for production
 - `npm run start` — Start the production server
 - `npm run lint` — Run ESLint
+- `npm run postbuild` — Generate sitemap and robots.txt (if using next-sitemap)
 
-## Technologies Used
+---
 
-- [Next.js](https://nextjs.org/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Lucide Icons](https://lucide.dev/)
-- [PostCSS](https://postcss.org/)
-- [ESLint](https://eslint.org/)
-
-## Deployment
+## 🌐 Deployment
 
 The site can be easily deployed on [Vercel](https://vercel.com/) or any platform supporting Next.js.
 
 1. Push your code to GitHub.
 2. Connect your repository to Vercel.
-3. Follow the deployment instructions.
+3. Set environment variables in the Vercel dashboard.
+4. Deploy!
 
 For more details, see the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
 
-## License
+---
+
+## 🔒 Security & Best Practices
+
+- **Environment Variables:** Never commit secrets. Use `.env.local` for sensitive data.
+- **SEO:** Meta tags, Open Graph, Twitter Card, JSON-LD, and sitemap are all set up.
+- **Accessibility:** Follows best practices for color contrast, keyboard navigation, and semantic HTML.
+- **Performance:** Uses static generation, image optimization, and code splitting.
+
+---
+
+## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
 

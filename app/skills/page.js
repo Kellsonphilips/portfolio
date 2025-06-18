@@ -41,6 +41,7 @@ export default function Skills() {
                   src={categoryImages[category]}
                   alt={category}
                   fill
+                  priority
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
