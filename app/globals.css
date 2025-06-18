@@ -46,6 +46,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -56,6 +57,7 @@
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -67,6 +69,7 @@
     transform: scale(0.95);
     opacity: 0;
   }
+
   to {
     transform: scale(1);
     opacity: 1;
@@ -77,6 +80,7 @@
   from {
     width: 0;
   }
+
   to {
     width: 100%;
   }
@@ -92,15 +96,19 @@
   0% {
     color: #40046d;
   }
+
   25% {
     color: #3b82f6;
   }
+
   50% {
     color: #3cbc38;
   }
+
   75% {
     color: #27860f;
   }
+
   100% {
     color: #2563eb;
   }
@@ -111,6 +119,7 @@
     opacity: 0;
     transform: translateY(-50px);
   }
+  
   100% {
     opacity: 1;
     transform: translateY(0);
