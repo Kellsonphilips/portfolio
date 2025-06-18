@@ -35,7 +35,7 @@ export default function Footer() {
           GitHub
         </a>
       </div>
-      <p className="text-sm text-text-light dark:text-text-dark">Copywrite &copy; {year} MyPortfolio. All rights reserved.</p>
+      <p className="text-sm text-text-light dark:text-text-dark">Copywrite &copy; {year} Philip Kelechukwu Orji. All rights reserved.</p>
       <div className="flex justify-center gap-4 mt-2 text-sm">
         <a href="/privacy">Privacy Policy</a>
         <a href="/faq">FAQ</a>

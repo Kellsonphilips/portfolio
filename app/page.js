@@ -1,3 +1,4 @@
+export const dynamic = 'force-static';
 import '@/app/globals.css';
 import About from '@/components/About';
 import FeaturedProjects from '@/components/FeaturedProjects';

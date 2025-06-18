@@ -4,10 +4,57 @@ export default function MachineLearningDeepDive() {
   return (
     <>
       <Head>
-        <title>A Deep Dive into Machine Learning | Blog</title>
+        <title>Machine Learning Deep Dive | Philip Kelechukwu Orji</title>
         <meta
           name="description"
-          content="Explore machine learning concepts, types, algorithms, real-world use cases, and challenges in this deep dive for developers and tech enthusiasts."
+          content="Explore the fundamentals and advanced concepts of machine learning."
+        />
+        <meta
+          name="keywords"
+          content="machine learning, AI, data science, Philip Orji"
+        />
+        <meta
+          property="og:title"
+          content="Machine Learning Deep Dive | Philip Kelechukwu Orji"
+        />
+        <meta
+          property="og:description"
+          content="Explore the fundamentals and advanced concepts of machine learning."
+        />
+        <meta property="og:image" content="/Images/profile.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Machine Learning Deep Dive | Philip Kelechukwu Orji"
+        />
+        <meta
+          name="twitter:description"
+          content="Explore the fundamentals and advanced concepts of machine learning."
+        />
+        <meta name="twitter:image" content="/Images/profile.jpg" />
+        <link
+          rel="canonical"
+          href="https://philipkelechiorji.vercel.app/blog/machine-learning-deep-dive"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Machine Learning Deep Dive",
+              "image": ["/Images/profile.jpg"],
+              "author": { "@type": "Person", "name": "Philip Kelechukwu Orji" },
+              "publisher": { "@type": "Organization", "name": "Philip Kelechukwu Orji" },
+              "datePublished": "2024-06-17",
+              "description": "Explore the fundamentals and advanced concepts of machine learning.",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://philipkelechiorji.vercel.app/blog/machine-learning-deep-dive"
+              }
+            })
+          }}
         />
       </Head>
 

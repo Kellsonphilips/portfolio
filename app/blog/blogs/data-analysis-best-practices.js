@@ -4,10 +4,57 @@ export default function DataAnalysisBestPractices() {
   return (
     <>
       <Head>
-        <title>Data Analysis Best Practices | Blog</title>
+        <title>Data Analysis Best Practices | Philip Kelechukwu Orji</title>
         <meta
           name="description"
           content="Comprehensive guide to data analysis best practices for reliable insights. Learn how to clean, validate, and visualize data effectively."
+        />
+        <meta
+          name="keywords"
+          content="data analysis, best practices, analytics, Philip Orji"
+        />
+        <meta
+          property="og:title"
+          content="Data Analysis Best Practices | Philip Kelechukwu Orji"
+        />
+        <meta
+          property="og:description"
+          content="Comprehensive guide to data analysis best practices for reliable insights. Learn how to clean, validate, and visualize data effectively."
+        />
+        <meta property="og:image" content="/Images/profile.jpg" />
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Data Analysis Best Practices | Philip Kelechukwu Orji"
+        />
+        <meta
+          name="twitter:description"
+          content="Comprehensive guide to data analysis best practices for reliable insights. Learn how to clean, validate, and visualize data effectively."
+        />
+        <meta name="twitter:image" content="/Images/profile.jpg" />
+        <link
+          rel="canonical"
+          href="https://philipkelechiorji.vercel.app/blog/data-analysis-best-practices"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              "headline": "Data Analysis Best Practices",
+              "image": ["/Images/profile.jpg"],
+              "author": { "@type": "Person", "name": "Philip Kelechukwu Orji" },
+              "publisher": { "@type": "Organization", "name": "Philip Kelechukwu Orji" },
+              "datePublished": "2024-06-17",
+              "description": "Best practices for effective and accurate data analysis.",
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://philipkelechiorji.vercel.app/blog/data-analysis-best-practices"
+              }
+            })
+          }}
         />
       </Head>
 
@@ -89,7 +136,7 @@ export default function DataAnalysisBestPractices() {
           validate these before drawing conclusions.
         </p>
         <p className="mb-6">
-          <strong>Best Practice:</strong> Don’t skip assumption checks — they’re
+          <strong>Best Practice:</strong> Don't skip assumption checks — they're
           crucial for reliable inference.
         </p>
 
@@ -145,7 +192,7 @@ export default function DataAnalysisBestPractices() {
           10. Iterate and Update
         </h2>
         <p className="mb-4">
-          Don’t treat analysis as a one-time effort. Data and goals evolve.
+          Don&apos;t treat analysis as a one-time effort. Data and goals evolve.
         </p>
         <p className="mb-6">
           <strong>Best Practice:</strong> Revisit past work and adapt as needed
@@ -159,8 +206,8 @@ export default function DataAnalysisBestPractices() {
           better decisions and deeper insights.
         </p>
         <p className="mb-6">
-          Remember: great analysis doesn’t just answer questions — it drives
-          actions.
+          Remember: great analysis doesn&apos;t just answer questions — it
+          drives actions.
         </p>
 
         <h2 className="text-xl font-semibold mt-10 mb-2">Bonus Tips</h2>
