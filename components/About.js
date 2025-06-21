@@ -80,16 +80,16 @@ export default function About() {
             <>
               <p className="mb-4">{firstParagraph}</p>
               <p className="mb-4">{secondParagraphFirstSentence}...</p>
-              <div className="flex justify-center mt-4">
-                <button
-                  className="px-4 py-2 rounded bg-[#DC8923] text-white hover:bg-[#372207] transition-colors"
-                  onClick={() => setShowAll(true)}
-                >
-                  Read More...
-                </button>
-              </div>
             </>
           )}
+          <div className="flex justify-center mt-4">
+            <button
+              className="px-4 py-2 rounded bg-[#DC8923] text-white hover:bg-[#372207] transition-colors"
+              onClick={() => setShowAll(!showAll)}
+            >
+              {showAll ? 'Show Less...' : 'Read More...'}
+            </button>
+          </div>
         </div>
       </div>
     </section>
