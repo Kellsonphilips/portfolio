@@ -62,7 +62,7 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="backdrop-blur-lg dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-white/20">
+        <div className="card-3d-glow backdrop-blur-lg dark:bg-gray-800 rounded-2xl shadow-xl p-8 border border-white/20">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-1">

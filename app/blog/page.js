@@ -17,7 +17,7 @@ export default function Blog() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post) => (
             <Link href={`/blog/${post.slug}`} key={post.slug} className="block">
-              <div className="card rounded-lg shadow-lg hover-lift h-full flex flex-col overflow-hidden">
+              <div className="card card-3d-glow rounded-lg shadow-lg hover-lift h-full flex flex-col overflow-hidden">
                 <div className="relative h-48 w-full">
                   <Image
                     src={post.image}

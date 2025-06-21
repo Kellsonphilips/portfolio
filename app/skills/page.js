@@ -34,7 +34,7 @@ export default function Skills() {
           {Object.entries(skills).map(([category, skillList]) => (
             <div
               key={category}
-              className="dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
+              className="card-3d-glow dark:bg-gray-800 rounded-lg shadow-md overflow-hidden"
             >
               <div className="h-48 w-full relative">
                 <Image
@@ -47,7 +47,9 @@ export default function Skills() {
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-xl text-primary font-semibold mb-4">{category}</h2>
+                <h2 className="text-xl text-primary font-semibold mb-4">
+                  {category}
+                </h2>
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill) => (
                     <span

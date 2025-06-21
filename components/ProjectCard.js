@@ -4,7 +4,7 @@ import { Github, ExternalLink } from 'lucide-react';
 
 export default function ProjectCard({ title, description, tags, githubUrl, liveUrl }) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+    <div className="card-3d-glow bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <div className="p-6">
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600 mb-4">{description}</p>

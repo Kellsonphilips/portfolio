@@ -51,7 +51,7 @@ export default function Projects() {
           {projects[activeTab].map((project) => (
             <div
               key={project.id}
-              className="dark:bg-gray-800 backdrop-blur-lg rounded-xl shadow-xl overflow-hidden border border-white/20 hover:shadow-2xl transition-all duration-300"
+              className="card card-3d-glow dark:bg-gray-800 backdrop-blur-lg rounded-xl overflow-hidden border border-white/20"
             >
               <div className="relative h-48">
                 <Image

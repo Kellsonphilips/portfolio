@@ -40,6 +40,17 @@
   .hover-lift {
     @apply transition-transform hover:-translate-y-1;
   }
+
+  .card-3d-glow {
+    perspective: 1000px;
+    transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .card-3d-glow:hover {
+    transform: rotateX(18deg) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(220, 137, 35, 0.5), 0 0 24px 4px #DC8923;
+    z-index: 2;
+  }
 }
 
 @keyframes fadeIn {
@@ -126,6 +137,62 @@
   }
 }
 
+@keyframes social-rotate-color-step {
+  0% {
+    transform: rotate(0deg);
+    color: #DC8923;
+  }
+  40% {
+    transform: rotate(180deg);
+    color: #3cbc38;
+  }
+  80% {
+    transform: rotate(360deg);
+    color: #3b82f6;
+  }
+  100% {
+    transform: rotate(360deg);
+    color: #DC8923;
+  }
+}
+
+@keyframes navbarFade {
+  0%, 100% {
+    color: #DC8923;
+  }
+  50% {
+    color: #3b82f6;
+  }
+}
+
+@keyframes rabbitDance {
+  0% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(1);
+    opacity: 1;
+  }
+  40% {
+    left: 60%;
+    transform: translateY(-50%) scaleX(1.1) rotate(-10deg);
+    opacity: 1;
+  }
+  50% {
+    left: 70%;
+    transform: translateY(-50%) scaleX(-1.1) rotate(10deg);
+    opacity: 1;
+  }
+  60% {
+    left: 60%;
+    transform: translateY(-50%) scaleX(-1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    left: 120px;
+    transform: translateY(-50%) scaleX(1);
+    opacity: 1;
+  }
+}
+
 .animate-fade-in {
   animation: fadeIn 0.5s ease-out;
 }
@@ -156,6 +223,41 @@
   display: inline-block;
   opacity: 0;
   animation: fallIn 0.5s forwards;
+}
+
+.animate-social-rotate-color-step {
+  animation: social-rotate-color-step 2s cubic-bezier(0.68, -0.55, 0.27, 1.55) both;
+}
+
+.animate-navbar-fade {
+  animation: navbarFade 3s ease-in-out infinite;
+  position: relative;
+}
+
+.animate-rabbit-dance {
+  animation: rabbitDance 3.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) infinite;
+  font-size: 2rem;
+  will-change: left, transform;
+}
+
+.underline-animate {
+  position: relative;
+}
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #DC8923, #3b82f6, #DC8923);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.underline-animate:hover::after, .underline-animate:focus::after {
+  transform: scaleX(1);
 }
 
 /* Scrollbar Styles */

@@ -41,7 +41,7 @@ export default function Capabilities() {
           {capabilities.map((capability) => (
             <div
               key={capability.title}
-              className="dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
+              className="card-3d-glow dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
               <div className="h-48 w-full relative">
                 <Image
