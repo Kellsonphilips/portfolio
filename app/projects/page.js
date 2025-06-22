@@ -29,7 +29,7 @@ export default function Projects() {
 
         {/* Tabs */}
         <div className="flex justify-center mb-8 animate-fade-in">
-          <div className="inline-flex rounded-lg bg-white/30 p-1 backdrop-blur-sm">
+          <div className="card-3d-glow inline-flex rounded-lg bg-white/30 p-1 backdrop-blur-sm">
             {tabs.map((tab) => (
               <button
                 key={tab.id}

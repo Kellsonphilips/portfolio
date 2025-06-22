@@ -75,7 +75,7 @@ export default function Contact() {
                 placeholder="Full name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none"
+                className="card card-3d-glow w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none"
                 required
               />
             </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                 placeholder="Your email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none"
+                className="card card-3d-glow w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none"
                 required
               />
             </div>
@@ -110,7 +110,7 @@ export default function Contact() {
                 placeholder="Subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none"
+                className="card card-3d-glow w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none"
                 required
               />
             </div>
@@ -129,14 +129,14 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none resize-none"
+                className="card card-3d-glow w-full px-4 py-2 rounded-lg bg-white/20 border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all duration-200 outline-none resize-none"
                 required
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-2 group"
+              className="card-3d-glow w-full bg-primary text-white py-3 px-6 rounded-lg hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-200 flex items-center justify-center gap-2 group"
             >
               <span>Send Message</span>
               <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

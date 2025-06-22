@@ -25,7 +25,7 @@ export default function FAQ() {
             >
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center"
+                className="card-3d-glow w-full px-6 py-4 text-left flex justify-between items-center"
               >
                 <span className="font-semibold">{faq.question}</span>
                 {openIndex === index ? (
@@ -35,7 +35,7 @@ export default function FAQ() {
                 )}
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-4">
+                <div className="card-3d-glow px-6 pb-4">
                   <p>{faq.answer}</p>
                 </div>
               )}

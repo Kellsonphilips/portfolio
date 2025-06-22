@@ -57,7 +57,7 @@ export default function About() {
                 <Button
                   href="/Philip_Orji_CV.pdf"
                   variant="primary"
-                  className="flex items-center gap-2"
+                  className="card-3d-glow flex items-center gap-2"
                   showArrow={false}
                 >
                   <span>Download CV</span>
@@ -84,7 +84,7 @@ export default function About() {
           )}
           <div className="flex justify-center mt-4">
             <button
-              className="px-4 py-2 rounded bg-[#DC8923] text-white hover:bg-[#372207] transition-colors"
+              className="card-3d-glow px-4 py-2 rounded bg-[#DC8923] text-white hover:bg-[#372207] transition-colors"
               onClick={() => setShowAll(!showAll)}
             >
               {showAll ? 'Show Less...' : 'Read More...'}

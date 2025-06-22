@@ -30,21 +30,27 @@ export default function Hero() {
         <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text-light dark:text-text-dark animate-typing">
           {renderAnimatedText(fullText)}
         </h1>
-        <p className="text-xl mb-4 text-text-light dark:text-text-dark">ICT Solution Provider, Software Engineer & Data Analyst</p>
+        <p className="text-xl mb-4 text-text-light dark:text-text-dark">
+          ICT Solution Provider, Software Engineer & Data Analyst
+        </p>
         <p className="text-md mb-6 text-gray-600 dark:text-gray-300">
-          Welcome to my professional space, where I showcase my projects, skills, and capabilities. I help businesses transform their ideas into digital reality.
+          Welcome to my professional space, where I showcase my projects,
+          skills, and capabilities. I help businesses transform their ideas into
+          digital reality.
         </p>
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <Button 
+          <Button
             href="/contact"
             variant="primary"
+            className="card-3d-glow"
             showArrow
           >
             Get in Touch
           </Button>
-          <Button 
+          <Button
             href="/projects"
             variant="secondary"
+            className="card-3d-glow"
             showArrow
           >
             View Projects
@@ -56,7 +62,7 @@ export default function Hero() {
           <Image
             src={profilePic}
             alt="Profile Picture"
-            className="rounded-full object-cover hover-lift"
+            className="card-3d-glow rounded-full object-cover hover-lift"
             fill
             sizes="(max-width: 768px) 192px, (max-width: 1024px) 288px, 320px"
             priority

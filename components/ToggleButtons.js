@@ -66,7 +66,9 @@ function SocialIcons() {
 
   return (
     <div
-      className={`fixed left-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 transition-opacity duration-500 ${hasBeenVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+      className={`fixed left-4 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-6 transition-opacity duration-500 ${
+        hasBeenVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
       aria-label="Social Links"
     >
       {icons.map(({ href, title, Icon }, idx) => (
@@ -76,7 +78,9 @@ function SocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           title={title}
-          className={`hover:text-[#DC8923] transition-colors ${activeIndex === idx ? 'animate-social-rotate-color-step' : ''}`}
+          className={`hover:text-[#DC8923] transition-colors ${
+            activeIndex === idx ? "animate-social-rotate-color-step" : ""
+          }`}
         >
           <Icon className="w-6 h-6" />
         </a>
