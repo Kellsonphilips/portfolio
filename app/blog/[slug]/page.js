@@ -29,7 +29,7 @@ export default function BlogPost({ params }) {
           {post.title}
         </h1>
         <p className="text-secondary-color text-sm mb-6">
-          Published on {new Date(post.date).toLocaleDateString()} &bull;{" "}
+          Published on {new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })} &bull;{" "}
           {post.readTime}
         </p>
         <div className="prose prose-lg mx-auto text-text dark:prose-invert">

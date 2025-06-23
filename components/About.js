@@ -3,9 +3,11 @@
 import { Github, Linkedin, Twitter } from 'lucide-react';
 import Button from './Button';
 import { useState } from 'react';
+import useScrollReveal from './useScrollReveal';
 
 export default function About() {
   const [showAll, setShowAll] = useState(false);
+  const revealRef = useScrollReveal('random');
 
   // First paragraph
   const firstParagraph = `Hello! I'm Philip Kelechukwu Orji, an ICT Solution Provider, Software Engineer, and Data Analyst with a passion for transforming complex business challenges into elegant, efficient, and scalable digital solutions. My passion in building, and helping businesses shaped my journey in learning technology, and that has been driven by a relentless curiosity and a commitment to my continuous learning.`;
@@ -13,7 +15,7 @@ export default function About() {
   const secondParagraphFirstSentence = `With a solid foundation in software development, I specialize in crafting robust web applications using modern frameworks like React and Next.js, backed by powerful backend technologies.`;
 
   return (
-    <section id="about" className="py-16 bg-background animate-fade-in">
+    <section id="about" ref={revealRef} className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-8 text-text">
           About Me

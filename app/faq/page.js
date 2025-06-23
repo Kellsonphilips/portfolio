@@ -3,8 +3,11 @@
 import { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { faqs } from './faqs';
+import useScrollReveal from '@/components/useScrollReveal';
+
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
+  const revealRef = useScrollReveal('random');
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -12,7 +15,7 @@ export default function FAQ() {
 
   return (
     <div className="pt-24">
-      <div className="container h-full text-text-light dark:text-text-dark mx-auto px-4 py-8">
+      <div ref={revealRef} className="container h-full text-text-light dark:text-text-dark mx-auto px-4 py-8">
         <h1 className="text-3xl flex justify-center font-bold mb-8">
           Frequently Asked Questions
         </h1>

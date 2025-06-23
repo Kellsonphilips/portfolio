@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import useScrollReveal from '@/components/useScrollReveal';
 
 const skills = {
   "Frontend Development": [
@@ -23,10 +24,11 @@ const categoryImages = {
 };
 
 export default function Skills() {
+  const revealRef = useScrollReveal('random');
   return (
     <div className="pt-24">
-      <div className="container mx-auto px-4 py-8 mt-20">
-        <h1 className="text-3xl text-text-light dark:text-text-dark font-bold mb-8">
+      <div ref={revealRef} className="container mx-auto px-4 py-8 mt-20">
+        <h1 className="text-3xl text-text text-center font-bold mb-8">
           Technical Skills
         </h1>
 

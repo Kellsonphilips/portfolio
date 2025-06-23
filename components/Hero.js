@@ -3,40 +3,68 @@
 import Image from 'next/image';
 import profilePic from '@/public/Images/profile.jpg';
 import Button from './Button';
+import useScrollReveal from './useScrollReveal';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
-  const fullText = "Hi, I'm Philip Kelechukwu Orji";
+  const fullText = "Hi, I'm ";
   const nameText = "Philip Kelechukwu Orji";
-  const nameStartIndex = fullText.indexOf(nameText);
 
-  const renderAnimatedText = (textToAnimate) => {
-    return textToAnimate.split('').map((char, index) => {
-      const isNameChar = index >= nameStartIndex && index < nameStartIndex + nameText.length;
-      return (
-        <span
-          key={index}
-          className={`${isNameChar ? 'animate-color-change text-[#DC8923]' : ''}`}
-          style={{ animationDelay: `${0.10 * index}s` }}
-        >
-          {char === ' ' ? '\u00A0' : char}
-        </span>
-      );
-    });
-  };
+  const revealRef = useScrollReveal('random');
+
+  // Animation
+  const [typedName, setTypedName] = useState('');
+  useEffect(() => {
+    let i = 0;
+    let interval;
+    let timeout;
+    const startTyping = () => {
+      setTypedName('');
+      i = 0;
+      interval = setInterval(() => {
+        setTypedName(nameText.slice(0, i + 1));
+        i++;
+        if (i === nameText.length) {
+          clearInterval(interval);
+          timeout = setTimeout(() => {
+            startTyping();
+          }, 4000);
+        }
+      }, 150);
+    };
+    startTyping();
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
+  }, [nameText]);
 
   return (
-    <section className="flex flex-col-reverse md:flex-row items-center gap-6 mt-20 animate-fade-in">
-      <div className="md:w-2/3 text-center md:text-left">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text-light dark:text-text-dark animate-typing">
-          {renderAnimatedText(fullText)}
+    <section
+      ref={revealRef}
+      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 pl-0 md:pl-10 lg:pl-20 pt-20 md:pt-0"
+    >
+      <div className="md:w-2/3 px-6 text-center md:text-left">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          {fullText}
+          <span className="text-[#DC8923]">
+            {typedName}
+            <span className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1">&nbsp;</span>
+          </span>
         </h1>
-        <p className="text-xl mb-4 text-text-light dark:text-text-dark">
+        <p className="text-xl mb-4 font-bold text-text-light dark:text-text-dark">
           ICT Solution Provider, Software Engineer & Data Analyst
         </p>
-        <p className="text-md mb-6 text-gray-600 dark:text-gray-300">
+        <p className="text-md mb-6 text-justify text-text-light dark:text-text-dark">
           Welcome to my professional space, where I showcase my projects,
           skills, and capabilities. I help businesses transform their ideas into
-          digital reality.
+          digital reality. As a passionate ICT Solution Provider, Software
+          Engineer, and Data Analyst, I specialize in building robust web
+          applications and extracting actionable insights from data. With a
+          proven track record of delivering innovative solutions for businesses,
+          I thrive on turning complex challenges into digital success stories.
+          Explore my portfolio to see how I blend technology, creativity, and
+          strategy to drive real impact.
         </p>
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           <Button
@@ -58,11 +86,11 @@ export default function Hero() {
         </div>
       </div>
       <div className="md:w-1/3 flex justify-center">
-        <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 animate-scale-in">
+        <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 aspect-square rounded-full animate-scale-in">
           <Image
             src={profilePic}
             alt="Profile Picture"
-            className="card-3d-glow rounded-full object-cover hover-lift"
+            className="card-3d-glow hero-glow rounded-full object-cover hover-lift"
             fill
             sizes="(max-width: 768px) 192px, (max-width: 1024px) 288px, 320px"
             priority

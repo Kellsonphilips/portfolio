@@ -2,6 +2,7 @@
 
 import Button from './Button';
 import { projects } from '../app/projects/projects';
+import useScrollReveal from './useScrollReveal';
 
 export default function FeaturedProjects() {
   // Combine all projects from different categories
@@ -11,9 +12,11 @@ export default function FeaturedProjects() {
     ...projects.dataAnalytics
   ];
 
+  const revealRef = useScrollReveal('random');
+
   return (
-    <section className="py-16 bg-background animate-fade-in">
-      <div className="container mx-auto px-4">
+    <section ref={revealRef} className="py-16 bg-background">
+      <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8 text-text">
           Featured Projects
         </h2>

@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { blogPosts } from './blogs';
+import useScrollReveal from '@/components/useScrollReveal';
 
 export default function Blog() {
+  const revealRef = useScrollReveal('random');
   return (
     <div className="pt-24">
-      <div className="container mx-auto px-4 py-8 pt-24">
+      <div ref={revealRef} className="container mx-auto px-4 py-8 pt-24">
         <h1 className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark text-center">
           Blog Posts
         </h1>
@@ -32,7 +34,7 @@ export default function Blog() {
                     {post.title}
                   </h2>
                   <p className="text-sm mb-4">
-                    {new Date(post.date).toLocaleDateString()}
+                    {new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })}
                   </p>
                   <p className="text-text flex-grow">{post.excerpt}</p>
                 </div>

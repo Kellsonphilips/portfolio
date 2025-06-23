@@ -39,6 +39,7 @@ export default function Footer() {
       <div className="flex justify-center gap-4 mt-2 text-sm">
         <a href="/privacy">Privacy Policy</a>
         <a href="/faq">FAQ</a>
+        <a href="/blog">Blogs</a>
       </div>
     </footer>
   );

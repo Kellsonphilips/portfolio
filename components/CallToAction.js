@@ -1,11 +1,14 @@
 'use client';
 
 import Button from './Button';
+import useScrollReveal from './useScrollReveal';
 
 export default function CallToAction() {
+  const revealRef = useScrollReveal('random');
+
   return (
-    <section className="py-16 bg-primary-color text-text-light dark:text-text-dark text-center animate-fade-in">
-      <div className="container mx-auto px-4">
+    <section ref={revealRef} className="py-16 bg-primary-color text-text-light dark:text-text-dark text-center">
+      <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold mb-4">
           Ready to Transform Your Ideas into Reality?
         </h2>

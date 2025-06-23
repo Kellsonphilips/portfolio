@@ -8,6 +8,11 @@
   }
 }
 
+/* Prevent horizontal (bottom) scrollbar */
+html, body {
+  overflow-x: hidden;
+}
+
 @layer components {
   .glass {
     @apply bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm border border-gray-200 dark:border-gray-700;
@@ -53,6 +58,14 @@
   }
 }
 
+/* Make the 3D glow effect permanent for the Hero image only */
+.hero-glow.card-3d-glow,
+.hero-glow.card-3d-glow:hover {
+  transform: rotateX(18deg) scale(1.03);
+  box-shadow: 0 8px 32px 0 rgba(220, 137, 35, 0.5), 0 0 24px 4px #DC8923;
+  z-index: 2;
+}
+
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -84,22 +97,6 @@
   to {
     transform: scale(1);
     opacity: 1;
-  }
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
   }
 }
 
@@ -211,16 +208,6 @@
 
 .animate-scale-in {
   animation: scaleIn 0.5s ease-out;
-}
-
-.animate-typing {
-  display: block;
-}
-
-.animate-typing span {
-  display: inline-block;
-  opacity: 0;
-  animation: fallIn 0.5s forwards;
 }
 
 .animate-color-change {
@@ -343,4 +330,33 @@ p {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Typing animation for Hero h1 */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-typing {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #DC8923;
+  width: 0;
+  animation:
+    typing 2.5s steps(40, end) forwards,
+    blink 0.7s step-end infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
 }
