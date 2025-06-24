@@ -66,7 +66,7 @@ export default function Hero() {
           Explore my portfolio to see how I blend technology, creativity, and
           strategy to drive real impact.
         </p>
-        <div className="flex flex-row justify-center gap-4 md:justify-start">
+        <div className="flex flex-row gap-4 md:justify-start">
           <Button
             href="/contact"
             variant="primary"
