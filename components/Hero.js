@@ -45,14 +45,14 @@ export default function Hero() {
       className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 pl-0 md:pl-10 lg:pl-20 pt-20 md:pt-0"
     >
       <div className="md:w-2/3 px-6 md:text-left">
-        <h1 className="text-3xl text-center md:text-4xl font-bold mb-4">
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">
           {fullText}
           <span className="text-[#DC8923]">
             {typedName}
             <span className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1">&nbsp;</span>
           </span>
         </h1>
-        <p className="text-xl text-center mb-4 font-bold text-text-light dark:text-text-dark">
+        <p className="text-xl mb-4 font-bold text-text-light dark:text-text-dark">
           ICT Solution Provider, Software Engineer & Data Analyst
         </p>
         <p className="text-md mb-6 text-justify text-text-light dark:text-text-dark">
