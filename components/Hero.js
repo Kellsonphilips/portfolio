@@ -80,7 +80,7 @@ export default function Hero() {
             <Button
               href="/contact"
               variant="primary"
-              className="card-3d-glow text-left"
+              className="card-3d-glow text-nowrap"
               showArrow
             >
               Get in Touch
@@ -90,7 +90,7 @@ export default function Hero() {
             <Button
               href="/projects"
               variant="secondary"
-              className="card-3d-glow text-left"
+              className="card-3d-glow text-nowrap"
               showArrow
             >
               View Projects
