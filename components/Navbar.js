@@ -24,7 +24,12 @@ export default function Navbar() {
             className="rounded-full w-10 h-10 object-cover"
             priority
           />
-          <span ref={nameRef} className="font-bold text-xl text-text-light dark:text-text-dark animate-navbar-fade underline-animate">Philip K.C O.</span>
+          <span
+            ref={nameRef}
+            className="font-bold text-xl text-text-light dark:text-text-dark animate-navbar-fade underline-animate"
+          >
+            Philip K.C O.
+          </span>
         </Link>
         {/* <span
           ref={rabbitRef}
@@ -48,7 +53,7 @@ export default function Navbar() {
           <li className="text-center" ref={homeRef}>
             <Link
               href="/"
-              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923]"
+              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
               onClick={() => setMenuOpen(false)}
             >
               Home
@@ -57,7 +62,7 @@ export default function Navbar() {
           <li className="text-center">
             <Link
               href="/projects"
-              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923]"
+              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
               onClick={() => setMenuOpen(false)}
             >
               Projects
@@ -66,7 +71,7 @@ export default function Navbar() {
           <li className="text-center">
             <Link
               href="/skills"
-              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923]"
+              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
               onClick={() => setMenuOpen(false)}
             >
               Skills
@@ -75,7 +80,7 @@ export default function Navbar() {
           <li className="text-center">
             <Link
               href="/capabilities"
-              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923]"
+              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
               onClick={() => setMenuOpen(false)}
             >
               Capabilities
@@ -84,7 +89,7 @@ export default function Navbar() {
           <li className="text-center">
             <Link
               href="/blog"
-              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923]"
+              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
               onClick={() => setMenuOpen(false)}
             >
               Blog
@@ -93,7 +98,7 @@ export default function Navbar() {
           <li className="text-center">
             <Link
               href="/contact"
-              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923]"
+              className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
               onClick={() => setMenuOpen(false)}
             >
               Contact

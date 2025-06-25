@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import useScrollReveal from '@/components/useScrollReveal';
+import { useRef, useEffect } from 'react';
 
 const capabilities = [
   {
@@ -31,18 +32,51 @@ const capabilities = [
 ];
 
 export default function Capabilities() {
-  const revealRef = useScrollReveal('random');
+  const headerRef = useScrollReveal('left', 0);
+  const cardRefs = useRef([]);
+
+  // Precompute for cards
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    cardRefs.current.forEach((ref, idx) => {
+      if (!ref) return;
+      ref.style.opacity = 0;
+      const direction = Math.random() < 0.5 ? 'left' : 'right';
+      ref.style.transform = direction === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
+      ref.style.transition =
+        `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.1}s, ` +
+        `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.1}s`;
+      const handleReveal = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            ref.style.opacity = 1;
+            ref.style.transform = 'translateX(0)';
+          }
+        });
+      };
+      const observer = new window.IntersectionObserver(handleReveal, {
+        threshold: 0.2,
+      });
+      observer.observe(ref);
+      return () => observer.disconnect();
+    });
+  }, []);
+
   return (
     <div className="pt-24">
-      <div ref={revealRef} className="container mx-auto px-4 py-8 mt-20">
-        <h1 className="text-3xl text-text text-center font-bold mb-8">
+      <div className="container mx-auto px-4 py-8 mt-20">
+        <h1 ref={headerRef} className="text-3xl text-text text-center font-bold mb-8">
           Professional Capabilities
         </h1>
+        <p className="text-lg text-center text-secondary-color mb-8">
+          Discover the range of services and expertise I offer to help businesses and individuals achieve their technology goals.
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {capabilities.map((capability) => (
+          {capabilities.map((capability, idx) => (
             <div
               key={capability.title}
+              ref={el => cardRefs.current[idx] = el}
               className="card-3d-glow dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
             >
               <div className="h-48 w-full relative">

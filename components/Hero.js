@@ -10,7 +10,11 @@ export default function Hero() {
   const fullText = "Hi, I'm ";
   const nameText = "Philip Kelechukwu Orji";
 
-  const revealRef = useScrollReveal('random');
+  const headerRef = useScrollReveal('left', 0);
+  const subtitleRef = useScrollReveal('right', 0.15);
+  const paraRef = useScrollReveal('left', 0.3);
+  const btn1Ref = useScrollReveal('right', 0.45);
+  const btn2Ref = useScrollReveal('left', 0.6);
 
   // Animation
   const [typedName, setTypedName] = useState('');
@@ -40,49 +44,58 @@ export default function Hero() {
   }, [nameText]);
 
   return (
-    <section
-      ref={revealRef}
-      className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 pl-0 md:pl-10 lg:pl-20 pt-20 md:pt-0"
-    >
+    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 pl-0 md:pl-10 lg:pl-20 pt-20 md:pt-0">
       <div className="md:w-2/3 px-6 md:text-left">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">
+        <h1 ref={headerRef} className="text-3xl md:text-4xl font-bold mb-4">
           {fullText}
           <span className="text-[#DC8923]">
             {typedName}
-            <span className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1">&nbsp;</span>
+            <span className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1">
+              &nbsp;
+            </span>
           </span>
         </h1>
-        <p className="text-xl mb-4 font-bold text-text-light dark:text-text-dark">
+        <p
+          ref={subtitleRef}
+          className="text-xl mb-4 font-bold text-text-light dark:text-text-dark"
+        >
           ICT Solution Provider, Software Engineer & Data Analyst
         </p>
-        <p className="text-md mb-6 text-justify text-text-light dark:text-text-dark">
+        <p
+          ref={paraRef}
+          className="text-md mb-6 text-justify text-text-light dark:text-text-dark"
+        >
           Welcome to my professional space, where I showcase my projects,
-          skills, and capabilities. I help businesses transform their ideas into
-          digital reality. As a passionate ICT Solution Provider, Software
-          Engineer, and Data Analyst, I specialize in building robust web
-          applications and extracting actionable insights from data. With a
-          proven track record of delivering innovative solutions for businesses,
-          I thrive on turning complex challenges into digital success stories.
-          Explore my portfolio to see how I blend technology, creativity, and
-          strategy to drive real impact.
+          skills, and capabilities. I am a passionate ICT Solution Provider,
+          Software Engineer, and Data Analyst, I specialize in building robust
+          web applications and extracting actionable insights from data. I help
+          businesses transform their ideas into digital reality. Explore my
+          portfolio to see how I blend technology, creativity, and strategy to
+          drive real impact and also check <a href="/faq">FAQ</a> for any
+          question you might have or simply &ldquo;Get in touch 👇.&ldquo;
+          Appreciate you checking me out!
         </p>
         <div className="flex flex-row gap-4 md:justify-start">
-          <Button
-            href="/contact"
-            variant="primary"
-            className="card-3d-glow text-left"
-            showArrow
-          >
-            Get in Touch
-          </Button>
-          <Button
-            href="/projects"
-            variant="secondary"
-            className="card-3d-glow text-left"
-            showArrow
-          >
-            View Projects
-          </Button>
+          <div ref={btn1Ref} className="inline-block">
+            <Button
+              href="/contact"
+              variant="primary"
+              className="card-3d-glow text-left"
+              showArrow
+            >
+              Get in Touch
+            </Button>
+          </div>
+          <div ref={btn2Ref} className="inline-block">
+            <Button
+              href="/projects"
+              variant="secondary"
+              className="card-3d-glow text-left"
+              showArrow
+            >
+              View Projects
+            </Button>
+          </div>
         </div>
       </div>
       <div className="md:w-1/3 flex justify-center">

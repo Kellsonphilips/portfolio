@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ExternalLink, Github } from 'lucide-react';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from './projects';
+import useScrollReveal from '@/components/useScrollReveal';
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState('ict');
@@ -15,14 +16,46 @@ export default function Projects() {
     { id: 'dataAnalytics', label: 'Data Analytics' }
   ];
 
+  const headerRef = useScrollReveal('left', 0);
+  const paraRef = useScrollReveal('right', 0.15);
+  const cardRefs = useRef([]);
+
+  const currentProjects = projects[activeTab];
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    cardRefs.current.forEach((ref, idx) => {
+      if (!ref) return;
+      ref.style.opacity = 0;
+      const direction = Math.random() < 0.5 ? 'left' : 'right';
+      ref.style.transform = direction === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
+      ref.style.transition =
+        `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.2}s, ` +
+        `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.2}s`;
+      const handleReveal = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            ref.style.opacity = 1;
+            ref.style.transform = 'translateX(0)';
+          }
+        });
+      };
+      const observer = new window.IntersectionObserver(handleReveal, {
+        threshold: 0.2,
+      });
+      observer.observe(ref);
+      return () => observer.disconnect();
+    });
+  }, [currentProjects.length, activeTab]);
+
   return (
     <div className="min-h-screen from-blue-50 to-indigo-100 py-12 px-4 mt-20 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-text-light dark:text-text-dark mb-4">
+          <h1 ref={headerRef} className="text-4xl font-bold text-text-light dark:text-text-dark mb-4">
             My Projects
           </h1>
-          <p className="text-lg text-text-light dark:text-text-dark">
+          <p ref={paraRef} className="text-lg text-text-light dark:text-text-dark">
             Explore my work across different domains and technologies.
           </p>
         </div>
@@ -48,9 +81,10 @@ export default function Projects() {
 
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects[activeTab].map((project) => (
+          {projects[activeTab].map((project, idx) => (
             <div
               key={project.id}
+              ref={el => cardRefs.current[idx] = el}
               className="card card-3d-glow dark:bg-gray-800 backdrop-blur-lg rounded-xl overflow-hidden border border-white/20"
             >
               <div className="relative h-48">
@@ -87,7 +121,7 @@ export default function Projects() {
                     className="text-blue-600 hover:text-blue-700 flex items-center gap-2"
                   >
                     View Project
-                    <ExternalLink className="w-4 h-4" />
+                    <FaExternalLinkAlt className="w-4 h-4" />
                   </Link>
                   <Link
                     href={`${project.link}`}
@@ -95,7 +129,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="text-primary hover:text-gray-500"
                   >
-                    <Github className="w-5 h-5" />
+                    <FaGithub className="w-5 h-5" />
                   </Link>
                 </div>
               </div>

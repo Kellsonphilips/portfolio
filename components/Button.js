@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
+import { FiArrowRight } from 'react-icons/fi';
 
 export default function Button({ 
   href, 
@@ -22,7 +22,7 @@ export default function Button({
   const buttonContent = (
     <>
       {children}
-      {showArrow && <ArrowRight className="w-4 h-4" />}
+      {showArrow && <FiArrowRight className="w-4 h-4" />}
     </>
   );
 

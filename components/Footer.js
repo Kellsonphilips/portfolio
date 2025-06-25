@@ -4,7 +4,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-blue-900/50 dark:bg-background text-center py-6 mt-10 border-t">
+    <footer className="bg-blue-900/10 dark:bg-background text-center py-6 mt-10 border-t border-t-primary">
       <div className="flex justify-center gap-4 mb-4">
         <a
           href="https://x.com/JoinPhotonPhill"
