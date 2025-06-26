@@ -86,7 +86,7 @@ export default function Skills() {
               </div>
               <div className="p-6">
                 <h2 className="text-xl text-primary font-semibold mb-4">
-                  {category}
+                  {t(`skills.category.${category}`)}
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {skillList.map((skill) => (
@@ -94,7 +94,7 @@ export default function Skills() {
                       key={skill}
                       className="px-3 py-1 bg-blue-100/20 text-blue-400 rounded-full text-sm"
                     >
-                      {skill}
+                      {t(`skills.skill.${skill}`)}
                     </span>
                   ))}
                 </div>

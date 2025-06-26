@@ -1,3 +1,4 @@
+'use client';
 import { useLanguage } from '@/components/LanguageContext';
 
 export default function Privacy() {

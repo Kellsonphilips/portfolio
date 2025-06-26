@@ -100,10 +100,10 @@ export default function Projects() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl text-primary font-semibold mb-2">
-                  {project.title}
+                  {t(`project.${project.id}.title`)}
                 </h3>
                 <p className="text-text-light dark:text-text-dark light mb-4">
-                  {project.description}
+                  {t(`project.${project.id}.desc`)}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
