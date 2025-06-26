@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import useScrollReveal from '@/components/useScrollReveal';
 import { useRef, useEffect } from 'react';
+import { useLanguage } from '@/components/LanguageContext';
 
 const capabilities = [
   {
@@ -34,6 +35,7 @@ const capabilities = [
 export default function Capabilities() {
   const headerRef = useScrollReveal('left', 0);
   const cardRefs = useRef([]);
+  const { t } = useLanguage();
 
   // Precompute for cards
   useEffect(() => {
@@ -66,10 +68,10 @@ export default function Capabilities() {
     <div className="pt-24">
       <div className="container mx-auto px-4 py-8 mt-20">
         <h1 ref={headerRef} className="text-3xl text-text text-center font-bold mb-8">
-          Professional Capabilities
+          {t('capabilities.title')}
         </h1>
         <p className="text-lg text-center text-secondary-color mb-8">
-          Discover the range of services and expertise I offer to help businesses and individuals achieve their technology goals.
+          {t('capabilities.subtitle')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

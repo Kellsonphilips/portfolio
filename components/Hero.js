@@ -5,9 +5,11 @@ import profilePic from '@/public/Images/profile.jpg';
 import Button from './Button';
 import useScrollReveal from './useScrollReveal';
 import { useEffect, useState } from 'react';
+import { useLanguage } from './LanguageContext';
 
 export default function Hero() {
-  const fullText = "Hi, I'm ";
+  const { t } = useLanguage();
+  const fullText = t('hero.greeting') + ' ';
   const nameText = "Philip Kelechukwu Orji";
 
   const headerRef = useScrollReveal('left', 0);
@@ -48,7 +50,10 @@ export default function Hero() {
       <div className="md:w-2/3 px-6 md:text-left">
         <h1 ref={headerRef} className="text-3xl md:text-4xl font-bold mb-4">
           {fullText}
-          <span className="text-[#DC8923]">
+          <span className="text-[#DC8923] relative">
+            <span aria-hidden="true" className="invisible absolute whitespace-pre">
+              {nameText}
+            </span>
             {typedName}
             <span className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1">
               &nbsp;
@@ -59,21 +64,13 @@ export default function Hero() {
           ref={subtitleRef}
           className="text-xl mb-4 font-bold text-text-light dark:text-text-dark"
         >
-          ICT Solution Provider, Software Engineer & Data Analyst
+          {t('hero.role')}
         </p>
         <p
           ref={paraRef}
           className="text-md mb-6 text-justify text-text-light dark:text-text-dark"
         >
-          Welcome to my professional space, where I showcase my projects,
-          skills, and capabilities. I am a passionate ICT Solution Provider,
-          Software Engineer, and Data Analyst, I specialize in building robust
-          web applications and extracting actionable insights from data. I help
-          businesses transform their ideas into digital reality. Explore my
-          portfolio to see how I blend technology, creativity, and strategy to
-          drive real impact and also check <a href="/faq">FAQ</a> for any
-          question you might have or simply &ldquo;Get in touch 👇.&ldquo;
-          Appreciate you checking me out!
+          {t('hero.intro')}
         </p>
         <div className="flex flex-row gap-4 md:justify-start">
           <div ref={btn1Ref} className="inline-block">
@@ -82,8 +79,9 @@ export default function Hero() {
               variant="primary"
               className="card-3d-glow text-nowrap"
               showArrow
+              aria-label="Contact Philip Kelechukwu Orji"
             >
-              Get in Touch
+              {t('button.getInTouch')}
             </Button>
           </div>
           <div ref={btn2Ref} className="inline-block">
@@ -92,8 +90,9 @@ export default function Hero() {
               variant="secondary"
               className="card-3d-glow text-nowrap"
               showArrow
+              aria-label="View Philip Kelechukwu Orji's Projects"
             >
-              View Projects
+              {t('button.viewProjects')}
             </Button>
           </div>
         </div>
@@ -107,6 +106,7 @@ export default function Hero() {
             fill
             sizes="(max-width: 768px) 192px, (max-width: 1024px) 288px, 320px"
             priority
+            aria-label="Philip Kelechukwu Orji profile photo"
           />
         </div>
       </div>

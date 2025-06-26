@@ -1,8 +1,10 @@
 'use client';
 
 import { FaGithub, FaExternalLink } from 'react-icons/fa';
+import { useLanguage } from './LanguageContext';
 
 export default function ProjectCard({ title, description, tags, githubUrl, liveUrl }) {
+  const { t } = useLanguage();
   return (
     <div className="card-3d-glow bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
       <div className="p-6">
@@ -27,9 +29,10 @@ export default function ProjectCard({ title, description, tags, githubUrl, liveU
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-gray-600 hover:text-gray-900"
+              aria-label={`View ${title} on GitHub`}
             >
               <FaGithub className="w-5 h-5 mr-1" />
-              GitHub
+              {t('projectCard.github')}
             </a>
           )}
           {liveUrl && (
@@ -38,9 +41,10 @@ export default function ProjectCard({ title, description, tags, githubUrl, liveU
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center text-gray-600 hover:text-gray-900"
+              aria-label={`View live demo of ${title}`}
             >
               <FaExternalLink className="w-5 h-5 mr-1" />
-              Live Demo
+              {t('projectCard.liveDemo')}
             </a>
           )}
         </div>

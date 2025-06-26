@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import useScrollReveal from '@/components/useScrollReveal';
 import { useRef, useEffect } from 'react';
+import { useLanguage } from '@/components/LanguageContext';
 
 const skills = {
   "Frontend Development": [
@@ -28,6 +29,7 @@ export default function Skills() {
   const headerRef = useScrollReveal('left', 0);
   const skillCategories = Object.entries(skills);
   const cardRefs = useRef([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -59,10 +61,10 @@ export default function Skills() {
     <div className="pt-24">
       <div className="container mx-auto px-4 py-8 mt-20">
         <h1 ref={headerRef} className="text-3xl text-text text-center font-bold mb-8">
-          My Technical Skills
+          {t('skills.title')}
         </h1>
         <p className="text-lg text-center text-secondary-color mb-8">
-          Here you&apos;ll find a categorized overview of my technical expertise, tools, and technologies I use to build robust digital solutions.
+          {t('skills.subtitle')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

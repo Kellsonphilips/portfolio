@@ -4,6 +4,7 @@ import { useTheme } from './ThemeProvider';
 import { Sun, Moon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { socialIcons } from './socialIcons';
+import LanguageSwitcher from './LanguageSwitcher';
 
 function SocialIcons() {
   const [hasBeenVisible, setHasBeenVisible] = useState(false);
@@ -79,6 +80,7 @@ export default function ToggleButtons() {
             <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-gray-700" />
           )}
         </button>
+        <LanguageSwitcher />
       </div>
     </>
   );

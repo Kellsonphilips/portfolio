@@ -4,12 +4,28 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { blogPosts } from './blogs';
 import useScrollReveal from '@/components/useScrollReveal';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 
 export default function Blog() {
   const headerRef = useScrollReveal('left', 0);
   const paraRef = useScrollReveal('right', 0.15);
   const cardRefs = useRef([]);
+
+  // Add state for search and filter
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState('All');
+
+  // Get unique categories
+  const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
+
+  // Filtered posts
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch =
+      post.title.toLowerCase().includes(search.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = category === 'All' || post.category === category;
+    return matchesSearch && matchesCategory;
+  });
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -35,7 +51,7 @@ export default function Blog() {
       observer.observe(ref);
       return () => observer.disconnect();
     });
-  }, []);
+  }, [filteredPosts]);
 
   return (
     <div className="pt-24">
@@ -46,9 +62,36 @@ export default function Blog() {
         <p ref={paraRef} className="text-xl flex justify-center text-center mb-8">
           Read some of  my blog posts and if you my expertise in technical writing, Get in Touch!
         </p>
+        {/* Search and Filter Controls */}
+        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center md:justify-center w-full">
+          {/* Visually hidden label for search */}
+          <label htmlFor="blog-search" className="sr-only">Search blog posts</label>
+          <input
+            id="blog-search"
+            type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
+            placeholder="Search blog posts..."
+            className="bg-white dark:bg-gray-800 text-text-light dark:text-text-dark border border-gray-300 dark:border-gray-700 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-[#DC8923] shadow"
+            aria-label="Search blog posts"
+          />
+          {/* Visually hidden label for filter */}
+          <label htmlFor="blog-category" className="sr-only">Filter by category</label>
+          <select
+            id="blog-category"
+            value={category}
+            onChange={e => setCategory(e.target.value)}
+            className="bg-white dark:bg-gray-800 text-text-light dark:text-text-dark border border-gray-300 dark:border-gray-700 rounded px-4 py-2 w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-[#DC8923] shadow"
+            aria-label="Filter blog posts by category"
+          >
+            {categories.map(cat => (
+              <option key={cat} value={cat}>{cat}</option>
+            ))}
+          </select>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, idx) => (
-            <Link href={`/blog/${post.slug}`} key={post.slug} className="block">
+          {filteredPosts.map((post, idx) => (
+            <Link href={`/blog/${post.slug}`} key={post.slug} className="block" aria-label={`Read blog post: ${post.title}`}>
               <div
                 ref={el => cardRefs.current[idx] = el}
                 className="card card-3d-glow rounded-lg shadow-lg hover-lift h-full flex flex-col overflow-hidden"

@@ -2,13 +2,15 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { faqs } from './faqs';
+import { faqKeys } from './faqs';
 import useScrollReveal from '@/components/useScrollReveal';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const headerRef = useScrollReveal('left', 0);
   const cardRefs = useRef([]);
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -40,11 +42,16 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqs = faqKeys.map(faq => ({
+    question: t(faq.question),
+    answer: t(faq.answer)
+  }));
+
   return (
     <div className="pt-24">
       <div className="container h-full text-text-light dark:text-text-dark mx-auto px-4 py-8">
         <h1 ref={headerRef} className="text-3xl flex justify-center font-bold mb-8">
-          Frequently Asked Questions
+          {t('faq.title')}
         </h1>
 
         <div className="max-w-3xl mx-auto space-y-4">

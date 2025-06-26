@@ -6,14 +6,16 @@ import Link from 'next/link';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { projects } from './projects';
 import useScrollReveal from '@/components/useScrollReveal';
+import { useLanguage } from '@/components/LanguageContext';
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState('ict');
+  const { t } = useLanguage();
 
   const tabs = [
-    { id: 'ict', label: 'ICT Solutions' },
-    { id: 'webApps', label: 'Web Applications' },
-    { id: 'dataAnalytics', label: 'Data Analytics' }
+    { id: 'ict', label: t('projects.tabs.ict') },
+    { id: 'webApps', label: t('projects.tabs.webApps') },
+    { id: 'dataAnalytics', label: t('projects.tabs.dataAnalytics') }
   ];
 
   const headerRef = useScrollReveal('left', 0);
@@ -53,10 +55,10 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 ref={headerRef} className="text-4xl font-bold text-text-light dark:text-text-dark mb-4">
-            My Projects
+            {t('projects.title')}
           </h1>
           <p ref={paraRef} className="text-lg text-text-light dark:text-text-dark">
-            Explore my work across different domains and technologies.
+            {t('projects.subtitle')}
           </p>
         </div>
 
@@ -120,7 +122,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-700 flex items-center gap-2"
                   >
-                    View Project
+                    {t('projects.viewProject')}
                     <FaExternalLinkAlt className="w-4 h-4" />
                   </Link>
                   <Link

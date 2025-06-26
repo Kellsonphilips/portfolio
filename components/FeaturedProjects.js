@@ -4,6 +4,7 @@ import Button from './Button';
 import { projects } from '../app/projects/projects';
 import useScrollReveal from './useScrollReveal';
 import { useRef, useEffect } from 'react';
+import { useLanguage } from './LanguageContext';
 
 export default function FeaturedProjects() {
   // Combine all projects from different categories
@@ -20,6 +21,8 @@ export default function FeaturedProjects() {
   const buttonRef = useScrollReveal('right', 0.5);
 
   const cardRefs = useRef([]);
+
+  const { t } = useLanguage();
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -51,10 +54,10 @@ export default function FeaturedProjects() {
     <section className="py-16 bg-background">
       <div className="container mx-auto px-6">
         <h2 ref={headerRef} className="text-3xl font-bold text-center mb-8 text-text">
-          Featured Projects
+          {t('featured.title')}
         </h2>
         <p className="text-lg text-center text-secondary-color mb-8">
-          A selection of standout projects showcasing my skills and experience across different domains.
+          {t('featured.subtitle')}
         </p>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featuredProjects.map((project, idx) => (
@@ -62,11 +65,12 @@ export default function FeaturedProjects() {
               key={project.id}
               ref={el => cardRefs.current[idx] = el}
               className="card card-3d-glow p-6 rounded-lg shadow-lg flex flex-col items-center text-center animate-slide-in"
+              aria-label={`Featured project: ${project.title}`}
             >
               <h3 className="text-xl text-primary font-semibold mb-2 text-primary-color">
-                {project.title}
+                {t(`project.${project.id}.title`)}
               </h3>
-              <p className="mb-4 text-secondary-color">{project.description}</p>
+              <p className="mb-4 text-secondary-color">{t(`project.${project.id}.desc`)}</p>
               <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {project.technologies.map((tech) => (
                   <span
@@ -87,8 +91,9 @@ export default function FeaturedProjects() {
               variant="primary"
               className="card-3d-glow"
               showArrow
+              aria-label="View all projects by Philip Kelechukwu Orji"
             >
-              View All Projects
+              {t('featured.viewAll')}
             </Button>
           </div>
         </div>

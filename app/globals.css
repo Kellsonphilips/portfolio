@@ -56,6 +56,24 @@ html, body {
     box-shadow: 0 8px 32px 0 rgba(220, 137, 35, 0.5), 0 0 24px 4px #DC8923;
     z-index: 2;
   }
+
+  .navbar-primary-shadow {
+    box-shadow: 0 6px 16px -4px #DC8923, 0 2px 0 0 #DC8923;
+  }
+
+  .navbar-haze-shadow {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 64px; /* Adjust to match your navbar height */
+    height: 18px;
+    box-shadow: 0 12px 32px 0 rgba(220,137,35,0.25), 0 4px 24px 0 rgba(220,137,35,0.18);
+    z-index: 40;
+    border-radius: 0 0 16px 16px;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    background: transparent;
+  }
 }
 
 /* Make the 3D glow effect permanent for the Hero image only */
