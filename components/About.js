@@ -26,19 +26,32 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-16 bg-background">
+    <section id="about" className="py-16 bg-background px-6 md:px-10 lg:px-15">
       <div className="container mx-auto px-4">
-        <h2 ref={headerRef} className="text-3xl font-bold text-center mb-8 text-text">
-          {t('about.title')}
+        <h2
+          ref={headerRef}
+          className="text-3xl font-bold text-center mb-8 text-text"
+        >
+          {t("about.title")}
         </h2>
-        <div className="max-w-3xl mx-auto text-lg text-justify leading-relaxed text-secondary-color">
+        <div className="max-w-3xl mx-auto text-lg text-justify leading-relaxed text-secondary-color text-wrap">
           {showAll ? (
             <>
-              <p ref={paraRef0} className="mb-4">{t('about.p1')}</p>
-              <p ref={paraRef1} className="mb-4">{t('about.p2')}</p>
-              <p ref={paraRef2} className="mb-4">{t('about.p3')}</p>
-              <p ref={paraRef3} className="mb-4">{t('about.p4')}</p>
-              <p ref={paraRef4} className="mb-4">{t('about.p5')}</p>
+              <p ref={paraRef0} className="mb-4">
+                {t("about.p1")}
+              </p>
+              <p ref={paraRef1} className="mb-4">
+                {t("about.p2")}
+              </p>
+              <p ref={paraRef2} className="mb-4">
+                {t("about.p3")}
+              </p>
+              <p ref={paraRef3} className="mb-4">
+                {t("about.p4")}
+              </p>
+              <p ref={paraRef4} className="mb-4">
+                {t("about.p5")}
+              </p>
               <div className="flex justify-center mt-8">
                 <div ref={downloadBtnRef} className="inline-block">
                   <Button
@@ -47,7 +60,7 @@ export default function About() {
                     className="card-3d-glow flex items-center gap-2"
                     showArrow={false}
                   >
-                    <span>{t('about.downloadCV')}</span>
+                    <span>{t("about.downloadCV")}</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5"
@@ -66,8 +79,12 @@ export default function About() {
             </>
           ) : (
             <>
-              <p ref={paraRef0} className="mb-4">{t('about.p1')}</p>
-              <p ref={paraRef1} className="mb-4">{t('about.p2short')}...</p>
+              <p ref={paraRef0} className="mb-4">
+                {t("about.p1")}
+              </p>
+              <p ref={paraRef1} className="mb-4">
+                {t("about.p2short")}...
+              </p>
             </>
           )}
           <div className="flex justify-center mt-4">
@@ -76,7 +93,7 @@ export default function About() {
                 className="card-3d-glow px-4 py-2 rounded bg-[#DC8923] text-white hover:bg-[#372207] transition-colors"
                 onClick={() => setShowAll(!showAll)}
               >
-                {showAll ? t('about.showLess') : t('about.readMore')}
+                {showAll ? t("about.showLess") : t("about.readMore")}
               </button>
             </div>
           </div>

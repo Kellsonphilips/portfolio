@@ -21,27 +21,36 @@ export default function useScrollReveal(direction = 'left', delay = 0) {
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    node.style.opacity = 0;
-    node.style.transform =
-      chosenDirectionRef.current === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
-    node.style.transition =
-      `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s, ` +
-      `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s`;
+    
+    // Make element visible by default
+    node.style.opacity = 1;
+    node.style.transform = 'translateX(0)';
+    
+    // Only animate if IntersectionObserver is supported
+    if (typeof window !== 'undefined' && window.IntersectionObserver) {
+      // Set initial hidden state
+      node.style.opacity = 0;
+      node.style.transform =
+        chosenDirectionRef.current === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
+      node.style.transition =
+        `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s, ` +
+        `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s`;
 
-    const handleReveal = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          node.style.opacity = 1;
-          node.style.transform = 'translateX(0)';
-        }
+      const handleReveal = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            node.style.opacity = 1;
+            node.style.transform = 'translateX(0)';
+          }
+        });
+      };
+
+      const observer = new window.IntersectionObserver(handleReveal, {
+        threshold: 0.2,
       });
-    };
-
-    const observer = new window.IntersectionObserver(handleReveal, {
-      threshold: 0.2,
-    });
-    observer.observe(node);
-    return () => observer.disconnect();
+      observer.observe(node);
+      return () => observer.disconnect();
+    }
   }, [delay]); // direction is locked per instance
 
   return ref;

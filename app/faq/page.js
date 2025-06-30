@@ -10,33 +10,62 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const headerRef = useScrollReveal('left', 0);
   const cardRefs = useRef([]);
+  const animationInitialized = useRef(false);
   const { t } = useLanguage();
 
+  // Initialize animations only once
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    cardRefs.current.forEach((ref, idx) => {
-      if (!ref) return;
-      ref.style.opacity = 0;
-      const direction = Math.random() < 0.5 ? 'left' : 'right';
-      ref.style.transform = direction === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
-      ref.style.transition =
-        `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.1}s, ` +
-        `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.1}s`;
-      const handleReveal = (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            ref.style.opacity = 1;
-            ref.style.transform = 'translateX(0)';
-          }
+    if (typeof window === 'undefined' || animationInitialized.current) return;
+    
+    const initializeAnimations = () => {
+      cardRefs.current.forEach((ref, idx) => {
+        if (!ref) return;
+        
+        // Set initial state
+        ref.style.opacity = 0;
+        const direction = Math.random() < 0.5 ? 'left' : 'right';
+        ref.style.transform = direction === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
+        ref.style.transition = `opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1) ${0.1 * idx}s, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1) ${0.1 * idx}s`;
+        
+        // Create intersection observer
+        const handleReveal = (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              ref.style.opacity = 1;
+              ref.style.transform = 'translateX(0)';
+            }
+          });
+        };
+        
+        const observer = new window.IntersectionObserver(handleReveal, {
+          threshold: 0.1,
+          rootMargin: '50px'
         });
-      };
-      const observer = new window.IntersectionObserver(handleReveal, {
-        threshold: 0.2,
+        
+        observer.observe(ref);
+        
+        // Store observer for cleanup
+        ref._observer = observer;
       });
-      observer.observe(ref);
-      return () => observer.disconnect();
-    });
-  }, []);
+    };
+
+    // Small delay to ensure DOM is ready
+    const timer = setTimeout(initializeAnimations, 100);
+    animationInitialized.current = true;
+
+    // Capture refs for cleanup
+    const currentRefs = cardRefs.current;
+
+    return () => {
+      clearTimeout(timer);
+      // Cleanup observers using captured refs
+      currentRefs.forEach(ref => {
+        if (ref && ref._observer) {
+          ref._observer.disconnect();
+        }
+      });
+    };
+  }, []); // Only run once on mount
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);

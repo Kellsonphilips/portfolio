@@ -43,17 +43,22 @@ export default function DataAnalysisBestPractices() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "headline": "Data Analysis Best Practices",
-              "image": ["/Images/profile.jpg"],
-              "author": { "@type": "Person", "name": "Philip Kelechukwu Orji" },
-              "publisher": { "@type": "Organization", "name": "Philip Kelechukwu Orji" },
-              "datePublished": "2024-06-17",
-              "description": "Best practices for effective and accurate data analysis.",
-              "mainEntityOfPage": {
+              headline: "Data Analysis Best Practices",
+              image: ["/Images/profile.jpg"],
+              author: { "@type": "Person", name: "Philip Kelechukwu Orji" },
+              publisher: {
+                "@type": "Organization",
+                name: "Philip Kelechukwu Orji",
+              },
+              datePublished: "2024-06-17",
+              description:
+                "Best practices for effective and accurate data analysis.",
+              mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": "https://philipkelechiorji.vercel.app/blog/data-analysis-best-practices"
-              }
-            })
+                "@id":
+                  "https://philipkelechiorji.vercel.app/blog/data-analysis-best-practices",
+              },
+            }),
           }}
         />
       </Head>
@@ -63,6 +68,12 @@ export default function DataAnalysisBestPractices() {
           Data Analysis Best Practices: A Comprehensive Guide for Reliable
           Insights
         </h1>
+        <p className="text-lg mb-6">
+          By Philip Kelechukwu Orji
+          <br />
+          Tech Educator | Cloud Enthusiast | Data Enthusiast | Digital Projects
+          Specialist
+        </p>
 
         <p className="mb-4">
           In today&apos;s data-driven world, the ability to turn raw data into
@@ -136,7 +147,7 @@ export default function DataAnalysisBestPractices() {
           validate these before drawing conclusions.
         </p>
         <p className="mb-6">
-          <strong>Best Practice:</strong> Don't skip assumption checks — they're
+          <strong>Best Practice:</strong> Don&apos;t skip assumption checks — they&apos;re
           crucial for reliable inference.
         </p>
 

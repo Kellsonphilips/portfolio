@@ -1,124 +1,143 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { blogPosts } from './blogs';
+import { useLanguage } from '@/components/LanguageContext';
+import { getBlogPosts } from './blogs';
 import useScrollReveal from '@/components/useScrollReveal';
-import { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
 
 export default function Blog() {
+  const { t, language } = useLanguage();
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState(t('blog.all'));
+
+  // Get blog posts for current language
+  const blogPosts = getBlogPosts(language);
+
+  // Scroll reveal refs for main elements
   const headerRef = useScrollReveal('left', 0);
   const paraRef = useScrollReveal('right', 0.15);
-  const cardRefs = useRef([]);
+  const searchRef = useScrollReveal('left', 0.3);
+  const filterRef = useScrollReveal('right', 0.45);
 
-  // Add state for search and filter
-  const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('All');
+  // Create refs for blog cards with staggered delays
+  const card1Ref = useScrollReveal('left', 0.6);
+  const card2Ref = useScrollReveal('right', 0.7);
+  const card3Ref = useScrollReveal('left', 0.8);
+  const card4Ref = useScrollReveal('right', 0.9);
 
-  // Get unique categories
-  const categories = ['All', ...Array.from(new Set(blogPosts.map(post => post.category)))];
+  // Handle search
+  const handleSearchChange = (e) => {
+    const searchTerm = e.target.value;
+    setSearch(searchTerm);
+  };
 
-  // Filtered posts
+  // Filtered posts (search and filter using translated values)
   const filteredPosts = blogPosts.filter(post => {
+    const translatedTitle = t(post.titleKey);
+    const translatedExcerpt = t(post.excerptKey);
+    const translatedCategory = t(post.categoryKey);
     const matchesSearch =
-      post.title.toLowerCase().includes(search.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = category === 'All' || post.category === category;
+      translatedTitle.toLowerCase().includes(search.toLowerCase()) ||
+      translatedExcerpt.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = category === t('blog.all') || translatedCategory === category;
     return matchesSearch && matchesCategory;
   });
 
+  // Update category state when language changes
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-    cardRefs.current.forEach((ref, idx) => {
-      if (!ref) return;
-      ref.style.opacity = 0;
-      const direction = Math.random() < 0.5 ? 'left' : 'right';
-      ref.style.transform = direction === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
-      ref.style.transition =
-        `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.2}s, ` +
-        `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${0.15 * idx + 0.2}s`;
-      const handleReveal = (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            ref.style.opacity = 1;
-            ref.style.transform = 'translateX(0)';
-          }
-        });
-      };
-      const observer = new window.IntersectionObserver(handleReveal, {
-        threshold: 0.2,
-      });
-      observer.observe(ref);
-      return () => observer.disconnect();
-    });
-  }, [filteredPosts]);
+    setCategory(t('blog.all'));
+  }, [t]);
+
+  const categories = [
+    t('blog.all'),
+    t('blog.category.webDevelopment'),
+    t('blog.category.cloudTechnologies'),
+    t('blog.category.dataScience'),
+    t('blog.category.artificialIntelligence'),
+    t('blog.category.ictSolutions')
+  ];
 
   return (
     <div className="pt-24">
-      <div className="container mx-auto px-4 py-8 pt-24">
-        <h1 ref={headerRef} className="text-4xl font-bold mb-8 text-text-light dark:text-text-dark text-center">
-          Blog Posts
+      <div className="container mx-auto px-4 py-8 mt-20">
+        <h1 ref={headerRef} className="text-3xl text-primary text-center font-bold mb-8">
+          {t('blog.title')}
         </h1>
-        <p ref={paraRef} className="text-xl flex justify-center text-center mb-8">
-          Read some of  my blog posts and if you my expertise in technical writing, Get in Touch!
+        <p ref={paraRef} className="text-lg text-center text-secondary-color mb-8 text-wrap">
+          {t('blog.subtitle')}
         </p>
-        {/* Search and Filter Controls */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8 items-center md:items-center md:justify-center w-full">
-          {/* Visually hidden label for search */}
-          <label htmlFor="blog-search" className="sr-only">Search blog posts</label>
-          <input
-            id="blog-search"
-            type="text"
-            value={search}
-            onChange={e => setSearch(e.target.value)}
-            placeholder="Search blog posts..."
-            className="bg-white dark:bg-gray-800 text-text-light dark:text-text-dark border border-gray-300 dark:border-gray-700 rounded px-4 py-2 w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-[#DC8923] shadow"
-            aria-label="Search blog posts"
-          />
-          {/* Visually hidden label for filter */}
-          <label htmlFor="blog-category" className="sr-only">Filter by category</label>
-          <select
-            id="blog-category"
-            value={category}
-            onChange={e => setCategory(e.target.value)}
-            className="bg-white dark:bg-gray-800 text-text-light dark:text-text-dark border border-gray-300 dark:border-gray-700 rounded px-4 py-2 w-full md:w-48 focus:outline-none focus:ring-2 focus:ring-[#DC8923] shadow"
-            aria-label="Filter blog posts by category"
-          >
-            {categories.map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
+
+        <div className="flex flex-row gap-2 sm:gap-4 mb-8 justify-center items-center flex-wrap">
+          <div ref={searchRef} className="w-32 sm:w-48 md:w-64">
+            <input
+              type="text"
+              placeholder={t('blog.searchPlaceholder')}
+              value={search}
+              onChange={handleSearchChange}
+              className="w-full p-2 sm:p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm sm:text-base"
+            />
+          </div>
+          <div ref={filterRef} className="w-24 sm:w-36 md:w-48">
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="w-full p-2 sm:p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm sm:text-base"
+            >
+              {categories.map((cat) => (
+                <option key={cat} value={cat}>
+                  {cat}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.map((post, idx) => (
-            <Link href={`/blog/${post.slug}`} key={post.slug} className="block" aria-label={`Read blog post: ${post.title}`}>
-              <div
-                ref={el => cardRefs.current[idx] = el}
-                className="card card-3d-glow rounded-lg shadow-lg hover-lift h-full flex flex-col overflow-hidden"
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredPosts.map((post, idx) => {
+            // Assign refs based on index
+            const cardRef = idx === 0 ? card1Ref : idx === 1 ? card2Ref : idx === 2 ? card3Ref : card4Ref;
+            
+            return (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="block no-underline"
               >
-                <div className="relative h-48 w-full">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    priority
-                    className="object-cover"
-                  />
+                <div
+                  ref={cardRef}
+                  className="card-3d-glow dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer h-full"
+                >
+                  <div className="h-48 w-full relative">
+                    <Image
+                      src={post.image}
+                      alt={t(post.titleKey)}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <span className="text-sm text-[#DC8923] font-semibold">
+                      {t(post.categoryKey)}
+                    </span>
+                    <h2 className="text-xl font-bold text-text-light dark:text-text-dark mt-2 mb-3">
+                      {t(post.titleKey)}
+                    </h2>
+                    <p className="text-text-light dark:text-text-dark mb-4">
+                      {t(post.excerptKey)}
+                    </p>
+                    <span className="inline-flex items-center text-[#DC8923] hover:text-[#372207] dark:hover:text-[#DC8923] transition-colors">
+                      {t('about.readMore')} →
+                    </span>
+                  </div>
                 </div>
-                <div className="p-6 text-text-light dark:text-text-dark">
-                  <h2 className="text-xl font-semibold mb-2 text-primary hover:text-primary/50 transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm mb-4">
-                    {new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })}
-                  </p>
-                  <p className="text-text flex-grow">{post.excerpt}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
   );
-} 
+}

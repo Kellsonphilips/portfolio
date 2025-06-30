@@ -43,17 +43,22 @@ export default function MachineLearningDeepDive() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BlogPosting",
-              "headline": "Machine Learning Deep Dive",
-              "image": ["/Images/profile.jpg"],
-              "author": { "@type": "Person", "name": "Philip Kelechukwu Orji" },
-              "publisher": { "@type": "Organization", "name": "Philip Kelechukwu Orji" },
-              "datePublished": "2024-06-17",
-              "description": "Explore the fundamentals and advanced concepts of machine learning.",
-              "mainEntityOfPage": {
+              headline: "Machine Learning Deep Dive",
+              image: ["/Images/profile.jpg"],
+              author: { "@type": "Person", name: "Philip Kelechukwu Orji" },
+              publisher: {
+                "@type": "Organization",
+                name: "Philip Kelechukwu Orji",
+              },
+              datePublished: "2024-06-17",
+              description:
+                "Explore the fundamentals and advanced concepts of machine learning.",
+              mainEntityOfPage: {
                 "@type": "WebPage",
-                "@id": "https://philipkelechiorji.vercel.app/blog/machine-learning-deep-dive"
-              }
-            })
+                "@id":
+                  "https://philipkelechiorji.vercel.app/blog/machine-learning-deep-dive",
+              },
+            }),
           }}
         />
       </Head>
@@ -63,6 +68,12 @@ export default function MachineLearningDeepDive() {
           A Deep Dive into Machine Learning: Concepts, Types, and Real-World
           Impact
         </h1>
+        <p className="text-lg mb-6">
+          By Philip Kelechukwu Orji
+          <br />
+          Tech Educator | Cloud Enthusiast | Data Enthusiast | Digital Projects
+          Specialist
+        </p>
 
         <p className="mb-4">
           Machine Learning (ML) has evolved from a niche academic field to one

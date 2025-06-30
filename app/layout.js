@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ToggleButtons from '@/components/ToggleButtons';
 import { LanguageProvider } from '@/components/LanguageContext';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,6 +20,9 @@ export const metadata = {
     capable: true,
     statusBarStyle: "black-translucent",
     title: "Philip Kelechukwu Orji Portfolio",
+  },
+  other: {
+    "mobile-web-app-capable": "yes",
   },
   icons: {
     icon: "/Images/profile.jpg",
@@ -60,6 +62,7 @@ export const metadata = {
       }
     ],
   },
+  metadataBase: new URL('https://philipkelechiorji.vercel.app/'),
   // For JSON-LD structured data, use a client component or next/script if needed
 };
 
@@ -78,7 +81,6 @@ export default function RootLayout({ children /*, locale = 'en' */ }) {
         <LanguageProvider>
           <ThemeProvider>
             <div className="min-h-screen bg-background-light dark:bg-background-dark">
-              <div className="flex justify-end p-2"><LanguageSwitcher /></div>
               <Navbar />
               <main className="container mx-auto px-4 py-8">{children}</main>
               <Footer />
@@ -87,6 +89,16 @@ export default function RootLayout({ children /*, locale = 'en' */ }) {
           </ThemeProvider>
         </LanguageProvider>
       </body>
+      {/* Google Analytics placeholder */}
+      {/* 
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+      </script>
+      */}
     </html>
   );
 }

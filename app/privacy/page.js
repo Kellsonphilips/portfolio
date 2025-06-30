@@ -1,22 +1,36 @@
 'use client';
 import { useLanguage } from '@/components/LanguageContext';
+import useScrollReveal from '@/components/useScrollReveal';
 
 export default function Privacy() {
   const { t } = useLanguage();
+  
+  // Scroll reveal refs
+  const headerRef = useScrollReveal('left', 0);
+  const introRef = useScrollReveal('right', 0.15);
+  const collectRef = useScrollReveal('left', 0.3);
+  const useRef = useScrollReveal('right', 0.45);
+  const securityRef = useScrollReveal('left', 0.6);
+  const rightsRef = useScrollReveal('right', 0.75);
+  const thirdPartyRef = useScrollReveal('left', 0.9);
+  const changesRef = useScrollReveal('right', 1.05);
+  const contactRef = useScrollReveal('left', 1.2);
+  const lastUpdatedRef = useScrollReveal('right', 1.35);
+  
   return (
     <div className="pt-24">
       <div className="container text-text-light dark:text-text-dark mx-auto">
-        <h1 className="text-3xl flex justify-center font-bold mb-8">
+        <h1 ref={headerRef} className="text-3xl flex justify-center font-bold mb-8">
           {t('privacy.title')}
         </h1>
 
         <div className="max-w-3xl mx-auto prose">
-          <section className="text-text-light dark:text-text-dark mb-8">
+          <section ref={introRef} className="text-text-light dark:text-text-dark mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.intro.title')}</h2>
             <p className="mb-4">{t('privacy.intro')}</p>
           </section>
 
-          <section className="text-text-light dark:text-text-dark mb-8">
+          <section ref={collectRef} className="text-text-light dark:text-text-dark mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.infoWeCollect.title')}</h2>
             <p className="mb-4">{t('privacy.infoWeCollect')}</p>
             <ul className="list-disc pl-6 mb-4">
@@ -27,7 +41,7 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="mb-8">
+          <section ref={useRef} className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.howWeUse.title')}</h2>
             <p className="mb-4">{t('privacy.howWeUse')}</p>
             <ul className="list-disc pl-6 mb-4">
@@ -40,7 +54,7 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="mb-8">
+          <section ref={securityRef} className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.dataSecurity.title')}</h2>
             <p className="mb-4">{t('privacy.dataSecurity')}</p>
             <ul className="list-disc pl-6 mb-4">
@@ -51,7 +65,7 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="mb-8">
+          <section ref={rightsRef} className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.rights.title')}</h2>
             <p className="mb-4">{t('privacy.rights')}</p>
             <ul className="list-disc pl-6 mb-4">
@@ -64,17 +78,17 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="mb-8">
+          <section ref={thirdPartyRef} className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.thirdParty.title')}</h2>
             <p className="mb-4">{t('privacy.thirdParty')}</p>
           </section>
 
-          <section className="mb-8">
+          <section ref={changesRef} className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.changes.title')}</h2>
             <p className="mb-4">{t('privacy.changes')}</p>
           </section>
 
-          <section className="mb-8">
+          <section ref={contactRef} className="mb-8">
             <h2 className="text-2xl font-semibold mb-4">{t('privacy.contact.title')}</h2>
             <p className="mb-4">{t('privacy.contact')}</p>
             <ul className="list-disc pl-6">
@@ -84,7 +98,7 @@ export default function Privacy() {
             </ul>
           </section>
 
-          <section className="mb-8">
+          <section ref={lastUpdatedRef} className="mb-8">
             <p className="text-sm text-gray-600 dark:text-gray-400">
               {t('privacy.lastUpdated')} {new Date().toLocaleDateString("en-GB", {
                 year: "numeric",

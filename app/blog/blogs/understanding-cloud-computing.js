@@ -68,6 +68,12 @@ export default function CloudComputingBlog() {
         <h1 style={{ margin: 0, fontSize: "2rem" }}>
           Understanding Cloud Computing with Visual Examples
         </h1>
+        <p className="text-lg mb-6">
+          By Philip Kelechukwu Orji
+          <br />
+          Tech Educator | Cloud Enthusiast | Data Enthusiast | Digital Projects
+          Specialist
+        </p>
 
         <h2 style={{ margin: 0, fontSize: "1.2rem" }}>Introduction</h2>
         <p>

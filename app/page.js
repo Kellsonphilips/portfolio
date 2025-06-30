@@ -1,8 +1,9 @@
-export const dynamic = 'force-static';
+'use client';
+
 import '@/app/globals.css';
+import Hero from '@/components/Hero';
 import About from '@/components/About';
 import FeaturedProjects from '@/components/FeaturedProjects';
-import Hero from '@/components/Hero';
 import CallToAction from '@/components/CallToAction';
 import Skills from '../app/skills/page';
 import Capabilities from '../app/capabilities/page';

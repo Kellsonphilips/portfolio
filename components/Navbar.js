@@ -1,6 +1,6 @@
 'use client';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import profilePic from '@/public/Images/profile.jpg';
@@ -22,6 +22,10 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleMenuClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 bg-background-light dark:bg-background-dark shadow-md transition-shadow duration-300"
@@ -31,7 +35,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
           <Link
             href="/"
-            className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 hover:opacity-80 transition-opacity no-underline"
+            onClick={handleMenuClick}
           >
             <Image
               src={profilePic}
@@ -69,8 +74,8 @@ export default function Navbar() {
             <li className="text-center" ref={homeRef}>
               <Link
                 href="/"
-                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
-                onClick={() => setMenuOpen(false)}
+                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
+                onClick={handleMenuClick}
               >
                 {t('navbar.home')}
               </Link>
@@ -78,8 +83,8 @@ export default function Navbar() {
             <li className="text-center">
               <Link
                 href="/projects"
-                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
-                onClick={() => setMenuOpen(false)}
+                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
+                onClick={handleMenuClick}
               >
                 {t('navbar.projects')}
               </Link>
@@ -87,8 +92,8 @@ export default function Navbar() {
             <li className="text-center">
               <Link
                 href="/skills"
-                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
-                onClick={() => setMenuOpen(false)}
+                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
+                onClick={handleMenuClick}
               >
                 {t('navbar.skills')}
               </Link>
@@ -96,8 +101,8 @@ export default function Navbar() {
             <li className="text-center">
               <Link
                 href="/capabilities"
-                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
-                onClick={() => setMenuOpen(false)}
+                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
+                onClick={handleMenuClick}
               >
                 {t('navbar.capabilities')}
               </Link>
@@ -105,8 +110,8 @@ export default function Navbar() {
             <li className="text-center">
               <Link
                 href="/blog"
-                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
-                onClick={() => setMenuOpen(false)}
+                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
+                onClick={handleMenuClick}
               >
                 {t('navbar.blog')}
               </Link>
@@ -114,8 +119,8 @@ export default function Navbar() {
             <li className="text-center">
               <Link
                 href="/contact"
-                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate"
-                onClick={() => setMenuOpen(false)}
+                className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
+                onClick={handleMenuClick}
               >
                 {t('navbar.contact')}
               </Link>
