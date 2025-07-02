@@ -46,7 +46,7 @@ export default function Hero() {
   }, [startTyping]);
 
   return (
-    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 px-4 md:pl-10 lg:pl-15 pt-20 md:pt-0">
+    <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 px-6 md:pl-10 lg:pl-15 pt-20 md:pt-0">
       <div className="md:w-2/3 px-6 md:text-left">
         <h1 ref={headerRef} className="text-3xl md:text-4xl font-bold mb-4">
           {greeting}

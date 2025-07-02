@@ -68,7 +68,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 px-8 md:pl-10 lg:pl-15">
       <div className="container mx-auto px-4 py-8 mt-20">
         <h1
           ref={headerRef}

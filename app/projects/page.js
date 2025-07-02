@@ -32,7 +32,7 @@ export default function Projects() {
   const currentProjects = projects[activeTab];
 
   return (
-    <div className="pt-24">
+    <div className="pt-24 px-8 md:pl-10 lg:pl-15">
       <div className="container mx-auto px-4 py-12 sm:py-8 mt-20">
         <h1
           ref={headerRef}
@@ -53,7 +53,7 @@ export default function Projects() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`px-3 sm:px-4 lg:px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 text-xs sm:text-sm lg:text-base whitespace-nowrap ${
+                className={`px-1 sm:px-6 lg:px-6 py-2 rounded-lg transition-all duration-300 hover:scale-105 text-xs sm:text-sm lg:text-base whitespace-nowrap ${
                   activeTab === tab.id
                     ? "bg-primary text-white shadow-lg"
                     : "bg-background-light/60 dark:bg-background-dark/60 text-text-light dark:text-text-dark hover:bg-background-light/80 dark:hover:bg-background-dark/80 border border-primary/80"
@@ -68,19 +68,24 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-6 lg:gap-6">
           {currentProjects.map((project, idx) => {
             // Assign refs based on index with more cards support
-            const cardRef = 
-              idx === 0 ? card1Ref : 
-              idx === 1 ? card2Ref : 
-              idx === 2 ? card3Ref : 
-              idx === 3 ? card4Ref : 
-              idx === 4 ? card5Ref : 
-              card6Ref;
-            
+            const cardRef =
+              idx === 0
+                ? card1Ref
+                : idx === 1
+                ? card2Ref
+                : idx === 2
+                ? card3Ref
+                : idx === 3
+                ? card4Ref
+                : idx === 4
+                ? card5Ref
+                : card6Ref;
+
             return (
               <div
                 key={project.id}
                 ref={cardRef}
-                className="card-3d-glow bg-background-light/10 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 border border-background-light/20 dark:border-background-dark/30"
+                className="card-3d-glow my-3 bg-background-light/10 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 border border-background-light/20 dark:border-background-dark/30"
               >
                 <div className="h-48 w-full relative">
                   <Image

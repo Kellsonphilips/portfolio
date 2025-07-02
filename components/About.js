@@ -26,7 +26,7 @@ export default function About() {
   const { t } = useLanguage();
 
   return (
-    <section id="about" className="py-16 bg-background px-6 md:px-10 lg:px-15">
+    <section id="about" className="py-16 bg-background px-8 md:px-10 lg:px-15">
       <div className="container mx-auto px-4">
         <h2
           ref={headerRef}

@@ -97,7 +97,6 @@ export default function CloudComputingBlog() {
           alt="Cloud vs Traditional IT"
           width={800}
           height={400}
-          priority
         />
 
         <h3 className="py-2">Traditional vs Cloud Computing</h3>
@@ -139,7 +138,6 @@ export default function CloudComputingBlog() {
           alt="IaaS vs PaaS vs SaaS"
           width={800}
           height={450}
-          priority
         />
         <h3 className="py-2">1. IaaS – Infrastructure as a Service</h3>
         <p>

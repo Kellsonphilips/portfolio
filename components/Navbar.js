@@ -42,7 +42,6 @@ export default function Navbar() {
               src={profilePic}
               alt="Profile Picture"
               className="rounded-full w-10 h-10 object-cover"
-              priority
             />
             <span
               ref={nameRef}
