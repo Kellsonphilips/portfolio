@@ -50,18 +50,22 @@ export default function Hero() {
     <ErrorBoundary>
       <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 px-6 md:pl-10 lg:pl-15 pt-20 md:pt-0">
         <div className="md:w-2/3 px-6 md:text-left">
-          <h1 ref={headerRef} className="text-3xl md:text-4xl font-bold mb-4">
+          <h1 ref={headerRef} className="font-hero text-3xl md:text-4xl font-bold mb-4">
             {greeting}
             <span className="text-[#DC8923] relative">
               <span
                 aria-hidden="true"
-                className="invisible absolute whitespace-pre"
+                className="invisible absolute whitespace-pre font-bold text-3xl md:text-4xl"
+                style={{ minWidth: '0', minHeight: '0' }}
               >
                 {nameText}
               </span>
               {typedName}
               {!isTypingComplete && (
-                <span className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1">
+                <span
+                  className="border-r-2 border-[#DC8923] animate-blink align-middle ml-1 inline-block"
+                  style={{ width: '1ch', minWidth: '1ch' }}
+                >
                   &nbsp;
                 </span>
               )}
@@ -104,7 +108,9 @@ export default function Hero() {
           </div>
         </div>
         <div className="md:w-1/3 flex justify-center">
-          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 px-0 md:pr-10 lg:pr-15 aspect-square rounded-full animate-scale-in">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 px-0 md:pr-10 lg:pr-15 aspect-square rounded-full animate-scale-in"
+            style={{ minWidth: '12rem', minHeight: '12rem' }} // 48 * 0.25rem = 12rem
+          >
             <Image
               src={profilePic}
               alt="Profile Picture"

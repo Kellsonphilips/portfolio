@@ -32,6 +32,17 @@ module.exports = {
           dark: '#2d3748',
         },
       },
+      fontFamily: {
+        hero: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
+      },
       animation: {
         'fadeIn': 'fadeIn 0.5s ease-in-out',
       },
