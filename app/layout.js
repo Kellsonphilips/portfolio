@@ -5,6 +5,9 @@ import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ToggleButtons from '@/components/ToggleButtons';
 import { LanguageProvider } from '@/components/LanguageContext';
+import ScrollToTop from '@/components/ScrollToTop';
+import StructuredData from '@/components/StructuredData';
+import HreflangTags from '@/components/HreflangTags';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -78,16 +81,30 @@ export default function RootLayout({ children /*, locale = 'en' */ }) {
   return (
     <html lang={/* locale || */ 'en'} suppressHydrationWarning>
       <body className={inter.className}>
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only absolute left-4 top-4 z-50 bg-white dark:bg-background text-primary font-bold px-4 py-2 rounded shadow transition-all duration-200"
+        >
+          Skip to main content
+        </a>
+        <HreflangTags />
         <LanguageProvider>
           <ThemeProvider>
             <div className="min-h-screen bg-background-light dark:bg-background-dark">
-              <Navbar />
-              <main className="container mx-auto px-4 py-8">{children}</main>
-              <Footer />
+              <nav>
+                <Navbar />
+              </nav>
+              <main id="main-content" className="container mx-auto px-4 py-8">{children}</main>
+              <footer>
+                <Footer />
+              </footer>
               <ToggleButtons />
             </div>
           </ThemeProvider>
         </LanguageProvider>
+        <ScrollToTop />
+        <StructuredData />
       </body>
       {/* Google Analytics placeholder */}
       {/* 

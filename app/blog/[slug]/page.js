@@ -6,6 +6,44 @@ import { getBlogPosts } from '../blogs';
 import { useLanguage } from '@/components/LanguageContext';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import JsonLdBlog from '../../../components/JsonLdBlog';
+
+export const metadata = {
+  title: "Blog Post | Philip Kelechukwu Orji Portfolio",
+  description: "Read insightful articles on ICT, web development, data analytics, and more by Philip Kelechukwu Orji.",
+  alternates: {
+    canonical: "https://philipkelechiorji.vercel.app/blog/[slug]",
+  },
+  openGraph: {
+    title: "Blog Post | Philip Kelechukwu Orji Portfolio",
+    description: "Read insightful articles on ICT, web development, data analytics, and more by Philip Kelechukwu Orji.",
+    url: "https://philipkelechiorji.vercel.app/blog/[slug]",
+    siteName: "Philip Kelechukwu Orji Portfolio",
+    images: [
+      {
+        url: "/Images/profile.jpg",
+        width: 800,
+        height: 800,
+        alt: "Philip Kelechukwu Orji Profile Picture"
+      }
+    ],
+    type: "article",
+    locale: "en_GB",
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@JoinPhotonPhill",
+    creator: "@JoinPhotonPhill",
+    title: "Blog Post | Philip Kelechukwu Orji Portfolio",
+    description: "Read insightful articles on ICT, web development, data analytics, and more by Philip Kelechukwu Orji.",
+    images: [
+      {
+        url: "/Images/profile.jpg",
+        alt: "Philip Kelechukwu Orji Profile Picture"
+      }
+    ],
+  },
+};
 
 export default function BlogPost() {
   const params = useParams();
@@ -88,27 +126,43 @@ export default function BlogPost() {
     );
   }
 
+  // Replace these with real data from your blog post
+  const title = 'Blog Post Title';
+  const description = 'Blog post description/excerpt.';
+  const url = 'https://philipkelechiorji.vercel.app/blog/[slug]';
+  const datePublished = '2024-01-01';
+  const image = 'https://philipkelechiorji.vercel.app/Images/profile.jpg';
+
   return (
-    <article className="container mx-auto px-4 py-10 bg-background rounded-lg shadow-lg my-8 animate-fade-in">
-      <div className="pt-24">
-        <Link
-          href="/blog"
-          className="flex items-center text-primary hover:text-primary/80 transition-colors duration-300 mb-6 no-underline"
-        >
-          <ArrowLeft className="mr-2" size={20} />
-          Back to Blogs
-        </Link>
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text">
-          {post.title}
-        </h1>
-        <p className="text-text-light dark:text-text-dark text-sm mb-6">
-          Published on {new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })} &bull;{" "}
-          {post.readTime}
-        </p>
-        <div className="prose prose-lg mx-auto text-text dark:prose-invert">
-          <BlogComponent />
+    <>
+      <JsonLdBlog
+        title={title}
+        description={description}
+        url={url}
+        datePublished={datePublished}
+        image={image}
+      />
+      <article className="container mx-auto px-4 py-10 bg-background rounded-lg shadow-lg my-8 animate-fade-in">
+        <div className="pt-24">
+          <Link
+            href="/blog"
+            className="flex items-center text-primary hover:text-primary/80 transition-colors duration-300 mb-6 no-underline"
+          >
+            <ArrowLeft className="mr-2" size={20} />
+            Back to Blogs
+          </Link>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text">
+            {post.title}
+          </h1>
+          <p className="text-text-light dark:text-text-dark text-sm mb-6">
+            Published on {new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })} &bull;{" "}
+            {post.readTime}
+          </p>
+          <div className="prose prose-lg mx-auto text-text dark:prose-invert">
+            <BlogComponent />
+          </div>
         </div>
-      </div>
-    </article>
+      </article>
+    </>
   );
 } 

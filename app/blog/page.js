@@ -135,9 +135,9 @@ export default function Blog() {
                     <span className="text-sm text-[#DC8923] font-semibold">
                       {t(post.categoryKey)}
                     </span>
-                    <h2 className="text-xl font-bold text-text-light dark:text-text-dark mt-2 mb-3">
+                    <h3 className="text-xl font-bold text-text-light dark:text-text-dark mt-2 mb-3">
                       {t(post.titleKey)}
-                    </h2>
+                    </h3>
                     <p className="text-text-light dark:text-text-dark mb-4">
                       {t(post.excerptKey)}
                     </p>

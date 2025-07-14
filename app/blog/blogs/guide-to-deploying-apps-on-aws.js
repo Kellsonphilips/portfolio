@@ -114,7 +114,7 @@ export default function AWSDeployBlog() {
             and click <strong>&ldquo;Create an AWS Account&ldquo;</strong>.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=400&fit=crop&q=80"
             alt="AWS signup"
             width={800}
             height={400}
@@ -166,7 +166,7 @@ if __name__ == '__main__':
             , create a Python app, and upload your zipped app folder.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop&q=80"
             alt="Elastic Beanstalk"
             width={800}
             height={400}
@@ -196,7 +196,7 @@ if __name__ == '__main__':
             <li>Upload your static files</li>
           </ol>
           <Image
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=400&fit=crop&q=80"
             alt="S3 bucket setup"
             width={800}
             height={400}
@@ -223,7 +223,7 @@ if __name__ == '__main__':
             , create an instance (e.g., Ubuntu), and download the key pair.
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=400&fit=crop&q=80"
             alt="EC2 Instance Setup"
             width={800}
             height={400}
@@ -250,7 +250,7 @@ node app.js`}
             3. Open Port in Security Group
           </p>
           <Image
-            src="https://images.unsplash.com/photo-1581091012184-e8f707c16c5f?w=800&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=400&fit=crop&q=80"
             alt="Security Group Settings"
             width={800}
             height={400}

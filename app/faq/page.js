@@ -94,7 +94,7 @@ export default function FAQ() {
                 onClick={() => toggleFAQ(index)}
                 className="card-3d-glow w-full px-6 py-4 text-left flex justify-between items-center"
               >
-                <span className="font-semibold">{faq.question}</span>
+                <h3 className="font-semibold m-0">{faq.question}</h3>
                 {openIndex === index ? (
                   <ChevronUp className="w-5 h-5" />
                 ) : (

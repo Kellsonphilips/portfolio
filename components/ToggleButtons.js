@@ -38,7 +38,8 @@ function SocialIcons() {
           target="_blank"
           rel="noopener noreferrer"
           title={title}
-          className={`hover:text-[#DC8923] transition-colors ${
+          aria-label={title}
+          className={`hover:text-[#DC8923] transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
             activeIndex === idx ? "animate-social-rotate-color-step" : ""
           }`}
         >
@@ -56,7 +57,7 @@ function ThemeAndLanguageControls() {
     <div className="fixed bottom-4 right-4 z-50 flex flex-col gap-3">
       <button
         onClick={toggleTheme}
-        className="p-2 sm:p-3 rounded-full bg-background-light dark:bg-background-dark shadow-lg hover:shadow-xl transition-all duration-300"
+        className="p-2 sm:p-3 rounded-full bg-background-light dark:bg-background-dark shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
         title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
       >

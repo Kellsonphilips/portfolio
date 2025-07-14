@@ -60,7 +60,7 @@ export default function ServerlessArchitectureBlog() {
         </p>
 
         <Image
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=500&fit=crop&q=80"
           alt="Cloud infrastructure concept"
           width={800}
           height={500}
@@ -88,7 +88,7 @@ export default function ServerlessArchitectureBlog() {
         </ul>
 
         <Image
-          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=450&fit=crop&q=80"
           alt="Serverless architecture diagram"
           width={800}
           height={450}
@@ -107,7 +107,7 @@ export default function ServerlessArchitectureBlog() {
         </ol>
 
         <Image
-          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop&q=80"
           alt="Image processing flow"
           width={800}
           height={500}
@@ -158,7 +158,7 @@ export default function ServerlessArchitectureBlog() {
         </ul>
 
         <Image
-          src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=500&fit=crop&q=80"
           alt="Automated processes with serverless"
           width={800}
           height={500}

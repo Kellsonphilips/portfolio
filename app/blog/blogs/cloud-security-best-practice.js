@@ -55,7 +55,7 @@ export default function CloudSecurityBestPractices() {
           1. Understand Shared Responsibility
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=500&fit=crop&q=80"
           alt="Shared responsibility model"
           width={800}
           height={500}
@@ -74,7 +74,7 @@ export default function CloudSecurityBestPractices() {
           2. Use Strong Identity and Access Management (IAM)
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=500&fit=crop&q=80"
           alt="IAM security"
           width={800}
           height={500}
@@ -91,7 +91,7 @@ export default function CloudSecurityBestPractices() {
           3. Encrypt Data at Rest and in Transit
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=500&fit=crop&q=80"
           alt="Data encryption"
           width={800}
           height={500}
@@ -107,7 +107,7 @@ export default function CloudSecurityBestPractices() {
           4. Regularly Monitor and Audit Activity
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1556761175-129418cb2dfe?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=800&h=500&fit=crop&q=80"
           alt="Monitoring logs"
           width={800}
           height={500}
@@ -124,7 +124,7 @@ export default function CloudSecurityBestPractices() {
           5. Configure Security Groups and Firewalls
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop&q=80"
           alt="Firewall protection"
           width={800}
           height={500}
@@ -141,7 +141,7 @@ export default function CloudSecurityBestPractices() {
           6. Keep Systems and Dependencies Updated
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop&q=80"
           alt="System update"
           width={800}
           height={500}
@@ -157,7 +157,7 @@ export default function CloudSecurityBestPractices() {
           7. Implement Backups and Disaster Recovery
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1581091012184-e8f707c16c5f?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&h=500&fit=crop&q=80"
           alt="Cloud backup"
           width={800}
           height={500}
@@ -173,7 +173,7 @@ export default function CloudSecurityBestPractices() {
           8. Conduct Regular Security Assessments
         </h2>
         <Image
-          src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d3?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=500&fit=crop&q=80"
           alt="Security assessments"
           width={800}
           height={500}
@@ -187,7 +187,7 @@ export default function CloudSecurityBestPractices() {
 
         <h2 className="text-2xl font-semibold mt-8 mb-4">9. Educate Your Team</h2>
         <Image
-          src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=800&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop&q=80"
           alt="Team training"
           width={800}
           height={500}

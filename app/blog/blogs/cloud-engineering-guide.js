@@ -276,7 +276,7 @@ export default function CloudEngineerBlog() {
             <li>Adaptability</li>
           </ul>
           <Image
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=400&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop&q=80"
             alt="Cloud Skills"
             width={800}
             height={400}

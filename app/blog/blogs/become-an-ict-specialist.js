@@ -42,7 +42,7 @@ export default function BecomeICTSpecialist() {
         </p>
 
         <Image
-          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=900&h=500&fit=crop&q=80"
+          src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=900&h=500&fit=crop&q=80"
           alt="ICT Specialist"
           width={900}
           height={500}
@@ -96,7 +96,7 @@ export default function BecomeICTSpecialist() {
             </li>
           </ul>
           <Image
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=900&h=500&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&h=500&fit=crop&q=80"
             alt="Tools"
             width={900}
             height={500}
@@ -214,7 +214,7 @@ export default function BecomeICTSpecialist() {
           </ul>
 
           <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=900&h=500&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=900&h=500&fit=crop&q=80"
             alt="ICT in Education"
             width={900}
             height={500}

@@ -43,7 +43,7 @@ export default function ITBlog() {
 
         <div className="mb-8">
           <Image
-            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1050&h=600&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1050&h=600&fit=crop&q=80"
             alt="IT Specialist at Work"
             width={1050}
             height={600}
@@ -85,7 +85,7 @@ export default function ITBlog() {
 
         <div className="mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1050&h=600&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1050&h=600&fit=crop&q=80"
             alt="IT Specialist at work"
             width={1050}
             height={600}
@@ -120,7 +120,7 @@ export default function ITBlog() {
 
         <div className="mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1050&h=600&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1050&h=600&fit=crop&q=80"
             alt="IT Engineer systems"
             width={1050}
             height={600}
@@ -249,21 +249,21 @@ export default function ITBlog() {
         <h2 className="text-3xl font-semibold mt-10 mb-4">📸 More Visuals</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
           <Image
-            src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=1050&h=600&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?w=1050&h=600&fit=crop&q=80"
             alt="IT Support"
             width={1050}
             height={600}
             className="rounded-lg object-cover"
           />
           <Image
-            src="https://images.unsplash.com/photo-1581091012184-e8f707c16c5f?w=1050&h=600&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1050&h=600&fit=crop&q=80"
             alt="Network Setup"
             width={1050}
             height={600}
             className="rounded-lg object-cover"
           />
           <Image
-            src="https://images.unsplash.com/photo-1605902711622-cfb43c4437d3?w=1050&h=600&fit=crop&q=80"
+            src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1050&h=600&fit=crop&q=80"
             alt="Cloud Engineer"
             width={1050}
             height={600}

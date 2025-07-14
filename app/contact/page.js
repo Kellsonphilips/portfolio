@@ -86,6 +86,8 @@ export default function Contact() {
         <div ref={formRef} className="max-w-2xl mx-auto">
           <form
             onSubmit={handleSubmit}
+            action="/api/contact"
+            method="POST"
             className="space-y-6 p-8 rounded-2xl backdrop-blur-md bg-background-light/10 dark:bg-gray-800 border border-background-light/50 dark:border-background-dark/30 shadow-2xl transform hover:scale-[1.01] transition-all duration-500 perspective-1000 card-3d-glow"
           >
             <div
