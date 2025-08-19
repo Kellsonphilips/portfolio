@@ -202,5 +202,13 @@
   "contact.successMessage": "¡Mensaje enviado exitosamente!",
   "contact.errorMessage": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
   "blog.post.dataAnalyticsCareerCompleteBlog.title": "Comenzar una carrera en Análisis de Datos: Guía completa para principiantes",
-  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "Una hoja de ruta práctica para que los principiantes inicien una carrera exitosa en análisis de datos, incluyendo habilidades, herramientas y consejos esenciales."
+  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "Una hoja de ruta práctica para que los principiantes inicien una carrera exitosa en análisis de datos, incluyendo habilidades, herramientas y consejos esenciales.",
+  "blog.post.cicdRoadmapLearningWithEase.title": "Aprende CI/CD de la manera más fácil: Guía completa",
+  "blog.post.cicdRoadmapLearningWithEase.excerpt": "Domina la Integración y Entrega/Despliegue Continuos (CI/CD) con una hoja de ruta estructurada. Esta guía cubre lo esencial, mejores prácticas y pasos prácticos para ser competente en CI/CD.",
+  "blog.post.learnDockerComprehensiveRoadmap.title": "Aprende Docker de la manera más fácil y efectiva",
+  "blog.post.learnDockerComprehensiveRoadmap.excerpt": "Una hoja de ruta paso a paso para dominar Docker, desde lo básico hasta temas avanzados, con ejemplos prácticos y ayudas visuales.",
+  "blog.post.simplifiedKubernetesLearningRoadmap.title": "Aprende Kubernetes de la manera más fácil y efectiva",
+  "blog.post.simplifiedKubernetesLearningRoadmap.excerpt": "Una hoja de ruta completa y estructurada para dominar Kubernetes, desde los requisitos previos hasta las mejores prácticas avanzadas.",
+  "blog.post.cloudComputingLearningRoadmap.title": "Análisis completo de la hoja de ruta de aprendizaje de Cloud Computing",
+  "blog.post.cloudComputingLearningRoadmap.excerpt": "Un análisis profundo, etapa por etapa, de cómo aprender cloud computing, incluyendo modelos, proveedores y mejores prácticas para todos los niveles."
 } 

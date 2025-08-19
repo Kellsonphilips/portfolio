@@ -202,5 +202,13 @@
   "contact.successMessage": "Nachricht erfolgreich gesendet!",
   "contact.errorMessage": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
   "blog.post.dataAnalyticsCareerCompleteBlog.title": "Karriere im Bereich Data Analytics starten: Der vollständige Einsteiger-Guide",
-  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "Ein praktischer Fahrplan für Einsteiger, um eine erfolgreiche Karriere im Bereich Data Analytics zu starten – inklusive wichtiger Fähigkeiten, Tools und Tipps."
+  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "Ein praktischer Fahrplan für Einsteiger, um eine erfolgreiche Karriere im Bereich Data Analytics zu starten – inklusive wichtiger Fähigkeiten, Tools und Tipps.",
+  "blog.post.cicdRoadmapLearningWithEase.title": "CI/CD einfach lernen: Ein umfassender Leitfaden",
+  "blog.post.cicdRoadmapLearningWithEase.excerpt": "Beherrschen Sie Continuous Integration und Continuous Delivery/Deployment mit einer strukturierten Roadmap. Dieser Leitfaden behandelt die Grundlagen, Best Practices und praktische Schritte für CI/CD-Kompetenz.",
+  "blog.post.learnDockerComprehensiveRoadmap.title": "Docker einfach und richtig lernen",
+  "blog.post.learnDockerComprehensiveRoadmap.excerpt": "Eine Schritt-für-Schritt-Roadmap, um Docker von den Grundlagen bis zu fortgeschrittenen Themen mit praktischen Beispielen und visuellen Hilfen zu meistern.",
+  "blog.post.simplifiedKubernetesLearningRoadmap.title": "Kubernetes einfach und richtig lernen",
+  "blog.post.simplifiedKubernetesLearningRoadmap.excerpt": "Eine umfassende, strukturierte Roadmap zum Meistern von Kubernetes – von den Voraussetzungen bis zu fortgeschrittenen Best Practices.",
+  "blog.post.cloudComputingLearningRoadmap.title": "Umfassende Analyse der Cloud-Computing-Lernroadmap",
+  "blog.post.cloudComputingLearningRoadmap.excerpt": "Eine detaillierte, stufenweise Analyse, wie man Cloud Computing lernt – inklusive Modelle, Anbieter und Best Practices für alle Niveaus."
 } 

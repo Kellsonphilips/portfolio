@@ -68,7 +68,7 @@ export const projects = {
       description:
         "Developed a comprehensive Digital Advertising management platform with AI Assistant for automated campaign optimization, real-time performance tracking, and intelligent ad placement across multiple channels.",
       image:
-        "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800&auto=format&fit=crop&q=60",
+        "/digitaladvert.jpg",
       technologies: ["Next.js", "React", "Node.js", "MongoDB", "AI/ML"],
       category: "Web Apps",
       link: "https://photonboost360.vercel.app",
@@ -82,7 +82,7 @@ export const projects = {
       description:
         "Built a comprehensive sales analytics platform with interactive dashboards, real-time data visualization, and advanced predictive analytics capabilities. Integrated multiple data sources, implemented automated reporting systems, and developed machine learning models for sales forecasting and trend analysis. Features include KPI tracking, performance metrics, and actionable insights that drove 25% increase in sales efficiency and improved decision-making processes.",
       image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+        "/salesbehhaviourr.jpg",
       technologies: ["Python", "Tableau", "Pandas", "Scikit-learn"],
       category: "Data Analytics",
       link: "https://github.com/Kellsonphilips",

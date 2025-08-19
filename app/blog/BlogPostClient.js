@@ -8,7 +8,7 @@ import { ArrowLeft } from 'lucide-react';
 import JsonLdBlog from '../../components/JsonLdBlog';
 
 export default function BlogPostClient({ slug }) {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const [BlogComponent, setBlogComponent] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -83,12 +83,14 @@ export default function BlogPostClient({ slug }) {
     );
   }
 
-  // Replace these with real data from your blog post
-  const title = 'Blog Post Title';
-  const description = 'Blog post description/excerpt.';
-  const url = 'https://philipkelechiorji.vercel.app/blog/[slug]';
-  const datePublished = '2024-01-01';
-  const image = 'https://philipkelechiorji.vercel.app/Images/profile.jpg';
+  const siteUrl = 'https://philipkelechiorji.vercel.app';
+  const title = post ? t(post.titleKey) : 'Blog Post';
+  const description = post ? t(post.excerptKey) : 'Blog post description/excerpt.';
+  const url = `${siteUrl}/blog/${slug}`;
+  const datePublished = post ? post.date : '2024-01-01';
+  const image = post && post.image
+    ? (post.image.startsWith('http') ? post.image : `${siteUrl}${post.image}`)
+    : `${siteUrl}/Images/profile.jpg`;
 
   return (
     <>
@@ -109,7 +111,7 @@ export default function BlogPostClient({ slug }) {
             Back to Blogs
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-4 text-text">
-            {post.title}
+            {title}
           </h1>
           <p className="text-text-light dark:text-text-dark text-sm mb-6">
             Published on {new Date(post.date).toLocaleDateString('en-GB', { year: 'numeric', month: '2-digit', day: '2-digit' })} &bull;{" "}

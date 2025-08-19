@@ -202,5 +202,13 @@
   "contact.successMessage": "消息发送成功！",
   "contact.errorMessage": "发送消息失败。请重试。",
   "blog.post.dataAnalyticsCareerCompleteBlog.title": "开启数据分析职业生涯：完整新手指南",
-  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "为初学者量身打造的数据分析职业路线图，涵盖必备技能、工具和实用建议，助你成功入行。"
+  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "为初学者量身打造的数据分析职业路线图，涵盖必备技能、工具和实用建议，助你成功入行。",
+  "blog.post.cicdRoadmapLearningWithEase.title": "更轻松学习CI/CD：全面指南",
+  "blog.post.cicdRoadmapLearningWithEase.excerpt": "通过结构化路线图掌握持续集成与持续交付/部署（CI/CD）。本指南涵盖要点、最佳实践和实操步骤，助你精通CI/CD。",
+  "blog.post.learnDockerComprehensiveRoadmap.title": "更轻松高效地学习Docker",
+  "blog.post.learnDockerComprehensiveRoadmap.excerpt": "从基础到高级主题，逐步掌握Docker，配有实用示例和可视化辅助。",
+  "blog.post.simplifiedKubernetesLearningRoadmap.title": "更轻松高效地学习Kubernetes",
+  "blog.post.simplifiedKubernetesLearningRoadmap.excerpt": "一份全面、结构化的Kubernetes学习路线图，涵盖从入门到高级最佳实践。",
+  "blog.post.cloudComputingLearningRoadmap.title": "云计算学习路线图的全面解析",
+  "blog.post.cloudComputingLearningRoadmap.excerpt": "对如何学习云计算进行深入、分阶段分析，包括模型、服务商和各级最佳实践。"
 } 

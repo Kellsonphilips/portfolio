@@ -14,6 +14,10 @@ const DataAnalyticsCareer = () =>
   import("./blogs/data-analytics-career-complete-blog").then(
     (mod) => mod.default
   );
+const CICDRoadmapBlog = () => import("./blogs/CI-CD-roadmap-learning-with-ease").then(mod => mod.default);
+const DockerRoadmapBlog = () => import("./blogs/learm-docker-comprehensive-roadmap").then(mod => mod.default);
+const KubernetesRoadmapBlog = () => import("./blogs/simplified-kubertes-learning-roadmap").then(mod => mod.default);
+const CloudComputingLearningRoadmapBlog = () => import("./blogs/cloud-computing-learning-roadmap").then(mod => mod.default);
 
 // Function to get blog posts based on language
 export const getBlogPosts = (language = 'en') => {
@@ -149,6 +153,46 @@ export const getBlogPosts = (language = 'en') => {
       content: DataAnalyticsCareer,
       image:
         "https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?fit=crop&w=1200&q=80",
+    },
+    {
+      slug: "ci-cd-roadmap-learning-with-ease",
+      titleKey: "blog.post.cicdRoadmapLearningWithEase.title",
+      excerptKey: "blog.post.cicdRoadmapLearningWithEase.excerpt",
+      date: "2025-07-16",
+      readTime: "15 min read",
+      categoryKey: "blog.category.devops",
+      content: CICDRoadmapBlog,
+      image: "/CI-CD-roadmap.jpg",
+    },
+    {
+      slug: "learn-docker-comprehensive-roadmap",
+      titleKey: "blog.post.learnDockerComprehensiveRoadmap.title",
+      excerptKey: "blog.post.learnDockerComprehensiveRoadmap.excerpt",
+      date: "2025-07-15",
+      readTime: "14 min read",
+      categoryKey: "blog.category.devops",
+      content: DockerRoadmapBlog,
+      image: "/learm-docker.jpg",
+    },
+    {
+      slug: "simplified-kubernetes-learning-roadmap",
+      titleKey: "blog.post.simplifiedKubernetesLearningRoadmap.title",
+      excerptKey: "blog.post.simplifiedKubernetesLearningRoadmap.excerpt",
+      date: "2025-07-14",
+      readTime: "16 min read",
+      categoryKey: "blog.category.devops",
+      content: KubernetesRoadmapBlog,
+      image: "/learn-kubernetes.jpg",
+    },
+    {
+      slug: "cloud-computing-learning-roadmap",
+      titleKey: "blog.post.cloudComputingLearningRoadmap.title",
+      excerptKey: "blog.post.cloudComputingLearningRoadmap.excerpt",
+      date: "2025-07-13",
+      readTime: "18 min read",
+      categoryKey: "blog.category.cloudTechnologies",
+      content: CloudComputingLearningRoadmapBlog,
+      image: "/cloud-computing-roadmap.jpg",
     },
   ];
 
