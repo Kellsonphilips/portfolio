@@ -14,7 +14,7 @@ export default function ProjectsPageClient() {
   const tabs = [
     { key: "ict", label: t("projects.tabs.ict") },
     { key: "webApps", label: t("projects.tabs.webApps") },
-    { key: "dataAnalytics", label: t("projects.tabs.dataAnalytics") },
+    // { key: "dataAnalytics", label: t("projects.tabs.dataAnalytics") },
   ];
 
   const currentProjects = projects[selectedTab];

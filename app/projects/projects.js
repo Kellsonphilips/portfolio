@@ -75,42 +75,42 @@ export const projects = {
       github: "https://github.com/Kellsonphilips/photonboost",
     },
   ],
-  dataAnalytics: [
-    {
-      id: 7,
-      title: "Sales Analytics Dashboard",
-      description:
-        "Built a comprehensive sales analytics platform with interactive dashboards, real-time data visualization, and advanced predictive analytics capabilities. Integrated multiple data sources, implemented automated reporting systems, and developed machine learning models for sales forecasting and trend analysis. Features include KPI tracking, performance metrics, and actionable insights that drove 25% increase in sales efficiency and improved decision-making processes.",
-      image:
-        "/salesbehhaviourr.jpg",
-      technologies: ["Python", "Tableau", "Pandas", "Scikit-learn"],
-      category: "Data Analytics",
-      link: "https://github.com/Kellsonphilips",
-      github: "https://github.com/Kellsonphilips",
-    },
-    {
-      id: 8,
-      title: "Customer Behavior Analysis",
-      description:
-        "Developed sophisticated machine learning algorithms and predictive models to analyze customer behavior patterns, segment customer base, and predict churn probability with 85% accuracy. Implemented real-time data processing pipelines, created interactive visualizations for customer journey mapping, and established automated alerting systems for high-risk customers. Results led to 30% reduction in customer churn and 40% improvement in customer retention strategies.",
-      image:
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
-      technologies: ["Python", "TensorFlow", "Power BI", "SQL"],
-      category: "Data Analytics",
-      link: "https://github.com/Kellsonphilips",
-      github: "https://github.com/Kellsonphilips",
-    },
-    {
-      id: 9,
-      title: "Supply Chain Optimization",
-      description:
-        "Engineered a comprehensive supply chain optimization system using advanced analytics and machine learning algorithms. Developed predictive models for demand forecasting, inventory optimization, and route planning that reduced operational costs by 35% and improved delivery efficiency by 50%. Implemented real-time monitoring dashboards, automated decision-making systems, and integrated multiple data sources for end-to-end supply chain visibility and control.",
-      image:
-        "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=60",
-      technologies: ["R", "Python", "Apache Spark", "D3.js"],
-      category: "Data Analytics",
-      link: "https://github.com/Kellsonphilips",
-      github: "https://github.com/Kellsonphilips",
-    },
-  ],
+  // dataAnalytics: [
+  //   {
+  //     id: 7,
+  //     title: "Sales Analytics Dashboard",
+  //     description:
+  //       "Built a comprehensive sales analytics platform with interactive dashboards, real-time data visualization, and advanced predictive analytics capabilities. Integrated multiple data sources, implemented automated reporting systems, and developed machine learning models for sales forecasting and trend analysis. Features include KPI tracking, performance metrics, and actionable insights that drove 25% increase in sales efficiency and improved decision-making processes.",
+  //     image:
+  //       "/salesbehhaviourr.jpg",
+  //     technologies: ["Python", "Tableau", "Pandas", "Scikit-learn"],
+  //     category: "Data Analytics",
+  //     link: "https://github.com/Kellsonphilips",
+  //     github: "https://github.com/Kellsonphilips",
+  //   },
+  //   {
+  //     id: 8,
+  //     title: "Customer Behavior Analysis",
+  //     description:
+  //       "Developed sophisticated machine learning algorithms and predictive models to analyze customer behavior patterns, segment customer base, and predict churn probability with 85% accuracy. Implemented real-time data processing pipelines, created interactive visualizations for customer journey mapping, and established automated alerting systems for high-risk customers. Results led to 30% reduction in customer churn and 40% improvement in customer retention strategies.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60",
+  //     technologies: ["Python", "TensorFlow", "Power BI", "SQL"],
+  //     category: "Data Analytics",
+  //     link: "https://github.com/Kellsonphilips",
+  //     github: "https://github.com/Kellsonphilips",
+  //   },
+  //   {
+  //     id: 9,
+  //     title: "Supply Chain Optimization",
+  //     description:
+  //       "Engineered a comprehensive supply chain optimization system using advanced analytics and machine learning algorithms. Developed predictive models for demand forecasting, inventory optimization, and route planning that reduced operational costs by 35% and improved delivery efficiency by 50%. Implemented real-time monitoring dashboards, automated decision-making systems, and integrated multiple data sources for end-to-end supply chain visibility and control.",
+  //     image:
+  //       "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=60",
+  //     technologies: ["R", "Python", "Apache Spark", "D3.js"],
+  //     category: "Data Analytics",
+  //     link: "https://github.com/Kellsonphilips",
+  //     github: "https://github.com/Kellsonphilips",
+  //   },
+  // ],
 }; 

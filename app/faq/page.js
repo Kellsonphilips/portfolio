@@ -76,6 +76,11 @@ export default function FAQ() {
     answer: t(faq.answer)
   }));
 
+  const createMarkup = (text) => {
+    const boldedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    return { __html: boldedText };
+  };
+
   return (
     <div className="pt-24">
       <div className="container h-full text-text-light dark:text-text-dark mx-auto px-4 py-8">
@@ -103,7 +108,7 @@ export default function FAQ() {
               </button>
               {openIndex === index && (
                 <div className="card-3d-glow px-6 pb-4">
-                  <p>{faq.answer}</p>
+                  <p dangerouslySetInnerHTML={createMarkup(faq.answer)} />
                 </div>
               )}
             </div>

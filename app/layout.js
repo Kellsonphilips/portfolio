@@ -12,9 +12,9 @@ import HreflangTags from '@/components/HreflangTags';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: "Philip Kelechukwu Orji - IT Support | Web Dev | Data Analyst",
-  description: "ICT Solution Provider, Software Engineer & a Data Analyst",
-  keywords: "portfolio, web development, data analysis, ICT, Philip Orji, Next.js, React, Node.js, Python, Tailwind CSS, software engineer, IT support, cloud computing, data analytics, frontend, backend, full stack, developer, technology, consulting, digital solutions, UI/UX, SaaS, web apps, business intelligence, machine learning, personal website, resume, CV, projects, blog, skills, capabilities, contact, privacy, FAQ, Philip Kelechukwu Orji, Philip Orji, Kellsonphilips, joinphotonphill",
+  title: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
+  description: "ICT Solution Provider, Software Engineer & Project Manager",
+  keywords: "portfolio, web development, ICT, Philip Orji, Next.js, React, Node.js, Python, Tailwind CSS, software engineer, IT support, cloud computing, project management, frontend, backend, full stack, developer, technology, consulting, digital solutions, UI/UX, SaaS, web apps, business intelligence, personal website, resume, CV, projects, blog, skills, capabilities, contact, privacy, FAQ, Philip Kelechukwu Orji, Philip Orji, Kellsonphilips, joinphotonphill",
   authors: [{ name: "Philip Kelechukwu Orji" }],
   creator: "Philip Kelechukwu Orji",
   canonical: "https://philipkelechiorji.vercel.app/",
@@ -37,8 +37,8 @@ export const metadata = {
     ]
   },
   openGraph: {
-    title: "Philip Kelechukwu Orji - IT Support | Web Dev | Data Analyst",
-    description: "ICT Solution Provider, Software Engineer & a Data Analyst",
+    title: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
+    description: "ICT Solution Provider, Software Engineer & Project Manager",
     url: "https://philipkelechiorji.vercel.app/",
     siteName: "Philip Kelechukwu Orji Portfolio",
     images: [
@@ -56,8 +56,8 @@ export const metadata = {
     card: "summary_large_image",
     site: "@JoinPhotonPhill",
     creator: "@JoinPhotonPhill",
-    title: "Philip Kelechukwu Orji - IT Support | Web Dev | Data Analyst",
-    description: "ICT Solution Provider, Software Engineer & a Data Analyst",
+    title: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
+    description: "ICT Solution Provider, Software Engineer & Project Manager",
     images: [
       {
         url: "/Images/profile.jpg",

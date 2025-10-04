@@ -3,14 +3,14 @@ import ProjectsPageClient from '../../components/ProjectsPageClient';
 export const metadata = {
   title: "Projects | Philip Kelechukwu Orji Portfolio",
   description:
-    "Explore a curated selection of ICT, Web App, and Data Analytics projects by Philip Kelechukwu Orji. See technologies, live demos, and GitHub links.",
+    "Explore a curated selection of ICT and Web App projects by Philip Kelechukwu Orji. See technologies, live demos, and GitHub links.",
   alternates: {
     canonical: "https://philipkelechiorji.vercel.app/projects",
   },
   openGraph: {
     title: "Projects | Philip Kelechukwu Orji Portfolio",
     description:
-      "Explore a curated selection of ICT, Web App, and Data Analytics projects by Philip Kelechukwu Orji. See technologies, live demos, and GitHub links.",
+      "Explore a curated selection of ICT and Web App projects by Philip Kelechukwu Orji. See technologies, live demos, and GitHub links.",
     url: "https://philipkelechiorji.vercel.app/projects",
     siteName: "Philip Kelechukwu Orji Portfolio",
     images: [
@@ -30,7 +30,7 @@ export const metadata = {
     creator: "@JoinPhotonPhill",
     title: "Projects | Philip Kelechukwu Orji Portfolio",
     description:
-      "Explore a curated selection of ICT, Web App, and Data Analytics projects by Philip Kelechukwu Orji. See technologies, live demos, and GitHub links.",
+      "Explore a curated selection of ICT and Web App projects by Philip Kelechukwu Orji. See technologies, live demos, and GitHub links.",
     images: [
       {
         url: "/Images/profile.jpg",

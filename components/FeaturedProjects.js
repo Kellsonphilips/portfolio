@@ -12,11 +12,10 @@ export default function FeaturedProjects() {
   const allProjects = [
     ...projects.ict,
     ...projects.webApps,
-    ...projects.dataAnalytics
   ];
 
   // Projects with id 4, 7, and 9
-  const featuredProjects = allProjects.filter(p => [4, 7, 9].includes(p.id));
+  const featuredProjects = allProjects.filter(p => [1, 4, 6].includes(p.id));
 
   const headerRef = useScrollReveal('left', 0);
   const subtitleRef = useScrollReveal('right', 0.2);

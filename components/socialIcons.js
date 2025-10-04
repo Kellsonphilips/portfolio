@@ -8,7 +8,7 @@ export const socialIcons = [
     Icon: FaGithub,
   },
   {
-    href: "https://www.linkedin.com/in/philip-kelechi-orji-a3579b128/",
+    href: "https://www.linkedin.com/in/philip-o-a3579b128/",
     title: "LinkedIn",
     Icon: FaLinkedin,
   },
