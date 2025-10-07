@@ -8,15 +8,20 @@ import Capabilities from '../app/capabilities/page';
 import JsonLdHome from '../components/JsonLdHome';
 
 export const metadata = {
-  title: "Philip Kelechukwu Orji - IT Support | Web Dev | Data Analyst",
-  description: "ICT Solution Provider, Software Engineer & Data Analyst. Explore my portfolio, projects, skills, and blog.",
-  keywords: "portfolio, web development, data analysis, ICT, Philip Orji, Next.js, React, Node.js, Python, Tailwind CSS, software engineer, IT support, cloud computing, data analytics, frontend, backend, full stack, developer, technology, consulting, digital solutions, UI/UX, SaaS, web apps, business intelligence, machine learning, personal website, resume, CV, projects, blog, skills, capabilities, contact, privacy, FAQ, Philip Kelechukwu Orji, Philip Orji, Kellsonphilips, joinphotonphill",
+  title:
+    "Philip Kelechukwu Orji - Network Engr | Software Engr | Project Manager",
+  description:
+    "ICT Solution Provider, Software Engineer & Project Manager. Explore my portfolio, projects, skills, and blog.",
+  keywords:
+    "portfolio, IT Support, Network Engineer, Network Engineering, Network Administration, Network Security, Technical Support, IT Support Specialist, Network Design, Network Implementation, Network Optimization, Network Monitoring, Network Troubleshooting, Network Configuration, Network Performance, Network Documentation, Network Reporting, Network Training, Network Consulting, Cloud Computing, Network, Software Engineer, Project Manager, web development, data analysis, ICT, Philip Orji, Next.js, React, Node.js, Python, Tailwind CSS, software engineer, IT support, cloud computing, data analytics, frontend, backend, full stack, developer, technology, consulting, digital solutions, UI/UX, SaaS, web apps, business intelligence, machine learning, personal website, resume, CV, projects, blog, skills, capabilities, contact, privacy, FAQ, Philip Kelechukwu Orji, Philip Orji, Kellsonphilips, joinphotonphill",
   alternates: {
     canonical: "https://philipkelechiorji.vercel.app/",
   },
   openGraph: {
-    title: "Philip Kelechukwu Orji - IT Support | Web Dev | Data Analyst",
-    description: "ICT Solution Provider, Software Engineer & Data Analyst. Explore my portfolio, projects, skills, and blog.",
+    title:
+      "Philip Kelechukwu Orji - Network Engr | Software Engr | Project Manager",
+    description:
+      "ICT Solution Provider, Software Engineer & Project Manager. Explore my portfolio, projects, skills, and blog.",
     url: "https://philipkelechiorji.vercel.app/",
     siteName: "Philip Kelechukwu Orji Portfolio",
     images: [
@@ -24,8 +29,8 @@ export const metadata = {
         url: "/Images/profile.jpg",
         width: 800,
         height: 800,
-        alt: "Philip Kelechukwu Orji Profile Picture"
-      }
+        alt: "Philip Kelechukwu Orji Profile Picture",
+      },
     ],
     type: "website",
     locale: "en_GB",
@@ -34,13 +39,15 @@ export const metadata = {
     card: "summary_large_image",
     site: "@JoinPhotonPhill",
     creator: "@JoinPhotonPhill",
-    title: "Philip Kelechukwu Orji - IT Support | Web Dev | Data Analyst",
-    description: "ICT Solution Provider, Software Engineer & Data Analyst. Explore my portfolio, projects, skills, and blog.",
+    title:
+      "Philip Kelechukwu Orji - Network Engr| Software Engr | Project Manager",
+    description:
+      "ICT Solution Provider, Software Engineer & Project Manager. Explore my portfolio, projects, skills, and blog.",
     images: [
       {
         url: "/Images/profile.jpg",
-        alt: "Philip Kelechukwu Orji Profile Picture"
-      }
+        alt: "Philip Kelechukwu Orji Profile Picture",
+      },
     ],
   },
 };

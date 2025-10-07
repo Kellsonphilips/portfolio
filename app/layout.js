@@ -28,12 +28,12 @@ export const metadata = {
     "mobile-web-app-capable": "yes",
   },
   icons: {
-    icon: "/Images/profile.jpg",
-    shortcut: "/Images/profile.jpg",
-    apple: "/Images/profile.jpg",
+    icon: "/Images/profile/profilelogoNobg.png",
+    shortcut: "/Images/profile/profilelogoNobg.png",
+    apple: "/Images/profile/profilelogoNobg.png",
     other: [
-      { rel: "apple-touch-icon", url: "/Images/profile.jpg" },
-      { rel: "icon", url: "/Images/profile.jpg" }
+      { rel: "apple-touch-icon", url: "/Images/profile/profilelogoNobg.png" },
+      { rel: "icon", url: "/Images/profile/profilelogoNobg.png" }
     ]
   },
   openGraph: {

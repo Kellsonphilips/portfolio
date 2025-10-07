@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import profilePic from '@/public/Images/profile.jpg';
+import profilePic from '@/public/Images/profile/profilelogoNobg.png';
 import { useLanguage } from './LanguageContext';
 
 export default function Navbar() {
@@ -41,7 +41,7 @@ export default function Navbar() {
             <Image
               src={profilePic}
               alt="Profile Picture"
-              className="rounded-full w-10 h-10 object-cover"
+              className="w-12 h-10 object-cover"
               width={40}
               height={40}
             />
