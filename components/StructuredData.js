@@ -14,7 +14,10 @@ export default function StructuredData() {
     ],
     "knowsAbout": [
       "Web Development",
-      "ICT Solutions", 
+      "ICT Solutions",
+      "Network Engineer",
+      "Network Security",
+      "Cloud Security", 
       "Data Analytics",
       "React",
       "Next.js",

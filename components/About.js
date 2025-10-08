@@ -54,7 +54,7 @@ export default function About() {
                 <div className="flex justify-center mt-8">
                   <div ref={downloadBtnRef} className="inline-block">
                     <Button
-                      href="/Philip_Orji_CVg.pdf"
+                      href="/Philip_Orji_CVg..pdf"
                       variant="primary"
                       className="card-3d-glow flex items-center gap-2"
                       showArrow={false}

@@ -6,7 +6,6 @@ import profilePic from '@/public/Images/profile.jpg';
 import useScrollReveal from './useScrollReveal';
 import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useLanguage } from './LanguageContext';
-import { FiArrowRight } from 'react-icons/fi';
 import ErrorBoundary from './ErrorBoundary';
 
 export default function Hero() {
@@ -92,7 +91,6 @@ export default function Hero() {
                 aria-label="Contact Philip Kelechukwu Orji"
               >
                 {t("button.getInTouch")}
-                <FiArrowRight className="w-4 h-4" />
               </Link>
             </div>
             <div ref={btn2Ref} className="inline-block">
@@ -102,7 +100,6 @@ export default function Hero() {
                 aria-label="View Philip Kelechukwu Orji's Projects"
               >
                 {t("button.viewProjects")}
-                <FiArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
