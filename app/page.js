@@ -26,10 +26,10 @@ export const metadata = {
     siteName: "Philip Kelechukwu Orji Portfolio",
     images: [
       {
-        url: "/Images/profile.jpg",
+        url: "/Images/profile/profilelogoNobg.png",
         width: 800,
         height: 800,
-        alt: "Philip Kelechukwu Orji Profile Picture",
+        alt: "Philip Kelechukwu Orji Brand Logo",
       },
     ],
     type: "website",
@@ -45,8 +45,8 @@ export const metadata = {
       "ICT Solution Provider, Software Engineer & Project Manager. Explore my portfolio, projects, skills, and blog.",
     images: [
       {
-        url: "/Images/profile.jpg",
-        alt: "Philip Kelechukwu Orji Profile Picture",
+        url: "/Images/profile/profilelogoNobg.png",
+        alt: "Philip Kelechukwu Orji Brand Logo",
       },
     ],
   },

@@ -129,11 +129,6 @@ export default function Navbar() {
           </ul>
         </div>
       </div>
-      {/* <span
-        className={`navbar-haze-shadow ${
-          scrolled ? "opacity-100" : "opacity-0"
-        } transition-opacity duration-300`}
-      /> */}
     </nav>
   );
 } 
