@@ -88,9 +88,23 @@ export default function BlogPostClient({ slug }) {
   const description = post ? t(post.excerptKey) : 'Blog post description/excerpt.';
   const url = `${siteUrl}/blog/${slug}`;
   const datePublished = post ? post.date : '2024-01-01';
+  const dateModified = post ? post.date : datePublished;
+  const category = post ? t(post.categoryKey) : '';
   const image = post && post.image
-    ? (post.image.startsWith('http') ? post.image : `${siteUrl}${post.image}`)
-    : `${siteUrl}/Images/profile.jpg`;
+    ? (post.image.startsWith('http') ? post.image : `${siteUrl}${post.image.startsWith('/') ? '' : '/'}${post.image}`)
+    : `${siteUrl}/Images/profile/profilelogoNobg.png`;
+  
+  // Generate keywords from title and category
+  const keywords = post ? [
+    ...title.toLowerCase().split(' ').filter(w => w.length > 3),
+    category.toLowerCase(),
+    'Philip Kelechukwu Orji',
+    'technology blog',
+    'ICT solutions',
+    'software engineering',
+    'web development',
+    'cloud computing'
+  ].filter(Boolean) : [];
 
   return (
     <>
@@ -99,7 +113,10 @@ export default function BlogPostClient({ slug }) {
         description={description}
         url={url}
         datePublished={datePublished}
+        dateModified={dateModified}
         image={image}
+        category={category}
+        keywords={keywords}
       />
       <article className="container mx-auto px-4 py-10 bg-background rounded-lg shadow-lg my-8 animate-fade-in">
         <div className="pt-24">

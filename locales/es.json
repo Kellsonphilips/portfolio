@@ -181,6 +181,11 @@
   "blog.category.artificialIntelligence": "Inteligencia Artificial",
   "blog.category.cloudTechnologies": "Tecnologías en la Nube",
   "blog.category.ictSolutions": "Soluciones TIC",
+  "blog.category.devops": "DevOps",
+  "blog.post.cloudComputingLearningRoadmap.title": "Análisis Integral de la Hoja de Ruta de Aprendizaje de Cloud Computing",
+  "blog.post.cloudComputingLearningRoadmap.excerpt": "Un análisis en profundidad, etapa por etapa, de cómo aprender cloud computing, incluyendo modelos, proveedores y mejores prácticas para todos los niveles.",
+  "blog.post.linuxAudioClippingFix.title": "Corrigiendo el Recorte de Audio en Ubuntu (22.04 – 25.x y Más Allá)",
+  "blog.post.linuxAudioClippingFix.excerpt": "Una solución estable, elegante y permanente para audio con ruidos, distorsionado o roto en máquinas virtuales Ubuntu, especialmente en VMware. Esta solución restaura el sonido limpio en Ubuntu 22 hasta 25, y probablemente también en versiones futuras.",
   "contact.title": "Ponte en Contacto",
   "contact.subtitle": "¿Tienes una pregunta o quieres que trabajemos juntos? ¡Hablemos de eso enviándome un mensaje!",
   "contact.name": "Nombre",
@@ -198,8 +203,8 @@
   "blog.post.cicdRoadmapLearningWithEase.excerpt": "Domina la Integración y Entrega/Despliegue Continuos (CI/CD) con una hoja de ruta estructurada. Esta guía cubre lo esencial, mejores prácticas y pasos prácticos para ser competente en CI/CD.",
   "blog.post.learnDockerComprehensiveRoadmap.title": "Aprende Docker de la manera más fácil y efectiva",
   "blog.post.learnDockerComprehensiveRoadmap.excerpt": "Una hoja de ruta paso a paso para dominar Docker, desde lo básico hasta temas avanzados, con ejemplos prácticos y ayudas visuales.",
+  "blog.post.dataAnalyticsCareerCompleteBlog.title": "Iniciando una Carrera en Análisis de Datos: Una Guía Completa para Principiantes",
+  "blog.post.dataAnalyticsCareerCompleteBlog.excerpt": "Una hoja de ruta práctica para principiantes para lanzar una carrera exitosa en análisis de datos, incluyendo habilidades esenciales, herramientas y consejos.",
   "blog.post.simplifiedKubernetesLearningRoadmap.title": "Aprende Kubernetes de la manera más fácil y efectiva",
-  "blog.post.simplifiedKubernetesLearningRoadmap.excerpt": "Una hoja de ruta completa y estructurada para dominar Kubernetes, desde los requisitos previos hasta las mejores prácticas avanzadas.",
-  "blog.post.cloudComputingLearningRoadmap.title": "Análisis completo de la hoja de ruta de aprendizaje de Cloud Computing",
-  "blog.post.cloudComputingLearningRoadmap.excerpt": "Un análisis profundo, etapa por etapa, de cómo aprender cloud computing, incluyendo modelos, proveedores y mejores prácticas para todos los niveles."
+  "blog.post.simplifiedKubernetesLearningRoadmap.excerpt": "Una hoja de ruta completa y estructurada para dominar Kubernetes, desde los requisitos previos hasta las mejores prácticas avanzadas."
 } 

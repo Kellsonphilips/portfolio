@@ -56,7 +56,8 @@ export default function BlogIndexClient() {
     t('blog.category.cloudTechnologies'),
     t('blog.category.dataScience'),
     t('blog.category.artificialIntelligence'),
-    t('blog.category.ictSolutions')
+    t('blog.category.ictSolutions'),
+    t('blog.category.devops')
   ];
 
   return (

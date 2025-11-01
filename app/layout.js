@@ -13,16 +13,67 @@ import Script from 'next/script';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title:
-    "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
-  description: "ICT Solution Provider, Software Engineer & Project Manager",
-  keywords:
-    "portfolio, web development, ICT, Philip Orji, Next.js, React, Node.js, Python, Tailwind CSS, software engineer, IT support, cloud computing, project management, frontend, backend, full stack, developer, technology, consulting, digital solutions, UI/UX, SaaS, web apps, business intelligence, personal website, resume, CV, projects, blog, skills, capabilities, contact, privacy, FAQ, Philip Kelechukwu Orji, Philip Orji, Kellsonphilips, joinphotonphill",
-  authors: [{ name: "Philip Kelechukwu Orji" }],
+  title: {
+    default: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
+    template: "%s | Philip Kelechukwu Orji Portfolio",
+  },
+  description: "Professional ICT Solution Provider, Software Engineer, and Project Manager specializing in web development, cloud computing, network engineering, and data analytics. Expert in React, Next.js, Node.js, AWS, Docker, Kubernetes, and DevOps.",
+  keywords: [
+    "Philip Kelechukwu Orji",
+    "Philip Orji",
+    "ICT Solution Provider",
+    "Software Engineer",
+    "Project Manager",
+    "Network Engineer",
+    "Cloud Engineer",
+    "web development",
+    "cloud computing",
+    "AWS",
+    "Docker",
+    "Kubernetes",
+    "DevOps",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Python",
+    "TypeScript",
+    "network security",
+    "cloud migration",
+    "data analytics",
+    "machine learning",
+    "full stack developer",
+    "backend developer",
+    "frontend developer",
+    "DevOps engineer",
+    "IT consultant",
+    "software development",
+    "ICT solutions",
+    "network engineering",
+    "system administration",
+    "cloud infrastructure",
+    "CI/CD",
+    "microservices",
+    "portfolio",
+    "professional services",
+    "freelance developer",
+    "Kellsonphilips",
+    "JoinPhotonPhill",
+    "technology blog",
+  ],
+  authors: [{ name: "Philip Kelechukwu Orji", url: "https://philipkelechiorji.vercel.app" }],
   creator: "Philip Kelechukwu Orji",
-  canonical: "https://philipkelechiorji.vercel.app/",
-  robots:
-    "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  publisher: "Philip Kelechukwu Orji Portfolio",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -41,38 +92,41 @@ export const metadata = {
     ],
   },
   openGraph: {
-    title:
-      "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
-    description: "ICT Solution Provider, Software Engineer & Project Manager",
+    title: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
+    description: "Professional ICT Solution Provider, Software Engineer, and Project Manager specializing in web development, cloud computing, network engineering, and data analytics. Expert in React, Next.js, AWS, Docker, and Kubernetes.",
     url: "https://philipkelechiorji.vercel.app/",
     siteName: "Philip Kelechukwu Orji Portfolio",
     images: [
       {
-        url: "/Images/profile/profilelogoNobg.png",
-        width: 800,
-        height: 800,
-        alt: "Philip Kelechukwu Orji Brand Logo",
+        url: "https://philipkelechiorji.vercel.app/Images/profile/profilelogoNobg.png",
+        width: 1200,
+        height: 1200,
+        alt: "Philip Kelechukwu Orji - ICT Solution Provider, Software Engineer & Project Manager",
       },
     ],
     type: "website",
     locale: "en_GB",
+    localeAlternate: ["fr_FR", "es_ES", "de_DE", "zh_CN"],
   },
   twitter: {
     card: "summary_large_image",
     site: "@JoinPhotonPhill",
     creator: "@JoinPhotonPhill",
-    title:
-      "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
-    description: "ICT Solution Provider, Software Engineer & Project Manager",
+    title: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager",
+    description: "Professional ICT Solution Provider, Software Engineer, and Project Manager. Expert in web development, cloud computing, network engineering, and data analytics.",
     images: [
       {
-        url: "/Images/profile/profilelogoNobg.png",
-        alt: "Philip Kelechukwu Orji Brand Logo",
+        url: "https://philipkelechiorji.vercel.app/Images/profile/profilelogoNobg.png",
+        alt: "Philip Kelechukwu Orji - ICT Solution Provider, Software Engineer & Project Manager",
       },
     ],
   },
   metadataBase: new URL("https://philipkelechiorji.vercel.app/"),
-  // For JSON-LD structured data, use a client component or next/script if needed
+  verification: {
+    google: "verify-google",
+    yandex: "verify-yandex",
+    yahoo: "verify-yahoo",
+  },
 };
 
 export function generateViewport() {

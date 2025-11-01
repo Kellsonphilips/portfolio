@@ -209,5 +209,8 @@
   "blog.post.simplifiedKubernetesLearningRoadmap.title": "Learn Kubernetes the Easier Way & the Only Way",
   "blog.post.simplifiedKubernetesLearningRoadmap.excerpt": "A comprehensive, structured roadmap to mastering Kubernetes, covering everything from prerequisites to advanced best practices.",
   "blog.post.cloudComputingLearningRoadmap.title": "Comprehensive Analysis of the Cloud Computing Learning Roadmap",
-  "blog.post.cloudComputingLearningRoadmap.excerpt": "An in-depth, stage-by-stage analysis of how to learn cloud computing, including models, providers, and best practices for all levels."
+  "blog.post.cloudComputingLearningRoadmap.excerpt": "An in-depth, stage-by-stage analysis of how to learn cloud computing, including models, providers, and best practices for all levels.",
+  "blog.post.linuxAudioClippingFix.title": "Fixing Audio Clipping in Ubuntu (22.04 – 25.x & Beyond)",
+  "blog.post.linuxAudioClippingFix.excerpt": "A stable, elegant, and permanent fix for crackling, distorted, or broken audio on Ubuntu virtual machines, especially on VMware. This solution restores clean sound on Ubuntu 22 through 25, and likely future versions as well.",
+  "blog.category.devops": "DevOps"
 } 

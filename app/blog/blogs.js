@@ -18,6 +18,7 @@ const CICDRoadmapBlog = () => import("./blogs/CI-CD-roadmap-learning-with-ease")
 const DockerRoadmapBlog = () => import("./blogs/learm-docker-comprehensive-roadmap").then(mod => mod.default);
 const KubernetesRoadmapBlog = () => import("./blogs/simplified-kubertes-learning-roadmap").then(mod => mod.default);
 const CloudComputingLearningRoadmapBlog = () => import("./blogs/cloud-computing-learning-roadmap").then(mod => mod.default);
+const LinuxAudioClippingFixBlog = () => import("./blogs/linux-audio-clipping-fix").then(mod => mod.default);
 
 // Function to get blog posts based on language
 export const getBlogPosts = (language = 'en') => {
@@ -26,7 +27,7 @@ export const getBlogPosts = (language = 'en') => {
       slug: "become-an-ict-specialist",
       titleKey: "blog.post.becomeIctSpecialist.title",
       excerptKey: "blog.post.becomeIctSpecialist.excerpt",
-      date: "2024-12-20",
+      date: "2024-10-20",
       readTime: "8 min read",
       categoryKey: "blog.category.ictSolutions",
       content: BecomeICTSpecialist,
@@ -70,7 +71,7 @@ export const getBlogPosts = (language = 'en') => {
       slug: "cloud-security-best-practice",
       titleKey: "blog.post.cloudSecurityBestPractice.title",
       excerptKey: "blog.post.cloudSecurityBestPractice.excerpt",
-      date: "2024-12-16",
+      date: "2024-12-03",
       readTime: "5 min read",
       categoryKey: "blog.category.cloudTechnologies",
       content: CloudSecurityBestPractices,
@@ -158,7 +159,7 @@ export const getBlogPosts = (language = 'en') => {
       slug: "ci-cd-roadmap-learning-with-ease",
       titleKey: "blog.post.cicdRoadmapLearningWithEase.title",
       excerptKey: "blog.post.cicdRoadmapLearningWithEase.excerpt",
-      date: "2025-07-16",
+      date: "2025-05-21",
       readTime: "15 min read",
       categoryKey: "blog.category.devops",
       content: CICDRoadmapBlog,
@@ -193,6 +194,16 @@ export const getBlogPosts = (language = 'en') => {
       categoryKey: "blog.category.cloudTechnologies",
       content: CloudComputingLearningRoadmapBlog,
       image: "/cloud-computing-roadmap.jpg",
+    },
+    {
+      slug: "fixing-audio-clipping-in-ubuntu",
+      titleKey: "blog.post.linuxAudioClippingFix.title",
+      excerptKey: "blog.post.linuxAudioClippingFix.excerpt",
+      date: "2025-10-30",
+      readTime: "6 min read",
+      categoryKey: "blog.category.ictSolutions",
+      content: LinuxAudioClippingFixBlog,
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=900&h=500&fit=crop&q=80",
     },
   ];
 

@@ -508,3 +508,57 @@ p {
 .animate-blink {
   animation: blink 1s step-end infinite;
 }
+
+/* Testimonial Swiper Styles */
+.testimonial-swiper .swiper-button-next,
+.testimonial-swiper .swiper-button-prev {
+  color: var(--primary-color, #dc8923);
+  background: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-button-next:hover,
+.testimonial-swiper .swiper-button-prev:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-swiper .swiper-button-next::after,
+.testimonial-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  background: var(--primary-color, #dc8923);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.testimonial-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.dark .testimonial-swiper .swiper-button-next,
+.dark .testimonial-swiper .swiper-button-prev {
+  background: rgba(55, 65, 81, 0.9);
+  color: var(--primary-color, #dc8923);
+}
+
+/* Testimonial Filter Button */
+.testimonial-filter-btn {
+  @apply px-4 py-2 rounded-full font-medium text-sm transition-all duration-300 transform hover:scale-105;
+}
+
+.testimonial-filter-btn-active {
+  @apply bg-primary text-white shadow-lg scale-105;
+}
+
+.testimonial-filter-btn-inactive {
+  @apply bg-white dark:bg-gray-800 text-text-light dark:text-text-dark border-2 border-gray-200 dark:border-gray-700 hover:border-primary;
+}
