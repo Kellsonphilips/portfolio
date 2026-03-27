@@ -1,16 +1,14 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useLanguage } from './LanguageContext';
 import useTypingAnimation from './useTypingAnimation';
 
 export default function AnimatedProjectCard({ project, isVisible, delay = 0 }) {
-  const { t } = useLanguage();
   const [showTechnologies, setShowTechnologies] = useState(false);
   const [visibleTechnologies, setVisibleTechnologies] = useState([]);
 
-  const titleText = t(`project.${project.id}.title`);
-  const descText = t(`project.${project.id}.desc`);
+  const titleText = project.title;
+  const descText = project.description;
 
   const titleAnimation = useTypingAnimation(titleText, 80, isVisible);
   const descAnimation = useTypingAnimation(descText, 30, titleAnimation.hasTyped);

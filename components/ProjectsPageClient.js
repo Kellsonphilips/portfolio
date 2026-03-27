@@ -4,17 +4,22 @@ import { useState } from "react";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { projects } from "../app/projects/projects";
-import { useLanguage } from "./LanguageContext";
 import ErrorBoundary from './ErrorBoundary';
 
+const PROJECTS_TITLE = "My Projects";
+const PROJECTS_SUBTITLE = "Explore my work across different domains and technologies.";
+const TAB_ICT = "ICT Solutions";
+const TAB_WEB_APPS = "Web Applications";
+const LABEL_LIVE_DEMO = "Live Demo";
+const LABEL_GITHUB = "GitHub";
+
 export default function ProjectsPageClient() {
-  const { t } = useLanguage();
   const [selectedTab, setSelectedTab] = useState("ict");
 
   const tabs = [
-    { key: "ict", label: t("projects.tabs.ict") },
-    { key: "webApps", label: t("projects.tabs.webApps") },
-    // { key: "dataAnalytics", label: t("projects.tabs.dataAnalytics") },
+    { key: "ict", label: TAB_ICT },
+    { key: "webApps", label: TAB_WEB_APPS },
+    // { key: "dataAnalytics", label: "Data Analytics" },
   ];
 
   const currentProjects = projects[selectedTab];
@@ -24,10 +29,10 @@ export default function ProjectsPageClient() {
       <section className="py-16 bg-background px-8 md:pl-10 lg:pl-15">
         <div className="container mx-auto">
           <h1 className="text-3xl font-bold text-center mb-8 text-text">
-            {t("projects.title")}
+            {PROJECTS_TITLE}
           </h1>
           <p className="text-lg text-center text-secondary-color mb-8">
-            {t("projects.subtitle")}
+            {PROJECTS_SUBTITLE}
           </p>
           <div className="flex justify-center mb-8 gap-4 flex-wrap" role="tablist" aria-label="Project categories">
             {tabs.map((tab, idx) => (
@@ -73,10 +78,10 @@ export default function ProjectsPageClient() {
                 </div>
                 <div className="p-6 flex flex-col flex-1">
                   <h3 className="text-xl text-primary font-semibold mb-2">
-                    {t(`project.${project.id}.title`)}
+                    {project.title}
                   </h3>
                   <p className="mb-4 text-secondary-color flex-1">
-                    {t(`project.${project.id}.desc`)}
+                    {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
@@ -95,7 +100,7 @@ export default function ProjectsPageClient() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn-primary whitespace-nowrap"
-                        aria-label={t("projectCard.liveDemo")}
+                        aria-label={LABEL_LIVE_DEMO}
                       >
                         View Live
                       </a>
@@ -108,7 +113,7 @@ export default function ProjectsPageClient() {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-secondary dark:hover:text-text-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-                        aria-label={t("projectCard.github")}
+                        aria-label={LABEL_GITHUB}
                         style={{ display: 'inline-flex', alignItems: 'center', fontSize: '1.5rem', padding: 0 }}
                       >
                         <FaGithub />

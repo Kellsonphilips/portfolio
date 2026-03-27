@@ -1,21 +1,17 @@
 'use client';
 
-import { faqKeys } from '../app/faq/faqs';
-import en from '../locales/en.json';
+import { faqs } from './faqData';
 
 export default function JsonLdFAQ() {
-  const siteUrl = 'https://philipkelechiorji.vercel.app';
-  const t = (key) => en[key] || key;
-
   const faqPageLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqKeys.map((faq, index) => ({
+    mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
-      name: t(faq.question),
+      name: faq.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: t(faq.answer)
+        text: faq.answer.replace(/\*\*(.*?)\*\*/g, '$1')
       }
     }))
   };

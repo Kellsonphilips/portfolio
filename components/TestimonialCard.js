@@ -2,12 +2,22 @@
 
 import Image from "next/image";
 
+function getInitials(name) {
+  return name
+    .trim()
+    .split(/\s+/)
+    .map((w) => w[0])
+    .slice(0, 2)
+    .join('')
+    .toUpperCase();
+}
+
 const TestimonialCard = ({ testimonial }) => (
   <div className="card p-8 rounded-2xl text-center group">
     {/* Avatar with Flag */}
     <div className="flex flex-col items-center mb-4 relative">
       <div className="relative">
-        {testimonial.avatar && (
+        {testimonial.avatar ? (
           <div className="relative w-20 h-20 rounded-full overflow-hidden ring-4 ring-primary/20 dark:ring-primary/40 group-hover:ring-primary/60 transition-all duration-300 transform group-hover:scale-110">
             <Image
               src={testimonial.avatar}
@@ -16,6 +26,10 @@ const TestimonialCard = ({ testimonial }) => (
               className="object-cover"
               sizes="80px"
             />
+          </div>
+        ) : (
+          <div className="w-20 h-20 rounded-full flex items-center justify-center ring-4 ring-primary/20 dark:ring-primary/40 bg-primary/20 dark:bg-primary/30 text-primary font-bold text-xl group-hover:ring-primary/60 transition-all duration-300 transform group-hover:scale-110">
+            {getInitials(testimonial.name)}
           </div>
         )}
         {testimonial.flag && (
@@ -68,11 +82,13 @@ const TestimonialCard = ({ testimonial }) => (
 
     {/* Project Outcome */}
     <div className="mt-6 pt-4 border-t border-gray-200 dark:border-gray-700">
-      <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 px-4 py-2 rounded-full">
-        <span className="text-sm font-semibold text-primary dark:text-primary/90">
-          ✨ {testimonial.projectOutcome}
-        </span>
-      </div>
+      {testimonial.projectOutcome && (
+        <div className="inline-flex items-center gap-2 bg-primary/10 dark:bg-primary/20 px-4 py-2 rounded-full">
+          <span className="text-sm font-semibold text-primary dark:text-primary/90">
+            ✨ {testimonial.projectOutcome}
+          </span>
+        </div>
+      )}
       <div className="mt-3">
         <span className="inline-block px-3 py-1 bg-gray-100 dark:bg-gray-700 text-xs font-medium rounded-full text-secondary-color">
           {testimonial.service}

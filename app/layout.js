@@ -4,10 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import ToggleButtons from '@/components/ToggleButtons';
-import { LanguageProvider } from '@/components/LanguageContext';
 import ScrollToTop from '@/components/ScrollToTop';
 import StructuredData from '@/components/StructuredData';
-import HreflangTags from '@/components/HreflangTags';
 import Script from 'next/script';
 
 const inter = Inter({ subsets: ['latin'] });
@@ -106,7 +104,6 @@ export const metadata = {
     ],
     type: "website",
     locale: "en_GB",
-    localeAlternate: ["fr_FR", "es_ES", "de_DE", "zh_CN"],
   },
   twitter: {
     card: "summary_large_image",
@@ -136,10 +133,9 @@ export function generateViewport() {
   };
 }
 
-export default function RootLayout({ children /*, locale = 'en' */ }) {
-  // In the future, pass locale as a prop or from context/provider for i18n
+export default function RootLayout({ children }) {
   return (
-    <html lang={/* locale || */ "en"} suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         {/* Skip to main content link for accessibility */}
         <a
@@ -148,23 +144,20 @@ export default function RootLayout({ children /*, locale = 'en' */ }) {
         >
           Skip to main content
         </a>
-        <HreflangTags />
-        <LanguageProvider>
-          <ThemeProvider>
-            <div className="min-h-screen bg-background-light dark:bg-background-dark">
-              <nav>
-                <Navbar />
-              </nav>
-              <main id="main-content" className="container mx-auto px-4 py-8">
-                {children}
-              </main>
-              <footer>
-                <Footer />
-              </footer>
-              <ToggleButtons />
-            </div>
-          </ThemeProvider>
-        </LanguageProvider>
+        <ThemeProvider>
+          <div className="min-h-screen bg-background-light dark:bg-background-dark">
+            <nav>
+              <Navbar />
+            </nav>
+            <main id="main-content" className="container mx-auto px-4 py-8">
+              {children}
+            </main>
+            <footer>
+              <Footer />
+            </footer>
+            <ToggleButtons />
+          </div>
+        </ThemeProvider>
 
         <ScrollToTop />
         <StructuredData />

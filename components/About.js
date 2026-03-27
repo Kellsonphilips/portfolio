@@ -3,8 +3,18 @@
 import Button from './Button';
 import { useState } from 'react';
 import useScrollReveal from './useScrollReveal';
-import { useLanguage } from './LanguageContext';
 import ErrorBoundary from './ErrorBoundary';
+
+const ABOUT_TITLE = "About Me";
+const ABOUT_P1 = "Hello! I'm Philip Kelechukwu Orji, a versatile professional at the intersection of technology and management. As an ICT Solution Provider, Software Engineer, and Project Manager, I bring a unique blend of technical expertise and strategic oversight to every project I undertake. My journey in the tech world is driven by a relentless curiosity and a passion for creating solutions that are not only innovative but also practical and impactful.";
+const ABOUT_P2 = "My software engineering background has equipped me with a strong foundation in developing robust and scalable web applications. I am proficient in modern frameworks like React and Next.js, and I am adept at leveraging powerful backend technologies to build seamless digital experiences. I thrive on tackling complex technical challenges and transforming intricate requirements into elegant, functional code.";
+const ABOUT_P2SHORT = "My software engineering background has equipped me with a strong foundation in developing robust and scalable web applications using modern frameworks and powerful backend technologies.";
+const ABOUT_P3 = "As a Project Manager, I excel in steering projects from ideation to successful deployment. I am a firm believer in agile methodologies and collaborative teamwork. My approach involves meticulous planning, clear communication, and a proactive attitude towards problem-solving. I am committed to ensuring that projects are delivered on time, within budget, and to the highest standards of quality.";
+const ABOUT_P4 = "In my role as an ICT Solution Provider, I focus on understanding the unique needs of businesses and crafting tailored technology strategies to help them achieve their goals. Whether it's optimizing existing systems or architecting new ones, my goal is always to deliver solutions that enhance efficiency, drive growth, and provide a competitive edge.";
+const ABOUT_P5 = "I am passionate about continuous learning and am always exploring new technologies and methodologies to stay at the forefront of the industry. I invite you to explore my portfolio to see examples of my work. If you have a project in mind or would like to connect, please don't hesitate to reach out!";
+const ABOUT_DOWNLOAD_CV = "Download CV";
+const ABOUT_READ_MORE = "Read More...";
+const ABOUT_SHOW_LESS = "Show Less...";
 
 export default function About() {
   const [showAll, setShowAll] = useState(false);
@@ -19,10 +29,6 @@ export default function About() {
   const paraRef3 = useScrollReveal('random', 0.55);
   const paraRef4 = useScrollReveal('random', 0.7);
 
-  // First paragraph
-
-  const { t } = useLanguage();
-
   return (
     <ErrorBoundary>
       <section id="about" className="py-16 bg-background px-8 md:px-10 lg:px-15">
@@ -31,25 +37,25 @@ export default function About() {
             ref={headerRef}
             className="text-3xl font-bold text-center mb-8 text-text"
           >
-            {t("about.title")}
+            {ABOUT_TITLE}
           </h2>
           <div className="max-w-3xl mx-auto text-lg text-justify leading-relaxed text-secondary-color text-wrap">
             {showAll ? (
               <>
                 <p ref={paraRef0} className="mb-4">
-                  {t("about.p1")}
+                  {ABOUT_P1}
                 </p>
                 <p ref={paraRef1} className="mb-4">
-                  {t("about.p2")}
+                  {ABOUT_P2}
                 </p>
                 <p ref={paraRef2} className="mb-4">
-                  {t("about.p3")}
+                  {ABOUT_P3}
                 </p>
                 <p ref={paraRef3} className="mb-4">
-                  {t("about.p4")}
+                  {ABOUT_P4}
                 </p>
                 <p ref={paraRef4} className="mb-4">
-                  {t("about.p5")}
+                  {ABOUT_P5}
                 </p>
                 <div className="flex justify-center mt-8">
                   <div ref={downloadBtnRef} className="inline-block">
@@ -59,7 +65,7 @@ export default function About() {
                       className="card-3d-glow flex items-center gap-2"
                       showArrow={false}
                     >
-                      <span>{t("about.downloadCV")}</span>
+                      <span>{ABOUT_DOWNLOAD_CV}</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -79,10 +85,10 @@ export default function About() {
             ) : (
               <>
                 <p ref={paraRef0} className="mb-4">
-                  {t("about.p1")}
+                  {ABOUT_P1}
                 </p>
                 <p ref={paraRef1} className="mb-4">
-                  {t("about.p2short")}...
+                  {ABOUT_P2SHORT}...
                 </p>
               </>
             )}
@@ -92,7 +98,7 @@ export default function About() {
                   className="card-3d-glow px-4 py-2 rounded bg-[#DC8923] text-white hover:bg-[#372207] transition-colors"
                   onClick={() => setShowAll(!showAll)}
                 >
-                  {showAll ? t("about.showLess") : t("about.readMore")}
+                  {showAll ? ABOUT_SHOW_LESS : ABOUT_READ_MORE}
                 </button>
               </div>
             </div>

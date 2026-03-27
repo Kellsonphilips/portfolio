@@ -2,16 +2,16 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { faqKeys } from './faqs';
+import { faqs } from './faqs';
 import useScrollReveal from '@/components/useScrollReveal';
-import { useLanguage } from '@/components/LanguageContext';
+
+const FAQ_TITLE = "Frequently Asked Questions";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
   const headerRef = useScrollReveal('left', 0);
   const cardRefs = useRef([]);
   const animationInitialized = useRef(false);
-  const { t } = useLanguage();
 
   // Initialize animations only once
   useEffect(() => {
@@ -71,11 +71,6 @@ export default function FAQ() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const faqs = faqKeys.map(faq => ({
-    question: t(faq.question),
-    answer: t(faq.answer)
-  }));
-
   const createMarkup = (text) => {
     const boldedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     return { __html: boldedText };
@@ -85,7 +80,7 @@ export default function FAQ() {
     <div className="pt-24">
       <div className="container h-full text-text-light dark:text-text-dark mx-auto px-4 py-8">
         <h1 ref={headerRef} className="text-3xl flex justify-center font-bold mb-8">
-          {t('faq.title')}
+          {FAQ_TITLE}
         </h1>
 
         <div className="max-w-3xl mx-auto space-y-4">

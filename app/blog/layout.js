@@ -1,5 +1,4 @@
 import { getBlogPosts } from './blogs';
-import en from '../../locales/en.json';
 
 export const metadata = {
   title: 'Blog Posts | Philip Kelechukwu Orji - Technology Articles & Insights',
@@ -52,8 +51,7 @@ export const metadata = {
 
 export default function BlogLayout({ children }) {
   const siteUrl = 'https://philipkelechiorji.vercel.app';
-  const posts = getBlogPosts('en');
-  const t = (key) => en[key] || key;
+  const posts = getBlogPosts();
 
   // Generate Blog structured data
   const blogLd = {
@@ -79,7 +77,7 @@ export default function BlogLayout({ children }) {
     },
     blogPost: posts.map((post) => ({
       '@type': 'BlogPosting',
-      headline: t(post.titleKey),
+      headline: post.title,
       url: `${siteUrl}/blog/${post.slug}`,
       datePublished: post.date,
       image: post.image 
@@ -106,7 +104,7 @@ export default function BlogLayout({ children }) {
         position: index + 1,
         item: {
           '@type': 'BlogPosting',
-          headline: t(post.titleKey),
+          headline: post.title,
           url: `${siteUrl}/blog/${post.slug}`,
           datePublished: post.date,
         },

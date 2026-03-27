@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import profilePic from '@/public/Images/profile/profilelogoNobg.png';
-import { useLanguage } from './LanguageContext';
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +11,6 @@ export default function Navbar() {
   const homeRef = useRef(null);
   const nameRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +47,7 @@ export default function Navbar() {
               ref={nameRef}
               className="font-bold text-xl text-text-light dark:text-text-dark animate-navbar-fade underline-animate"
             >
-              {t('navbar.name')}
+              Philip O.
             </span>
           </Link>
           {/* <span
@@ -78,7 +76,7 @@ export default function Navbar() {
                 className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
                 onClick={handleMenuClick}
               >
-                {t('navbar.home')}
+                Home
               </Link>
             </li>
             <li className="text-center">
@@ -87,7 +85,7 @@ export default function Navbar() {
                 className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
                 onClick={handleMenuClick}
               >
-                {t('navbar.projects')}
+                Projects
               </Link>
             </li>
             <li className="text-center">
@@ -96,7 +94,7 @@ export default function Navbar() {
                 className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
                 onClick={handleMenuClick}
               >
-                {t('navbar.skills')}
+                Skills
               </Link>
             </li>
             <li className="text-center">
@@ -105,7 +103,7 @@ export default function Navbar() {
                 className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
                 onClick={handleMenuClick}
               >
-                {t('navbar.capabilities')}
+                Capabilities
               </Link>
             </li>
             <li className="text-center">
@@ -114,7 +112,7 @@ export default function Navbar() {
                 className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
                 onClick={handleMenuClick}
               >
-                {t('navbar.blog')}
+                Blog
               </Link>
             </li>
             <li className="text-center">
@@ -123,7 +121,7 @@ export default function Navbar() {
                 className="block py-2 transition-colors text-text-light dark:text-text-dark hover:text-[#DC8923] dark:hover:text-[#DC8923] underline-animate no-underline"
                 onClick={handleMenuClick}
               >
-                {t('navbar.contact')}
+                Contact
               </Link>
             </li>
           </ul>

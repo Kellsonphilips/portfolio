@@ -5,12 +5,15 @@ import Link from 'next/link';
 import profilePic from '@/public/Images/profile.jpg';
 import useScrollReveal from './useScrollReveal';
 import { useEffect, useState, useCallback, useMemo } from 'react';
-import { useLanguage } from './LanguageContext';
 import ErrorBoundary from './ErrorBoundary';
 
+const GREETING = "Hi, I'm";
+const ROLE = "ICT Solution Provider, Software Engineer, & Project Manager";
+const INTRO = "Welcome to my professional space, where I showcase my projects, skills, and capabilities. As a passionate ICT Solution Provider, Software Engineer, and Project Manager, I specialize in building robust web applications and overseeing projects from conception to completion. I help businesses transform their ideas into digital reality. Explore my portfolio to see how I blend technology, creativity, and strategy to drive real impact. Feel free to check out the FAQ section for any questions you might have or simply \"Get in touch 👇.\" I appreciate you stopping by!";
+const BUTTON_GET_IN_TOUCH = "Get in Touch";
+const BUTTON_VIEW_PROJECTS = "View Projects";
+
 export default function Hero() {
-  const { t } = useLanguage();
-  const greeting = t('hero.greeting');
   const nameText = useMemo(() => " Philip Kelechukwu Orji", []);
 
   const headerRef = useScrollReveal('left', 0);
@@ -50,7 +53,7 @@ export default function Hero() {
       <section className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-center gap-6 px-6 md:pl-10 lg:pl-15 pt-20 md:pt-0">
         <div className="md:w-2/3 px-6 md:text-left">
           <h1 ref={headerRef} className="font-hero text-3xl md:text-4xl font-bold mb-4">
-            {greeting}
+            {GREETING}
             <span className="text-[#DC8923] relative">
               <span
                 aria-hidden="true"
@@ -74,13 +77,13 @@ export default function Hero() {
             ref={subtitleRef}
             className="text-xl mb-4 font-bold text-text-light dark:text-text-dark text-wrap"
           >
-            {t("hero.role")}
+            {ROLE}
           </h2>
           <p
             ref={paraRef}
             className="text-md mb-6 text-justify text-text-light dark:text-text-dark text-wrap"
           >
-            {t("hero.intro")}
+            {INTRO}
           </p>
 
           <div className="flex flex-row gap-4 justify-center md:justify-start">
@@ -90,7 +93,7 @@ export default function Hero() {
                 className="btn-primary text-nowrap card-3d-glow cursor-pointer transition-all duration-200 hover:scale-105 inline-flex items-center gap-2 no-underline"
                 aria-label="Contact Philip Kelechukwu Orji"
               >
-                {t("button.getInTouch")}
+                {BUTTON_GET_IN_TOUCH}
               </Link>
             </div>
             <div ref={btn2Ref} className="inline-block">
@@ -99,7 +102,7 @@ export default function Hero() {
                 className="btn-secondary text-nowrap card-3d-glow cursor-pointer transition-all duration-200 hover:scale-105 inline-flex items-center gap-2 no-underline"
                 aria-label="View Philip Kelechukwu Orji's Projects"
               >
-                {t("button.viewProjects")}
+                {BUTTON_VIEW_PROJECTS}
               </Link>
             </div>
           </div>

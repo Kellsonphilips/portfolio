@@ -1,10 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useLanguage } from './LanguageContext';
 
 const SafeAnimatedCard = function SafeAnimatedCard({ project, delay = 0 }) {
-  const { t } = useLanguage();
   const [currentText, setCurrentText] = useState('');
   const [currentDesc, setCurrentDesc] = useState('');
   const [showTechnologies, setShowTechnologies] = useState(false);
@@ -12,8 +10,8 @@ const SafeAnimatedCard = function SafeAnimatedCard({ project, delay = 0 }) {
   const [hasAnimated, setHasAnimated] = useState(false);
   const cardRef = useRef(null);
 
-  const titleText = t(`project.${project.id}.title`);
-  const descText = t(`project.${project.id}.desc`);
+  const titleText = project.title;
+  const descText = project.description;
 
   useEffect(() => {
     const currentCardRef = cardRef.current;

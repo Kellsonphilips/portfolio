@@ -1,19 +1,32 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-import { useLanguage } from '@/components/LanguageContext';
 import { getBlogPosts } from './blogs';
 import useScrollReveal from '@/components/useScrollReveal';
 import Image from 'next/image';
 
-export default function BlogIndexClient() {
-  const { t, language } = useLanguage();
-  const [search, setSearch] = useState('');
-  const [category, setCategory] = useState(t('blog.all'));
+const BLOG_TITLE = "Blog Posts";
+const BLOG_SUBTITLE = "Read some of my blog posts and if you need my expertise in technical writing, Get in Touch!";
+const BLOG_SEARCH_PLACEHOLDER = "Search blog posts...";
+const BLOG_ALL = "All";
+const READ_MORE = "Read More...";
 
-  // Get blog posts for current language
-  const blogPosts = getBlogPosts(language);
+const CATEGORIES = [
+  "All",
+  "Web Development",
+  "Cloud Technologies",
+  "Data Science",
+  "Artificial Intelligence",
+  "ICT Solutions",
+  "DevOps",
+];
+
+export default function BlogIndexClient() {
+  const [search, setSearch] = useState('');
+  const [category, setCategory] = useState(BLOG_ALL);
+
+  const blogPosts = getBlogPosts();
 
   // Scroll reveal refs for main elements
   const headerRef = useScrollReveal('left', 0);
@@ -33,32 +46,13 @@ export default function BlogIndexClient() {
     setSearch(searchTerm);
   };
 
-  // Filtered posts (search and filter using translated values)
   const filteredPosts = blogPosts.filter(post => {
-    const translatedTitle = t(post.titleKey);
-    const translatedExcerpt = t(post.excerptKey);
-    const translatedCategory = t(post.categoryKey);
     const matchesSearch =
-      translatedTitle.toLowerCase().includes(search.toLowerCase()) ||
-      translatedExcerpt.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = category === t('blog.all') || translatedCategory === category;
+      post.title.toLowerCase().includes(search.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = category === BLOG_ALL || post.category === category;
     return matchesSearch && matchesCategory;
   });
-
-  // Update category state when language changes
-  useEffect(() => {
-    setCategory(t('blog.all'));
-  }, [t]);
-
-  const categories = [
-    t('blog.all'),
-    t('blog.category.webDevelopment'),
-    t('blog.category.cloudTechnologies'),
-    t('blog.category.dataScience'),
-    t('blog.category.artificialIntelligence'),
-    t('blog.category.ictSolutions'),
-    t('blog.category.devops')
-  ];
 
   return (
     <div className="pt-24 px-8 md:pl-10 lg:pl-15">
@@ -67,20 +61,20 @@ export default function BlogIndexClient() {
           ref={headerRef}
           className="text-3xl text-primary text-center font-bold mb-8"
         >
-          {t("blog.title")}
+          {BLOG_TITLE}
         </h1>
         <p
           ref={paraRef}
           className="text-lg text-center text-secondary-color mb-8 text-wrap"
         >
-          {t("blog.subtitle")}
+          {BLOG_SUBTITLE}
         </p>
 
         <div className="flex flex-row gap-2 sm:gap-4 mb-8 justify-center items-center flex-wrap">
           <div ref={searchRef} className="w-32 sm:w-48 md:w-64">
             <input
               type="text"
-              placeholder={t("blog.searchPlaceholder")}
+              placeholder={BLOG_SEARCH_PLACEHOLDER}
               value={search}
               onChange={handleSearchChange}
               className="w-full p-2 sm:p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm sm:text-base"
@@ -92,7 +86,7 @@ export default function BlogIndexClient() {
               onChange={(e) => setCategory(e.target.value)}
               className="w-full p-2 sm:p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm sm:text-base"
             >
-              {categories.map((cat) => (
+              {CATEGORIES.map((cat) => (
                 <option key={cat} value={cat}>
                   {cat}
                 </option>
@@ -126,7 +120,7 @@ export default function BlogIndexClient() {
                   <div className="h-48 w-full relative">
                     <Image
                       src={post.image}
-                      alt={t(post.titleKey)}
+                      alt={post.title}
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -134,16 +128,16 @@ export default function BlogIndexClient() {
                   </div>
                   <div className="p-6">
                     <span className="text-sm text-[#DC8923] font-semibold">
-                      {t(post.categoryKey)}
+                      {post.category}
                     </span>
                     <h3 className="text-xl font-bold text-text-light dark:text-text-dark mt-2 mb-3">
-                      {t(post.titleKey)}
+                      {post.title}
                     </h3>
                     <p className="text-text-light dark:text-text-dark mb-4">
-                      {t(post.excerptKey)}
+                      {post.excerpt}
                     </p>
                     <span className="inline-flex items-center text-[#DC8923] hover:text-[#372207] dark:hover:text-[#DC8923] transition-colors">
-                      {t("about.readMore")} →
+                      {READ_MORE} →
                     </span>
                   </div>
                 </div>

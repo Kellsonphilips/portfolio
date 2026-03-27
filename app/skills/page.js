@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/components/LanguageContext';
 import useScrollReveal from '@/components/useScrollReveal';
 
+const SKILLS_TITLE = "My Technical Skills";
+const SKILLS_SUBTITLE = "Here you'll find a categorized overview of my technical expertise, tools, and technologies I use to build robust digital solutions.";
+
 export default function Skills() {
-  const { t } = useLanguage();
   const headerRef = useScrollReveal('left', 0);
   const paraRef = useScrollReveal('right', 0.15);
 
@@ -37,13 +38,13 @@ export default function Skills() {
     <div className="pt-24 px-8 md:pl-10 lg:pl-15">
       <div className="container mx-auto px-4 py-12 sm:py-8 mt-20">
         <h1 ref={headerRef} className="text-3xl text-center font-bold mb-8">
-          {t("skills.title")}
+          {SKILLS_TITLE}
         </h1>
         <p
           ref={paraRef}
           className="text-lg text-center text-text-light dark:text-text-dark mb-8 max-w-4xl mx-auto leading-relaxed"
         >
-          {t("skills.subtitle")}
+          {SKILLS_SUBTITLE}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -67,7 +68,7 @@ export default function Skills() {
                 <div className="h-48 w-full relative">
                   <Image
                     src={categoryImages[category]}
-                    alt={t(`skills.category.${category}`)}
+                    alt={category}
                     fill
                     priority={idx < 2}
                     className="object-cover"
@@ -76,7 +77,7 @@ export default function Skills() {
                 </div>
                 <div className="p-6">
                   <h2 className="text-xl text-primary font-semibold mb-4">
-                    {t(`skills.category.${category}`)}
+                    {category}
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {skillList.map((skill) => (
@@ -84,7 +85,7 @@ export default function Skills() {
                         key={skill}
                         className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm border border-primary/30"
                       >
-                        {t(`skills.skill.${skill}`)}
+                        {skill}
                       </span>
                     ))}
                   </div>

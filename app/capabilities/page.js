@@ -1,12 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import { useLanguage } from '@/components/LanguageContext';
 import useScrollReveal from '@/components/useScrollReveal';
 import { capabilities } from './capabilities';
 
+const CAPABILITIES_TITLE = "Professional Capabilities";
+const CAPABILITIES_SUBTITLE = "Discover the range of services and expertise I offer to help businesses and individuals achieve their technology goals.";
+
 export default function Capabilities() {
-  const { t } = useLanguage();
   const headerRef = useScrollReveal('left', 0);
   const paraRef = useScrollReveal('right', 0.15);
 
@@ -20,13 +21,13 @@ export default function Capabilities() {
     <div className="pt-24 px-8 md:pl-10 lg:pl-15">
       <div className="container mx-auto px-4 py-12 sm:py-8 mt-20">
         <h1 ref={headerRef} className="text-3xl text-nowrap text-center font-bold mb-8">
-          {t("capabilities.title")}
+          {CAPABILITIES_TITLE}
         </h1>
         <p
           ref={paraRef}
           className="text-lg text-center text-text-light dark:text-text-dark mb-8 text-wrap"
         >
-          {t("capabilities.subtitle")}
+          {CAPABILITIES_SUBTITLE}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -43,14 +44,14 @@ export default function Capabilities() {
 
             return (
               <div
-                key={capability.titleKey}
+                key={capability.title}
                 ref={cardRef}
                 className="card-3d-glow my-3 bg-background-light/10 dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 border border-background-light/20 dark:border-background-dark/30"
               >
                 <div className="h-48 w-full relative">
                   <Image
                     src={capability.image}
-                    alt={t(capability.titleKey)}
+                    alt={capability.title}
                     fill
                     priority={idx < 2}
                     className="object-cover"
@@ -60,10 +61,10 @@ export default function Capabilities() {
                 <div className="p-6">
                   <div className="text-4xl mb-4">{capability.icon}</div>
                   <h2 className="text-xl text-primary font-semibold mb-2">
-                    {t(capability.titleKey)}
+                    {capability.title}
                   </h2>
                   <p className="text-text-secondary-light dark:text-text-secondary-dark">
-                    {t(capability.descKey)}
+                    {capability.desc}
                   </p>
                 </div>
               </div>

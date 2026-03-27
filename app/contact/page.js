@@ -1,12 +1,24 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Send } from 'lucide-react';
-import { useLanguage } from '@/components/LanguageContext';
 import useScrollReveal from '@/components/useScrollReveal';
 
+const CONTACT_TITLE = "Get in Touch";
+const CONTACT_SUBTITLE = "Have a question or want us to work together? Let's discuss that by dropping us a message!";
+const CONTACT_NAME = "Name";
+const CONTACT_NAME_PLACEHOLDER = "Full name";
+const CONTACT_EMAIL = "Email";
+const CONTACT_EMAIL_PLACEHOLDER = "Your email";
+const CONTACT_SUBJECT = "Subject";
+const CONTACT_SUBJECT_PLACEHOLDER = "Subject";
+const CONTACT_MESSAGE = "Message";
+const CONTACT_MESSAGE_PLACEHOLDER = "Write your message...";
+const CONTACT_SEND_BUTTON = "Send Message";
+const CONTACT_SUCCESS_MESSAGE = "Message sent successfully!";
+const CONTACT_ERROR_MESSAGE = "Failed to send message. Please try again.";
+
 export default function Contact() {
-  const { t } = useLanguage();
   
   const [formData, setFormData] = useState({
     name: '',
@@ -74,13 +86,13 @@ export default function Contact() {
           ref={headerRef}
           className="text-3xl text text-primary text-center font-bold mb-8"
         >
-          {t("contact.title")}
+          {CONTACT_TITLE}
         </h1>
         <p
           ref={subtitleRef}
           className="text-lg text-center text-text-secondary-light dark:text-text-secondary-dark mb-8 text-wrap"
         >
-          {t("contact.subtitle")}
+          {CONTACT_SUBTITLE}
         </p>
 
         <div ref={formRef} className="max-w-2xl mx-auto">
@@ -99,7 +111,7 @@ export default function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium text-text-light dark:text-text-dark mb-2"
                 >
-                  {t("contact.name")}
+                  {CONTACT_NAME}
                 </label>
                 <input
                   type="text"
@@ -107,7 +119,7 @@ export default function Contact() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  placeholder={t("contact.namePlaceholder")}
+                  placeholder={CONTACT_NAME_PLACEHOLDER}
                   required
                   className="w-full p-3 border border-primary/40 dark:border-primary/60 rounded-xl bg-background-light/60 dark:bg-background-dark/40 backdrop-blur-sm text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary/70 focus:border-primary/80 dark:focus:border-primary/90 transition-all duration-300 placeholder-text-secondary-light dark:placeholder-text-secondary-dark shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:-translate-y-1"
                 />
@@ -117,7 +129,7 @@ export default function Contact() {
                   htmlFor="email"
                   className="block text-sm font-medium text-text-light dark:text-text-dark mb-2"
                 >
-                  {t("contact.email")}
+                  {CONTACT_EMAIL}
                 </label>
                 <input
                   type="email"
@@ -125,7 +137,7 @@ export default function Contact() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder={t("contact.emailPlaceholder")}
+                  placeholder={CONTACT_EMAIL_PLACEHOLDER}
                   required
                   className="w-full p-3 border border-primary/40 dark:border-primary/60 rounded-xl bg-background-light/60 dark:bg-background-dark/40 backdrop-blur-sm text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary/70 focus:border-primary/80 dark:focus:border-primary/90 transition-all duration-300 placeholder-text-secondary-light dark:placeholder-text-secondary-dark shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:-translate-y-1"
                 />
@@ -139,7 +151,7 @@ export default function Contact() {
                 htmlFor="subject"
                 className="block text-sm font-medium text-text-light dark:text-text-dark mb-2"
               >
-                {t("contact.subject")}
+                {CONTACT_SUBJECT}
               </label>
               <input
                 type="text"
@@ -147,7 +159,7 @@ export default function Contact() {
                 name="subject"
                 value={formData.subject}
                 onChange={handleInputChange}
-                placeholder={t("contact.subjectPlaceholder")}
+                placeholder={CONTACT_SUBJECT_PLACEHOLDER}
                 required
                 className="w-full p-3 border border-primary/40 dark:border-primary/60 rounded-xl bg-background-light/60 dark:bg-background-dark/40 backdrop-blur-sm text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary/70 focus:border-primary/80 dark:focus:border-primary/90 transition-all duration-300 placeholder-text-secondary-light dark:placeholder-text-secondary-dark shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:-translate-y-1"
               />
@@ -160,14 +172,14 @@ export default function Contact() {
                 htmlFor="message"
                 className="block text-sm font-medium text-text-light dark:text-text-dark mb-2"
               >
-                {t("contact.message")}
+                {CONTACT_MESSAGE}
               </label>
               <textarea
                 id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleInputChange}
-                placeholder={t("contact.messagePlaceholder")}
+                placeholder={CONTACT_MESSAGE_PLACEHOLDER}
                 required
                 rows={6}
                 className="w-full p-3 border border-primary/40 dark:border-primary/60 rounded-xl bg-background-light/60 dark:bg-background-dark/40 backdrop-blur-sm text-text-light dark:text-text-dark focus:ring-2 focus:ring-primary/70 focus:border-primary/80 dark:focus:border-primary/90 transition-all duration-300 placeholder-text-secondary-light dark:placeholder-text-secondary-dark resize-vertical shadow-lg hover:shadow-xl transform hover:-translate-y-1 focus:-translate-y-1"
@@ -190,7 +202,7 @@ export default function Contact() {
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    {t("contact.sendButton")}
+                    {CONTACT_SEND_BUTTON}
                   </>
                 )}
               </button>
@@ -199,13 +211,13 @@ export default function Contact() {
 
           {submitStatus === "success" && (
             <div className="mt-6 p-4 bg-green-100/80 dark:bg-green-900/30 text-green-800 dark:text-green-200 rounded-xl backdrop-blur-sm border border-green-200/50 dark:border-green-700/30 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-              {t("contact.successMessage")}
+              {CONTACT_SUCCESS_MESSAGE}
             </div>
           )}
 
           {submitStatus === "error" && (
             <div className="mt-6 p-4 bg-red-100/80 dark:bg-red-900/30 text-red-800 dark:text-red-200 rounded-xl backdrop-blur-sm border border-red-200/50 dark:border-red-700/30 shadow-lg transform hover:scale-[1.02] transition-all duration-300">
-              {t("contact.errorMessage")}
+              {CONTACT_ERROR_MESSAGE}
             </div>
           )}
         </div>

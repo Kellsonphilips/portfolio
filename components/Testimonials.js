@@ -7,25 +7,24 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import TestimonialCard from "./TestimonialCard";
+import Link from "next/link";
 import useScrollReveal from "./useScrollReveal";
-
-const getLocale = () =>
-  typeof window !== "undefined"
-    ? window.localStorage.getItem("locale") || "en"
-    : "en";
+import { testimonialsData } from "./testimonialsData";
 
 const Testimonials = () => {
-  const [testimonials, setTestimonials] = useState([]);
+  const [approved, setApproved] = useState([]);
   const [filter, setFilter] = useState("All");
-  const headerRef = useScrollReveal("bottom", 0);
-  const contentRef = useScrollReveal("bottom", 0.2);
 
   useEffect(() => {
-    const locale = getLocale();
-    import(`../locales/${locale}/testimonials.json`)
-      .then((mod) => setTestimonials(mod.default || mod))
-      .catch(() => setTestimonials([]));
+    fetch("/api/testimonials/approved")
+      .then((res) => res.json())
+      .then((data) => setApproved(Array.isArray(data) ? data : []))
+      .catch(() => setApproved([]));
   }, []);
+
+  const testimonials = [...testimonialsData, ...approved];
+  const headerRef = useScrollReveal("bottom", 0);
+  const contentRef = useScrollReveal("bottom", 0.2);
 
   const serviceTypes = [
     "All",
@@ -122,6 +121,16 @@ const Testimonials = () => {
                 </Swiper>
               </>
             )}
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href="/submit-review"
+              className="inline-flex items-center justify-center btn-primary no-underline"
+              aria-label="Submit a review"
+            >
+              Submit Review
+            </Link>
           </div>
         </div>
       </div>

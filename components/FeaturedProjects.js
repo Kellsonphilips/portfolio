@@ -3,9 +3,12 @@
 import Button from './Button';
 import { projects } from '../app/projects/projects';
 import useScrollReveal from './useScrollReveal';
-import { useLanguage } from './LanguageContext';
 import SafeAnimatedCard from './SafeAnimatedCard';
 import ErrorBoundary from './ErrorBoundary';
+
+const FEATURED_TITLE = "Featured Projects";
+const FEATURED_SUBTITLE = "A selection of standout projects showcasing my skills and experience across different domains.";
+const FEATURED_VIEW_ALL = "View All Projects";
 
 export default function FeaturedProjects() {
   // Combine all projects from different categories
@@ -21,8 +24,6 @@ export default function FeaturedProjects() {
   const subtitleRef = useScrollReveal('right', 0.2);
   const buttonRef = useScrollReveal('right', 0.8);
 
-  const { t } = useLanguage();
-
   return (
     <ErrorBoundary>
       <section className="py-16 bg-background px-8 md:pl-10 lg:pl-15">
@@ -31,13 +32,13 @@ export default function FeaturedProjects() {
             ref={headerRef}
             className="text-3xl font-bold text-center mb-8 text-text"
           >
-            {t("featured.title")}
+            {FEATURED_TITLE}
           </h2>
           <p
             ref={subtitleRef}
             className="text-lg text-center text-secondary-color mb-8"
           >
-            {t("featured.subtitle")}
+            {FEATURED_SUBTITLE}
           </p>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, idx) => (
@@ -57,7 +58,7 @@ export default function FeaturedProjects() {
                 showArrow
                 aria-label="View all projects by Philip Kelechukwu Orji"
               >
-                {t("featured.viewAll")}
+                {FEATURED_VIEW_ALL}
               </Button>
             </div>
           </div>

@@ -4,7 +4,6 @@ import { useTheme } from './ThemeProvider';
 import { Sun, Moon } from 'lucide-react';
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { socialIcons } from './socialIcons';
-import LanguageSwitcher from './LanguageSwitcher';
 
 function SocialIcons() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -67,7 +66,6 @@ function ThemeAndLanguageControls() {
           <Moon className="w-4 h-4 sm:w-5 sm:h-5 text-[#DC8923]" />
         )}
       </button>
-      <LanguageSwitcher />
     </div>
   );
 }

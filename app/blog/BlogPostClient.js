@@ -2,13 +2,11 @@
 
 import { useState, useEffect } from 'react';
 import { getBlogPosts } from './blogs';
-import { useLanguage } from '@/components/LanguageContext';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import JsonLdBlog from '../../components/JsonLdBlog';
 
 export default function BlogPostClient({ slug }) {
-  const { language, t } = useLanguage();
   const [BlogComponent, setBlogComponent] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -19,7 +17,7 @@ export default function BlogPostClient({ slug }) {
       try {
         setIsLoading(true);
         setError(null);
-        const blogPosts = getBlogPosts(language);
+        const blogPosts = getBlogPosts();
         const foundPost = blogPosts.find(p => p.slug === slug);
         if (!foundPost) {
           setError('Blog post not found');
@@ -37,7 +35,7 @@ export default function BlogPostClient({ slug }) {
       }
     };
     loadBlogContent();
-  }, [slug, language]);
+  }, [slug]);
 
   if (isLoading) {
     return (
@@ -84,12 +82,12 @@ export default function BlogPostClient({ slug }) {
   }
 
   const siteUrl = 'https://philipkelechiorji.vercel.app';
-  const title = post ? t(post.titleKey) : 'Blog Post';
-  const description = post ? t(post.excerptKey) : 'Blog post description/excerpt.';
+  const title = post ? post.title : 'Blog Post';
+  const description = post ? post.excerpt : 'Blog post description/excerpt.';
   const url = `${siteUrl}/blog/${slug}`;
   const datePublished = post ? post.date : '2024-01-01';
   const dateModified = post ? post.date : datePublished;
-  const category = post ? t(post.categoryKey) : '';
+  const category = post ? post.category : '';
   const image = post && post.image
     ? (post.image.startsWith('http') ? post.image : `${siteUrl}${post.image.startsWith('/') ? '' : '/'}${post.image}`)
     : `${siteUrl}/Images/profile/profilelogoNobg.png`;

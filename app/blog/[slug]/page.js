@@ -1,9 +1,8 @@
 import BlogPostClient from '../BlogPostClient';
 import { getBlogPosts } from '../blogs';
-import en from '../../../locales/en.json';
 
 export async function generateStaticParams() {
-  const posts = getBlogPosts('en');
+  const posts = getBlogPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));
@@ -13,7 +12,7 @@ export async function generateMetadata({ params }) {
   const { slug } = params;
   const siteUrl = 'https://philipkelechiorji.vercel.app';
 
-  const posts = getBlogPosts('en');
+  const posts = getBlogPosts();
   const post = posts.find(p => p.slug === slug);
 
   const defaultTitle = 'Blog Post | Philip Kelechukwu Orji Portfolio';
@@ -102,10 +101,9 @@ export async function generateMetadata({ params }) {
     };
   }
 
-  const t = (key) => en[key] || key;
-  const title = t(post.titleKey);
-  const description = t(post.excerptKey);
-  const category = t(post.categoryKey);
+  const title = post.title;
+  const description = post.excerpt;
+  const category = post.category;
   const imageUrl = post.image 
     ? (post.image.startsWith('http') ? post.image : `${siteUrl}${post.image.startsWith('/') ? '' : '/'}${post.image}`)
     : `${siteUrl}/Images/profile/profilelogoNobg.png`;
