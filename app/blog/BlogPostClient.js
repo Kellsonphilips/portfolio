@@ -54,12 +54,12 @@ export default function BlogPostClient({ slug }) {
         <div className="text-center">
           <h1 className="text-2xl font-bold text-red-600 mb-4">Error</h1>
           <p className="text-text-light dark:text-text-dark">{error}</p>
-          <a 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="mt-4 inline-block text-blue-600 hover:underline"
           >
             ← Back to Blog
-          </a>
+          </Link>
         </div>
       </div>
     );
@@ -70,12 +70,12 @@ export default function BlogPostClient({ slug }) {
       <div className="pt-24 min-h-screen flex items-center justify-center">
         <div className="text-center">
           <p className="text-text-light dark:text-text-dark">Blog post not found</p>
-          <a 
-            href="/blog" 
+          <Link
+            href="/blog"
             className="mt-4 inline-block text-blue-600 hover:underline"
           >
             ← Back to Blog
-          </a>
+          </Link>
         </div>
       </div>
     );

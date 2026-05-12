@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 /**
  * useScrollReveal
@@ -11,11 +11,8 @@ import { useEffect, useRef } from 'react';
  */
 export default function useScrollReveal(direction = 'left', delay = 0) {
   const ref = useRef(null);
-  // Store the chosen direction for this instance
-  const chosenDirectionRef = useRef(
-    direction === 'random'
-      ? (Math.random() < 0.5 ? 'left' : 'right')
-      : direction
+  const [chosenDirection] = useState(() =>
+    direction === 'random' ? (Math.random() < 0.5 ? 'left' : 'right') : direction
   );
 
   useEffect(() => {
@@ -31,7 +28,7 @@ export default function useScrollReveal(direction = 'left', delay = 0) {
       // Set initial hidden state
       node.style.opacity = 0;
       node.style.transform =
-        chosenDirectionRef.current === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
+        chosenDirection === 'left' ? 'translateX(-60px)' : 'translateX(60px)';
       node.style.transition =
         `opacity 2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s, ` +
         `transform 2s cubic-bezier(0.23, 1, 0.32, 1) ${delay}s`;
@@ -51,7 +48,7 @@ export default function useScrollReveal(direction = 'left', delay = 0) {
       observer.observe(node);
       return () => observer.disconnect();
     }
-  }, [delay]); // direction is locked per instance
+  }, [delay, chosenDirection]);
 
   return ref;
 } 
