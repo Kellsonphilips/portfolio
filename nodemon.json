@@ -1,0 +1,12 @@
+{
+  "watch": [
+    "next.config.mjs",
+    "tailwind.config.js",
+    "postcss.config.mjs",
+    "postcss.config.js",
+    "eslint.config.mjs"
+  ],
+  "ignore": [".next/**", "node_modules/**"],
+  "ext": "mjs,js,cjs,json",
+  "exec": "next dev"
+}

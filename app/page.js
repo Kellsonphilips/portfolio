@@ -3,8 +3,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import FeaturedProjects from '@/components/FeaturedProjects';
 import CallToAction from '@/components/CallToAction';
-import Skills from '../app/skills/page';
-import Capabilities from '../app/capabilities/page';
 import Testimonials from '@/components/Testimonials';
 import JsonLdHome from '../components/JsonLdHome';
 
@@ -75,8 +73,6 @@ export default function Home() {
         <Hero />
         <About />
         <FeaturedProjects />
-        <Skills />
-        <Capabilities />
         <Testimonials />
         <CallToAction />
       </div>

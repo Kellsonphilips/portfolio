@@ -40,8 +40,19 @@ const nextConfig = {
         protocol: "https",
         hostname: "randomuser.me",
       },
+      {
+        protocol: "https",
+        hostname: "ui-avatars.com",
+      },
+      {
+        protocol: "https",
+        hostname: "logo.clearbit.com",
+      },
+      {
+        protocol: "https",
+        hostname: "via.placeholder.com",
+      },
     ],
-    domains: ["ui-avatars.com", "logo.clearbit.com", "via.placeholder.com", "randomuser.me"],
   },
   // Performance optimizations
   compiler: {
