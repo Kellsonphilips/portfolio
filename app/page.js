@@ -7,7 +7,7 @@ import Testimonials from '@/components/Testimonials';
 import JsonLdHome from '../components/JsonLdHome';
 
 export const metadata = {
-  title: "Philip Kelechukwu Orji - ICT Solution Provider | Software Engineer | Project Manager | Network Engineer",
+  title: "Philip O. - ICT Solution Provider | Software Engineer | Project Manager",
   description: "Professional ICT Solution Provider, Software Engineer, and Project Manager specializing in web development, cloud computing, network engineering, and data analytics. Explore my portfolio, projects, technical skills, capabilities, and technology blog. Expert in React, Next.js, Node.js, AWS, Docker, Kubernetes, and DevOps.",
   keywords: "Philip Kelechukwu Orji, Philip Orji, ICT Solution Provider, Software Engineer, Project Manager, Network Engineer, web development, cloud computing, AWS, Docker, Kubernetes, DevOps, React, Next.js, Node.js, Python, TypeScript, network security, cloud migration, data analytics, machine learning, full stack developer, backend developer, frontend developer, cloud engineer, DevOps engineer, IT consultant, software development, ICT solutions, network engineering, system administration, cloud infrastructure, CI/CD, microservices, portfolio, professional services, freelance developer, Kellsonphilips, JoinPhotonPhill, technology blog, career guide, technical expertise, business solutions, digital transformation",
   authors: [{ name: "Philip Kelechukwu Orji" }],
