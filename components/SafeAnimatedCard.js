@@ -88,7 +88,7 @@ const SafeAnimatedCard = function SafeAnimatedCard({ project, delay = 0 }) {
         )}
       </h3>
       
-      <p className="mb-4 text-secondary-color min-h-[4rem] leading-relaxed">
+      <p className="mb-4 text-secondary-color text-justify min-h-[4rem] leading-relaxed">
         {hasAnimated ? currentDesc : ''}
         {currentDesc.length < descText.length && hasAnimated && currentDesc.length > 0 && (
           <span className="animate-pulse">|</span>
