@@ -9,7 +9,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-  const { slug } = params;
+  const { slug } = await params;
   const siteUrl = 'https://philipkelechiorji.vercel.app';
 
   const posts = getBlogPosts();
@@ -160,6 +160,7 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPostPage({ params }) {
-  return <BlogPostClient slug={params.slug} />;
+export default async function BlogPostPage({ params }) {
+  const { slug } = await params;
+  return <BlogPostClient slug={slug} />;
 }
